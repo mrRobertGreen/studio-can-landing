@@ -3,6 +3,7 @@
 .wrapper {
   font-family: 'Open Sans', sans-serif;
   background-color: #fff;
+  overflow: hidden;
 }
 .container {
   padding: 0 35px;
@@ -19,8 +20,6 @@
     width: 160px;
     justify-content: space-between;
   }
-  &__point {
-  }
   &__label {
     font-size: 16px;
     width: 180px;
@@ -33,21 +32,23 @@
 }
 .menu {
   padding: 10px 0;
+  width: 100%;
   &__row {
     background-color: $almost_white;
     border-radius: 20px;
     @include flex-row;
     margin: 0 auto;
     justify-content: space-between;
-    width: 852px;
+    width: 912px;
   }
   &__item {
     text-align: center;
     border-radius: 20px;
     margin: 2px;
     color: $grey;
-    width: 140px;
+    width: 150px;
     padding: 10px 20px;
+   
     &_active {
       color: black;
       background-color: white;
@@ -62,7 +63,7 @@
   @include flex-row;
   justify-content: space-between;
   min-width: 0;
-  padding: 50px 0;
+  padding: 50px;
 }
 .slider-block {
   flex: 1 1 33.333%;
@@ -157,9 +158,10 @@
 }
 .we-are {
   @include flex-column;
-  height: 1000px;
+  height: 1100px;
   justify-content: space-between;
   text-align: center;
+  padding-bottom: 150px;
   &__title {
     text-align: center;
     font-size: 18px;
@@ -168,22 +170,33 @@
     position: relative;
   }
   &__item {
+    @include flex-row;
+    height: 100%;
     line-height: 1.7;
     width: 100%;
     position: relative;
     .img-l {
       display: block;
       position: absolute;
-      left: 0;
+      left: 25px;
+    }
+    .img-l_with-cut {
+      @extend .img-l;
+      left: -100px;
     }
     .img-r {
+      display: block;
       position: absolute;
-      right: 0;
+      right: 25px;
+    }
+    .img-r_with-cut {
+      @extend .img-r;
+      right: -100px;
     }
   }
   &__text_with-line {
     @extend .we-are__text;
-    @include with-yellow-line(7px, -20px);
+    @include with-yellow-line(8px, -20px);
   }
   &__label {
     font-size: 16px;
@@ -191,7 +204,7 @@
   }
   &__link {
     display: inline-block;
-    font-size: 12px;
+    font-size: 13px;
     color: $blue;
     position: relative;
     &::after {
@@ -204,6 +217,55 @@
     }
   }
   &__sub-label {
-    font-size: 12px;
+    font-size: 13px;
+  }
+}
+.clouds {
+  @include flex-row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 300px;
+  &__item-r {
+    color: white;
+    line-height: 1.5;
+    background-color: $blue;
+    padding: 15px 35px;
+    border-radius: 50px; 
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      transform: rotate(140deg);
+      border-bottom: 30px solid $blue;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      bottom: -13px;
+      right: 5px;
+    }
+  }
+  &__item-l {
+    @extend .clouds__item-r;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      transform: rotate(220deg);
+      border-bottom: 30px solid $blue;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      bottom: -13px;
+      left: 5px;
+    }
+  }
+  &__button {
+    right: 45px;
+    padding: 4px 28px;
+    position: absolute;
+    border-radius: 30px;
+    border: 2px solid $blue;
+    bottom: -15px;
   }
 }

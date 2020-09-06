@@ -3,6 +3,7 @@
 .wrapper {
   font-family: 'Open Sans', sans-serif;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .container {
@@ -53,6 +54,7 @@
 
 .menu {
   padding: 10px 0;
+  width: 100%;
 }
 
 .menu__row {
@@ -77,7 +79,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 852px;
+  width: 912px;
 }
 
 .menu__item {
@@ -85,7 +87,7 @@
   border-radius: 20px;
   margin: 2px;
   color: #8C8C8C;
-  width: 140px;
+  width: 150px;
   padding: 10px 20px;
 }
 
@@ -119,7 +121,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-width: 0;
-  padding: 50px 0;
+  padding: 50px;
 }
 
 .slider-block {
@@ -307,11 +309,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 1000px;
+  height: 1100px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: center;
+  padding-bottom: 150px;
 }
 
 .we-are__title {
@@ -324,20 +327,45 @@
 }
 
 .we-are__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  height: 100%;
   line-height: 1.7;
   width: 100%;
   position: relative;
 }
 
-.we-are__item .img-l {
+.we-are__item .img-l, .we-are__item .img-l_with-cut {
   display: block;
   position: absolute;
-  left: 0;
+  left: 25px;
 }
 
-.we-are__item .img-r {
+.we-are__item .img-l_with-cut {
+  left: -100px;
+}
+
+.we-are__item .img-r, .we-are__item .img-r_with-cut {
+  display: block;
   position: absolute;
-  right: 0;
+  right: 25px;
+}
+
+.we-are__item .img-r_with-cut {
+  right: -100px;
 }
 
 .we-are__text_with-line:before {
@@ -345,7 +373,7 @@
   border-radius: 5px;
   left: -20px;
   content: "";
-  width: 7px;
+  width: 8px;
   background-color: #FDD706;
   height: 100%;
   display: inline-block;
@@ -358,7 +386,7 @@
 
 .we-are__link {
   display: inline-block;
-  font-size: 12px;
+  font-size: 13px;
   color: #0095F6;
   position: relative;
 }
@@ -373,5 +401,76 @@
 }
 
 .we-are__sub-label {
-  font-size: 12px;
+  font-size: 13px;
+}
+
+.clouds {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 300px;
+}
+
+.clouds__item-r, .clouds__item-l {
+  color: white;
+  line-height: 1.5;
+  background-color: #0095F6;
+  padding: 15px 35px;
+  border-radius: 50px;
+  position: relative;
+}
+
+.clouds__item-r:after, .clouds__item-l:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  -webkit-transform: rotate(140deg);
+          transform: rotate(140deg);
+  border-bottom: 30px solid #0095F6;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  bottom: -13px;
+  right: 5px;
+}
+
+.clouds__item-l:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  -webkit-transform: rotate(220deg);
+          transform: rotate(220deg);
+  border-bottom: 30px solid #0095F6;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  bottom: -13px;
+  left: 5px;
+}
+
+.clouds__button {
+  right: 45px;
+  padding: 4px 28px;
+  position: absolute;
+  border-radius: 30px;
+  border: 2px solid #0095F6;
+  bottom: -15px;
 }
