@@ -1,0 +1,31 @@
+/* Mixins */
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-row {
+    @include flex-column;
+    flex-direction: row;
+}
+@mixin with-yellow-line($width: 3px, $left: -10px) {
+    &:before {
+        position: absolute;
+        border-radius: 5px;
+        left: $left;
+        content: "";
+        width: $width;
+        background-color: $yellow;
+        height: 100%;
+        display: inline-block;
+    }
+}
+
+/* Variables */
+$grey: #8C8C8C;
+$light-grey: #DEDEDE;
+$almost_white: #F6F6F6;
+$pink: #F476C7;
+$yellow: #FDD706;
+$blue: #0095F6;

@@ -1,0 +1,209 @@
+@import "vars";
+
+.wrapper {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+}
+.container {
+  padding: 0 35px;
+}
+.header {
+  padding: 20px 0;
+  position: relative;
+  &__points {
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    @include flex-row;
+    width: 160px;
+    justify-content: space-between;
+  }
+  &__point {
+  }
+  &__label {
+    font-size: 16px;
+    width: 180px;
+    border-radius: 20px;
+    padding: 12px 20px;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
+  }
+}
+.menu {
+  padding: 10px 0;
+  &__row {
+    background-color: $almost_white;
+    border-radius: 20px;
+    @include flex-row;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 852px;
+  }
+  &__item {
+    text-align: center;
+    border-radius: 20px;
+    margin: 2px;
+    color: $grey;
+    width: 140px;
+    padding: 10px 20px;
+    &_active {
+      color: black;
+      background-color: white;
+    }
+  }
+}
+.page {
+  width: 100%;
+  height: 100vh;
+}
+.top {
+  @include flex-row;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 50px 0;
+}
+.slider-block {
+  flex: 1 1 33.333%;
+  min-width: 0;
+}
+.logo {
+  flex: 1 1 33.333%;
+		&__image {
+		}
+}
+.form-block {
+  padding-left: 30px;
+  flex: 1 1 33.333%;
+  @include flex-column;
+  &__label {
+    line-height: 1.7;
+    width: 270px; 
+    position: relative;
+    margin-bottom: 20px;
+    @include with-yellow-line(3px);
+  }
+  .form {
+    .input-group {
+      width: 280px;
+      padding: 10px;
+      box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
+      border-radius: 10px;
+      &__input {
+        padding: 10px 5px;
+        width: 100%;
+        position: relative;
+        input {
+          color: black;
+          font-size: 16px;
+          width: 100%;
+        }
+        input::placeholder {
+          color: $grey;
+          font-size: 14px;
+        }
+      }
+      &__input::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 1px;
+        background-color: $grey;
+        position: absolute;
+        bottom: 2px;
+        left: 5px;
+      }
+      &__input:first-child::after {
+        width: 50px;
+      }
+      &__input::placeholder {
+        color: $grey;
+      }
+    }
+    &__checkbox {
+      margin: 25px 0;
+      @include flex-row;
+      color: $grey;
+      font-size: 14px;
+      position: relative;
+      left: 1.5;
+      input {
+        margin-left: 10px;
+        margin-top: 1px;
+      }
+    }
+    &__checkbox::before {
+      content: "";
+        display: block;
+        width: 3px;
+        height: 100%;
+        background-color: $almost_white;
+        position: absolute;
+        bottom: 0;
+        border-radius: 5px;
+        left: 0;
+    }
+    &__button {
+      display: block;
+      background-color: $blue;
+      color: white;
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+  }
+  
+}
+.we-are {
+  @include flex-column;
+  height: 1000px;
+  justify-content: space-between;
+  text-align: center;
+  &__title {
+    text-align: center;
+    font-size: 18px;
+  }
+  &__text {
+    position: relative;
+  }
+  &__item {
+    line-height: 1.7;
+    width: 100%;
+    position: relative;
+    .img-l {
+      display: block;
+      position: absolute;
+      left: 0;
+    }
+    .img-r {
+      position: absolute;
+      right: 0;
+    }
+  }
+  &__text_with-line {
+    @extend .we-are__text;
+    @include with-yellow-line(7px, -20px);
+  }
+  &__label {
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
+  &__link {
+    display: inline-block;
+    font-size: 12px;
+    color: $blue;
+    position: relative;
+    &::after {
+      font-weight: 800;
+      color: $blue;
+      content: ">";
+      position: absolute;
+      right: -12px;
+      top: 0.5px;
+    }
+  }
+  &__sub-label {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,80 @@
+@import "vars";
+
+.slider {
+    width: 260px;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0 0 50px;
+    &__label {
+        font-size: 18px;
+        font-weight: 600;
+        display: inline-block;
+        color: white;
+        background-color: $pink;
+        padding: 10px 12px 11px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+      }
+    &__item {
+        padding: 20px 0;
+        font-size: 18px;
+        p {
+            color: $grey;
+            padding-bottom: 10px;
+        }
+        b {
+            color: black;
+        }
+    }
+}
+
+/* Слайдер */
+.slick-slider{}
+/* Слайдер запущен */
+.slick-slider.slick-initialized{}
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+/* Ограничивающая оболочка */
+.slick-list {}
+/* Лента слайдов */
+.slick-track{
+    @include flex-row;
+}
+/* Слайд */
+.slick-slide{}
+/* Слайд активный (показывается) */
+.slick-slide.slick-active{}
+/* Слайд основной */
+.slick-slide.slick-current{}
+/* Слайд по центру */
+.slick-slide.slick-center{}
+/* Клонированный слайд */
+.slick-slide.slick-cloned{}
+/* Стрелка */
+.slick-arrow{}
+/* Стрелка влево */
+.slick-arrow.slick-prev{}
+/* Стрелка вправо */
+.slick-arrow.slick-next{}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+/* Точки (булиты) */
+.slick-dots{
+    @include flex-row;
+}
+.slick-dots li{
+    
+}
+/* Активная точка */
+.slick-dots li.slick-active button{
+    background-color: $yellow;
+}
+/* Элемент точки */
+.slick-dots li button{
+    margin: 0 5px;
+    font-size: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $light-grey;
+}

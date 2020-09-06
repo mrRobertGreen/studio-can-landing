@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* Mixins */
+/* Variables */
+.slider {
+  width: 260px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 0 50px;
+}
+
+.slider__label {
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  color: white;
+  background-color: #F476C7;
+  padding: 10px 12px 11px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.slider__item {
+  padding: 20px 0;
+  font-size: 18px;
+}
+
+.slider__item p {
+  color: #8C8C8C;
+  padding-bottom: 10px;
+}
+
+.slider__item b {
+  color: black;
+}
+
+/* Слайдер */
+/* Слайдер запущен */
+/* Слайдер с точками */
+/* Ограничивающая оболочка */
+/* Лента слайдов */
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
+/* Слайд */
+/* Слайд активный (показывается) */
+/* Слайд основной */
+/* Слайд по центру */
+/* Клонированный слайд */
+/* Стрелка */
+/* Стрелка влево */
+/* Стрелка вправо */
+/* Стрелка не активная */
+/* Точки (булиты) */
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
+/* Активная точка */
+.slick-dots li.slick-active button {
+  background-color: #FDD706;
+}
+
+/* Элемент точки */
+.slick-dots li button {
+  margin: 0 5px;
+  font-size: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #DEDEDE;
+}
