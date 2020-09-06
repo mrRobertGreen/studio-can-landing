@@ -375,3 +375,52 @@
 .we-are__sub-label {
   font-size: 12px;
 }
+
+.services {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 300px 300px;
+      grid-template-rows: 300px 300px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.services__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.services__item__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.services__info {
+  min-width: 300px;
+  margin-left: 35px;
+  margin-top: 40px;
+}
+
+.services__info__price {
+  min-width: 100%;
+}
+
+.services__more {
+  border: none;
+  background-color: #fff;
+}
+
+.info__line {
+  max-width: 90px;
+  color: #000;
+  background-color: #000;
+}
+/*# sourceMappingURL=style.css.map */
