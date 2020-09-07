@@ -10,8 +10,9 @@
 }
 .header-wrap {
   position: absolute;
-  left: 35px;
-  right: 35px;
+  left: 0;
+  right: 0;
+  padding: 0 35px;
   top: 0;
   background-color: #fff;
 }
@@ -339,7 +340,7 @@
   -ms-grid-rows: 300px 300px;
       grid-template-rows: 300px 300px;
   -webkit-box-pack: center;
-
+}
 .services__info {
   min-width: 300px;
   margin-left: 35px;
