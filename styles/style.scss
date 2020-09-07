@@ -211,7 +211,7 @@
 .services {
   display: grid;
   // в медиа запросе следующие 2 строки просто убери при экране меньше ~1120
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 55% 45%;
   grid-template-rows: 300px 300px;
   
   justify-content: center;
@@ -229,21 +229,53 @@
   &__info {
     min-width: 300px; // здесь надо бы шрифтов и размеров линий, значение может измениться
     margin-left: 35px;
-    margin-top: 40px;
+    margin-top: 50px;
+
+    &__head {
+      margin-bottom: 20px;
+    }
 
     &__price {
       min-width: 100%;
+      line-height: 20px;
     } 
   }
 
   &__more {
     border: none;
     background-color: #fff;
-  }
+    }
+}
+
+.table {
+  color: grey;
 }
 
 .info__line {
   max-width: 90px;
   color: #000;
   background-color: #000;
+<<<<<<< Updated upstream
+=======
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: 510px 510px 510px;
+  grid-template-rows: 350px 350px;
+  
+
+  &__ex {
+    
+
+    &__btn {
+      border: 1px solid #000;
+      border-radius: 5px;
+      background-color: #fff;
+
+      min-width: 422px;
+      min-height: 300px;
+    }
+  }
+>>>>>>> Stashed changes
 }

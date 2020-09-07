@@ -379,8 +379,8 @@
 .services {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  -ms-grid-columns: 55% 45%;
+      grid-template-columns: 55% 45%;
   -ms-grid-rows: 300px 300px;
       grid-template-rows: 300px 300px;
   -webkit-box-pack: center;
@@ -406,11 +406,16 @@
 .services__info {
   min-width: 300px;
   margin-left: 35px;
-  margin-top: 40px;
+  margin-top: 50px;
+}
+
+.services__info__head {
+  margin-bottom: 20px;
 }
 
 .services__info__price {
   min-width: 100%;
+  line-height: 20px;
 }
 
 .services__more {
@@ -418,9 +423,33 @@
   background-color: #fff;
 }
 
+.table {
+  color: grey;
+}
+
 .info__line {
   max-width: 90px;
   color: #000;
   background-color: #000;
 }
+<<<<<<< Updated upstream
+=======
+
+.examples {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 510px 510px 510px;
+      grid-template-columns: 510px 510px 510px;
+  -ms-grid-rows: 350px 350px;
+      grid-template-rows: 350px 350px;
+}
+
+.examples__ex__btn {
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  min-width: 422px;
+  min-height: 300px;
+}
+>>>>>>> Stashed changes
 /*# sourceMappingURL=style.css.map */
