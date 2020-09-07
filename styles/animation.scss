@@ -1,11 +1,8 @@
 .stickytop {
     position:fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 35px;
+    right: 35px;
     z-index: 10;
     padding: 0;
-  }
-  .padding-for-top-block {
-      padding-top: 108.4px;
-  }
+}
