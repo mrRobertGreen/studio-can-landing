@@ -54,6 +54,8 @@
           justify-content: center;
   -ms-flex-direction: row;
       flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Слайд */
@@ -82,6 +84,8 @@
           justify-content: center;
   -ms-flex-direction: row;
       flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Активная точка */

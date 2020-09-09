@@ -31,11 +31,9 @@ $(document).ready(function(){
     $(window).scroll(function() {
         if($(this).scrollTop() > 0) {
             $('.header-wrap').addClass('stickytop');
-            // $('.top').addClass('padding-for-top-block')
         }
         else {
             $('.header-wrap').removeClass('stickytop');
-            // $('.top').removeClass('padding-for-top-block')
         }
     });
 });

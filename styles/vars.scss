@@ -8,6 +8,8 @@
 @mixin flex-row {
     @include flex-column;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 @mixin with-yellow-line($width: 3px, $left: -10px) {
     &:before {

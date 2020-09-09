@@ -1,9 +1,11 @@
 @import "vars";
 
+body {
+  overflow-x: hidden;
+}
 .wrapper {
   font-family: 'Open Sans', sans-serif;
   background-color: #fff;
-  overflow: hidden;
 }
 .container {
   padding: 0 35px;
@@ -93,9 +95,8 @@
   min-width: 0;
 }
 .logo {
-  flex: 1 1 33.333%;
-		&__image {
-		}
+  display: block;
+  flex: 0 1 33.333%;
 }
 .form-block {
   padding-left: 30px;
@@ -198,24 +199,24 @@
     line-height: 1.7;
     width: 100%;
     position: relative;
-    .img-l {
-      display: block;
-      position: absolute;
-      left: 25px;
-    }
-    .img-l_with-cut {
-      @extend .img-l;
-      left: -100px;
-    }
-    .img-r {
-      display: block;
-      position: absolute;
-      right: 25px;
-    }
-    .img-r_with-cut {
-      @extend .img-r;
-      right: -100px;
-    }
+  }
+  .img-l {
+    display: block;
+    position: absolute;
+    left: 25px;
+  }
+  .img-l_with-cut {
+    @extend .img-l;
+    left: -100px;
+  }
+  .img-r {
+    display: block;
+    position: absolute;
+    right: 25px;
+  }
+  .img-r_with-cut {
+    @extend .img-r;
+    right: -100px;
   }
   &__text_with-line {
     @extend .we-are__text;
@@ -347,30 +348,24 @@
   margin-top: 40px;
   margin-top: 50px;
 }
-
 .services__info__head {
   margin-bottom: 20px;
 }
-
 .services__info__price {
   min-width: 100%;
   line-height: 20px;
 }
-
 .services__more {
   background-color: #fff;
 }
-
 .table {
   color: grey;
 }
-
 .info__line {
   max-width: 90px;
   color: #000;
   background-color: #000;
 }
-
 .examples {
   display: -ms-grid;
   display: grid;
@@ -379,11 +374,91 @@
   -ms-grid-rows: 350px 350px;
       grid-template-rows: 350px 350px;
 }
-
 .examples__ex__btn {
   border: 1px solid #000;
   border-radius: 5px;
   background-color: #fff;
   min-width: 422px;
   min-height: 300px;
+}
+.vacancies {
+  @include flex-row;
+  justify-content: space-between;
+  padding: 100px 0;
+  .img-l {
+    display: block;
+    position: absolute;
+    left: -25px;
+  }
+  .img-r {
+    display: block;
+    position: absolute;
+    right: -25px;
+  }
+}
+.cards {
+  width: 100%;
+  position: relative;
+}
+.card {
+  width: 590px;
+  padding: 30px 45px;
+  border: 1px solid $light-grey;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto 10px; // прости меня великий бэм
+    &__main-block {
+      width: 430px;
+    }
+		&_desc {
+      color: $grey;
+		}
+		&__top {
+      @include flex-row;
+      justify-content: space-between;
+      margin-bottom: 15px;
+		}
+		&__label {
+      font-size: 21px;
+		}
+		&__percent {
+      font-size: 15px;
+      color: $grey;
+		}
+		&__arrow {
+      position: absolute;
+      right: 45px;
+      top: calc(50% - 6.5px);
+      bottom: 0;
+		}
+}
+.contacts { 
+  padding: 210px 0 100px;
+    &__main {
+      @include flex-row;
+      margin: 0 auto;
+    }
+    &__label {
+
+    }
+    &__label {
+    }
+    &__footer {
+    } 
+}
+.contacts-items {
+  &__item {
+  }
+  &__key {
+  }
+}
+.contacts-item {
+  &__value {
+  }
+}
+.links {
+  &__row {
+  }
+  &__item {
+  }
 }
