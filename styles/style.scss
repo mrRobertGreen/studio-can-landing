@@ -10,18 +10,9 @@ body {
 .container {
   padding: 0 35px;
 }
-.header-wrap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: 0 35px;
-  top: 0;
-  background-color: #fff;
-}
 .header {
   padding: 20px 0;
   position: relative;
- 
   &__points {
     height: 100%;
     left: 0;
@@ -33,6 +24,7 @@ body {
   }
   &__label {
     background-color: #fff;
+    font-size: 19px;
     z-index: 10;
     font-size: 16px;
     width: 180px;
@@ -46,6 +38,7 @@ body {
 .menu {
   padding: 10px 0;
   width: 100%;
+  background: white;
   &__row {
     background-color: $almost_white;
     position: relative;
@@ -88,7 +81,7 @@ body {
   @include flex-row;
   justify-content: space-between;
   min-width: 0;
-  padding: 200px 50px 50px;
+  padding: 106px 50px 50px;
 }
 .slider-block {
   flex: 1 1 33.333%;
@@ -99,15 +92,17 @@ body {
   flex: 0 1 33.333%;
 }
 .form-block {
+  height: 100%;
   padding-left: 30px;
   flex: 1 1 33.333%;
   @include flex-column;
   &__label {
-    line-height: 1.7;
-    width: 270px; 
+    line-height: 1.6;
+    width: 300px; 
+    font-size: 18px;
     position: relative;
     margin-bottom: 20px;
-    @include with-yellow-line(3px);
+    @include with-yellow-line(4px);
   }
   .form {
     .input-group {
@@ -170,6 +165,7 @@ body {
         left: 0;
     }
     &__button {
+      font-size: 16px;
       display: block;
       background-color: $blue;
       color: white;
@@ -186,12 +182,14 @@ body {
   justify-content: space-between;
   text-align: center;
   padding-bottom: 150px;
+  font-size: 28px;
   &__title {
     text-align: center;
-    font-size: 18px;
+    
   }
   &__text {
     position: relative;
+    font-size: 20px;
   }
   &__item {
     @include flex-row;
@@ -223,25 +221,28 @@ body {
     @include with-yellow-line(8px, -20px);
   }
   &__label {
-    font-size: 16px;
     padding-bottom: 5px;
   }
   &__link {
+    font-weight: 600;
     display: inline-block;
-    font-size: 13px;
+    font-size: 14px;
     color: $blue;
     position: relative;
     &::after {
       font-weight: 800;
+      background: url("/icons/arrow-right.svg") center/100% 100% no-repeat;
+      width: 10px;
+      height: 10px;
       color: $blue;
-      content: ">";
+      content: "";
       position: absolute;
-      right: -12px;
-      top: 0.5px;
+      right: -16px;
+      top: 7px;
     }
   }
   &__sub-label {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 .clouds {
@@ -408,10 +409,11 @@ body {
   position: relative;
   margin: 0 auto 10px; // прости меня великий бэм
     &__main-block {
-      width: 430px;
+      width: 435px;
     }
 		&_desc {
       color: $grey;
+      font-size: 17px;
 		}
 		&__top {
       @include flex-row;
@@ -433,7 +435,7 @@ body {
 		}
 }
 .contacts { 
-  padding: 210px 230px 100px;
+  padding: 200px 230px;
     &__main {
       @include flex-row;
       justify-content: space-between;
@@ -487,7 +489,23 @@ body {
       padding-bottom: 0;
     }
   }
-  &__item {
-    
+  &__item {}
+}
+.footer {
+  @include flex-row;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 56px;
+  font-size: 19px;
+}
+.company-came {
+  flex: 1 1 50%;
+  span {
+    color: $grey;
   }
+}
+.user-terms {
+  flex: 1 1 50%;
+  color: $grey;
 }

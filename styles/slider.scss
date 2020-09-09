@@ -1,7 +1,7 @@
 @import "vars";
 
 .slider {
-    width: 260px;
+    width: 350px;
     min-width: 0;
     overflow: hidden;
     padding: 0 0 50px;
@@ -16,8 +16,8 @@
         margin-bottom: 40px;
       }
     &__item {
-        padding: 20px 0;
-        font-size: 18px;
+        padding: 20px 0 70px;
+        font-size: 25px; 
         p {
             color: $grey;
             padding-bottom: 10px;
@@ -29,7 +29,8 @@
 }
 
 /* Слайдер */
-.slick-slider{}
+.slick-slider{
+}
 /* Слайдер запущен */
 .slick-slider.slick-initialized{}
 /* Слайдер с точками */

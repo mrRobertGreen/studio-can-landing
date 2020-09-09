@@ -29,11 +29,14 @@ $(document).ready(function(){
     })
 
     $(window).scroll(function() {
-        if($(this).scrollTop() > 0) {
-            $('.header-wrap').addClass('stickytop');
+        if($(this).scrollTop() >= 70) {
+            $('.menu').addClass('stickytop');
+            $('.top').addClass('p-top-184')
         }
         else {
-            $('.header-wrap').removeClass('stickytop');
+            $('.menu').removeClass('stickytop');
+            $('.top').removeClass('p-top-184')
         }
     });
+
 });

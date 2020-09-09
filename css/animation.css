@@ -4,5 +4,9 @@
   left: 0;
   right: 0;
   z-index: 10;
-  padding: 0 35px;
+  padding: 15px;
+}
+
+.p-top-184 {
+  padding-top: 171px;
 }
