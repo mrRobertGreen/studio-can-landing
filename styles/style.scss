@@ -433,32 +433,61 @@ body {
 		}
 }
 .contacts { 
-  padding: 210px 0 100px;
+  padding: 210px 230px 100px;
     &__main {
       @include flex-row;
+      justify-content: space-between;
       margin: 0 auto;
+      padding-bottom: 110px;
     }
     &__label {
-
-    }
-    &__label {
+      width: 425px;
+      font-size: 30px;
+      font-weight: 600;
+      padding-bottom: 40px;
+      p {
+        padding-bottom: 10px;
+      }
+      .pink {
+        background-color: $pink;
+        color: white;
+      }
     }
     &__footer {
+      @include flex-row;
+      justify-content: space-between;
     } 
 }
 .contacts-items {
-  &__item {
+  &__row {
+    @include flex-row;
+    justify-content: space-between;
+    width: 330px;
+    font-size: 19px;
+    padding-bottom: 16px;
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
   &__key {
+    color: $grey;
+    
   }
-}
-.contacts-item {
   &__value {
+    color: $blue;
   }
 }
 .links {
+  width: 171px;
   &__row {
+    @include flex-row;
+    justify-content: space-between;
+    padding-bottom: 35px;
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
   &__item {
+    
   }
 }
