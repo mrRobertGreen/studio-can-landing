@@ -48,6 +48,12 @@ body {
     justify-content: space-between;
     width: 912px;
     z-index: 1;
+    a {
+      display: block;
+      height: 100%; 
+      width: 100%;
+      text-align: center;
+     }
   }
   &__item {
     text-align: center;
@@ -55,21 +61,26 @@ body {
     margin: 2px;
     color: $grey;
     width: 150px;
-    padding: 10px 20px;
+    height: 33px;
+    @include flex-row;
     z-index: 3;
     &_active {
       color: black;
       background: transparent;
     }
+    div {
+      @include flex-row;
+      height: 100%;
+    }
+
   }
   &__item_fake {
     @extend .menu__item;
     position: absolute;
     background-color: white;
     width: 150px;
+    height: 32px;
     left: 1px;
-    top: 1px;
-    bottom: 1px;
     z-index: 2;
   }
 }
