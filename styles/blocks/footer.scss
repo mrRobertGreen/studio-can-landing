@@ -1,0 +1,19 @@
+@import "../vars";
+.footer {
+    @include flex-row;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 56px;
+    font-size: 19px;
+  }
+  .company-came {
+    flex: 1 1 50%;
+    span {
+      color: $grey;
+    }
+  }
+  .user-terms {
+    flex: 1 1 50%;
+    color: $grey;
+  }

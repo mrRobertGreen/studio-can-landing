@@ -1,0 +1,41 @@
+@import "../vars";
+.love {
+    @include flex-column;
+    margin-top: 190px;
+    margin-bottom: 85px;
+    font-size: 25px;
+    min-width: 550px;
+    
+    &__container {
+      position: relative;
+    }
+    &__main {
+      display: flex;
+      font-size: 25px;
+      font-weight: bold;
+      justify-content: center;
+  
+      margin-top: 7px;
+      margin-bottom: 7px;
+    }
+    &__first {
+      color: $grey;
+      opacity: 0.5;
+      
+      margin-right: 80px;
+    }
+    &__second {
+      color: $grey;
+      opacity: 0.5;
+    }
+    &__third {
+      color: $grey;
+      opacity: 0.5;
+      padding-left: 40px;
+      margin-right: 70px;
+    }
+    &__fourth {
+      color: $grey;
+      opacity: 0.5;
+    }
+  }

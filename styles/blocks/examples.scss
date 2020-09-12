@@ -1,0 +1,15 @@
+@import "../vars";
+
+.examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 25px;
+  }
+  .examples__btn {
+    display: block;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+  }

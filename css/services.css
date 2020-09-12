@@ -1,0 +1,48 @@
+/* Mixins */
+/* Variables */
+.services {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 300px 300px;
+      grid-template-rows: 300px 300px;
+  padding-bottom: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.services__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.services__info {
+  margin-left: 35px;
+  margin-top: 50px;
+}
+
+.services__price {
+  min-width: 100%;
+  line-height: 20px;
+}
+
+.services__head {
+  margin-bottom: 20px;
+}
+
+.services__more {
+  display: block;
+  color: black;
+  padding-top: 25px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.info__line {
+  max-width: 90px;
+  color: #000;
+  background-color: #000;
+}

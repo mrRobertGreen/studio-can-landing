@@ -1,0 +1,19 @@
+/* Mixins */
+/* Variables */
+.examples {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 300px 300px;
+      grid-template-rows: 300px 300px;
+  gap: 25px;
+}
+
+.examples__btn {
+  display: block;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 100%;
+}

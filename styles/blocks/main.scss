@@ -1,0 +1,107 @@
+@import "../vars";
+
+.main {
+    @include flex-row;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 106px 50px 150px;
+  }
+.slider-block {
+flex: 1 1 33.333%;
+min-width: 0;
+}
+.logo {
+display: block;
+flex: 0 1 33.333%;
+}
+.form-block {
+height: 100%;
+padding-left: 30px;
+flex: 1 1 33.333%;
+@include flex-column;
+align-items: flex-start;
+&__label {
+    line-height: 1.6;
+    width: 300px; 
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 20px;
+    @include with-yellow-line(4px);
+    margin-left: 14px;
+}
+.form {
+    .input-group {
+    width: 280px;
+    padding: 10px;
+    box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
+    border-radius: 10px;
+    &__input {
+        padding: 10px 5px;
+        width: 100%;
+        position: relative;
+        input {
+        color: black;
+        font-size: 16px;
+        width: 100%;
+        }
+        input::placeholder {
+        color: $grey;
+        font-size: 14px;
+        }
+    }
+    &__input::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 1px;
+        background-color: $grey;
+        position: absolute;
+        bottom: 2px;
+        left: 5px;
+    }
+    &__input:first-child::after {
+        width: 50px;
+    }
+    &__input::placeholder {
+        color: $grey;
+    }
+    }
+    &__checkbox {
+    margin: 25px 0 25px 15px;
+    @include flex-row;
+    justify-content: flex-start;
+    color: $grey;
+    font-size: 14px;
+    }
+    &__checkbox {
+    position: relative;
+    & input {
+        display: none;
+    }
+    & label::after {
+        content: "";
+        border: 1px solid $grey;
+        display: block;
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        border-radius: 5px;
+        right: 25px;
+        top: -1.5px;
+    }
+    & input[type="checkbox"]:checked
+        + label:after {
+        background: url("/icons/check.svg")center/80% 80% no-repeat;
+        }   
+    }
+    &__button {
+    font-size: 16px;
+    display: block;
+    background-color: $blue;
+    color: white;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    }
+}
+}

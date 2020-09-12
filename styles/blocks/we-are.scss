@@ -1,0 +1,71 @@
+@import "../vars";
+
+.we-are {
+    @include flex-column;
+    height: 1100px;
+    justify-content: space-between;
+    text-align: center;
+    padding-bottom: 150px;
+    font-size: 28px;
+    &__title {
+      text-align: center;
+      
+    }
+    &__text {
+      position: relative;
+      font-size: 20px;
+    }
+    &__item {
+      @include flex-row;
+      height: 100%;
+      line-height: 1.7;
+      width: 100%;
+      position: relative;
+    }
+    .img-l {
+      display: block;
+      position: absolute;
+      left: 25px;
+    }
+    .img-l_with-cut {
+      @extend .img-l;
+      left: -100px;
+    }
+    .img-r {
+      display: block;
+      position: absolute;
+      right: 25px;
+    }
+    .img-r_with-cut {
+      @extend .img-r;
+      right: -100px;
+    }
+    &__text_with-line {
+      @extend .we-are__text;
+      @include with-yellow-line(8px, -20px);
+    }
+    &__label {
+      padding-bottom: 5px;
+    }
+    &__link {
+      font-weight: 600;
+      display: inline-block;
+      font-size: 14px;
+      color: $blue;
+      position: relative;
+      &::after {
+        font-weight: 800;
+        background: url("/icons/arrow-right.svg") center/100% 100% no-repeat;
+        width: 10px;
+        height: 10px;
+        color: $blue;
+        content: "";
+        position: absolute;
+        right: -16px;
+        top: 7px;
+      }
+    }
+    &__sub-label {
+      font-size: 16px;
+    }
+  }

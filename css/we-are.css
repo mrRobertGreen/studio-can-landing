@@ -1,0 +1,116 @@
+/* Mixins */
+/* Variables */
+.we-are {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 1100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  padding-bottom: 150px;
+  font-size: 28px;
+}
+
+.we-are__title {
+  text-align: center;
+}
+
+.we-are__text, .we-are__text_with-line {
+  position: relative;
+  font-size: 20px;
+}
+
+.we-are__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  line-height: 1.7;
+  width: 100%;
+  position: relative;
+}
+
+.we-are .img-l, .we-are .img-l_with-cut {
+  display: block;
+  position: absolute;
+  left: 25px;
+}
+
+.we-are .img-l_with-cut {
+  left: -100px;
+}
+
+.we-are .img-r, .we-are .img-r_with-cut {
+  display: block;
+  position: absolute;
+  right: 25px;
+}
+
+.we-are .img-r_with-cut {
+  right: -100px;
+}
+
+.we-are__text_with-line:before {
+  position: absolute;
+  border-radius: 5px;
+  left: -20px;
+  content: "";
+  width: 8px;
+  background-color: #FDD706;
+  height: 100%;
+  display: inline-block;
+}
+
+.we-are__label {
+  padding-bottom: 5px;
+}
+
+.we-are__link {
+  font-weight: 600;
+  display: inline-block;
+  font-size: 14px;
+  color: #0095F6;
+  position: relative;
+}
+
+.we-are__link::after {
+  font-weight: 800;
+  background: url("/icons/arrow-right.svg") center/100% 100% no-repeat;
+  width: 10px;
+  height: 10px;
+  color: #0095F6;
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 7px;
+}
+
+.we-are__sub-label {
+  font-size: 16px;
+}

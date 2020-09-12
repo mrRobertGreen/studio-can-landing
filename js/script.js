@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $(".menu__item").click(function() {
+        // listen menu-item click  
         $(".menu__item").removeClass("menu__item_active")
         $(this).addClass("menu__item_active")
         const id = $(this).attr('id');
@@ -29,6 +30,7 @@ $(document).ready(function(){
     })
 
     $(window).scroll(function() {
+        // make menu fixed on top
         if($(this).scrollTop() >= 70) {
             $('.menu').addClass('stickytop');
             $('.top').addClass('p-top-184')
@@ -40,14 +42,16 @@ $(document).ready(function(){
     });
 
     $(".menu__row").on('click', '[href*="#"]', function(e){
+        // make smooth scroll to anchor
         $.scrollTo($(this.hash), 500, {'offset':-70});
         e.preventDefault();
     });
     
     let visibleElem = null
-    let prevScrollPos = 0
+    // let prevScrollPos = 0
 
     $(window).on('resize scroll', function() {
+        // switch menu items when scrolling
         let pagesArr = [
             "we",
             "services",
@@ -68,18 +72,21 @@ $(document).ready(function(){
     });
 });
 
-
-$.fn.isInViewport = function() {
+$.fn.isInViewport = function() {  
+    // check element visibility
     const elementTop = $(this).offset().top;
     const elementBottom = elementTop + $(this).outerHeight();
   
-    const viewportTop = $(window).scrollTop();
+    const menuHeight = 70 // height of top fixed menu
+
+    const viewportTop = $(window).scrollTop() + menuHeight;
     const viewportBottom = viewportTop + $(window).height();
   
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
 const moveFakeItem = (left = 1, delay = 300) => {
+    // move fake menu item to left with delay
     const fakeItem = $(".menu__item_fake")
     fakeItem.animate({left: `${left}px`}, delay)
 }

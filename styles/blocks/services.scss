@@ -1,0 +1,36 @@
+@import "../vars";
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    padding-bottom: 200px;
+    justify-content: center;
+  
+    &__item {
+      display: flex;
+    }
+    &__info {
+      margin-left: 35px;
+      margin-top: 50px;
+    }
+    &__price {
+      min-width: 100%;
+      line-height: 20px;
+    }
+    &__head {
+      margin-bottom: 20px;
+    }
+    &__more {
+      display: block;
+      color: black;
+      padding-top: 25px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+  .info__line {
+    max-width: 90px;
+    color: #000;
+    background-color: #000;
+  }

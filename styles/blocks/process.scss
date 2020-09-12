@@ -1,0 +1,53 @@
+@import "../vars";
+
+.process {
+    @include flex-column;
+    width: 100%;
+    padding-bottom: 210px;
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: flex-start;
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      line-height: 1.5;
+    }
+    &__num {
+      @include flex-row;
+      background-color: $yellow;
+      border-radius: 40px;
+      font-size: 25px;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 31px;
+    }
+    &__header {
+      font-weight: 600;
+      text-align: center;
+      font-size: 23px;
+      margin-bottom: 23px;
+    }
+    &__text {
+      text-align: center;
+    }
+    &__btnContainer {
+      align-self: center;
+      margin-top: 92px;
+    }
+    &__btn {
+      width: 345px;
+      height: 41px;
+      background-color: $blue;
+      align-self: center;
+      border: none;
+      border-radius: 7px;
+      font-size: 17px;
+      color: #fff;
+    }
+}

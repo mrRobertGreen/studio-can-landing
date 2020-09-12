@@ -1,0 +1,107 @@
+/* Mixins */
+/* Variables */
+.menu {
+  padding: 10px 0;
+  width: 100%;
+  background: white;
+}
+
+.menu__row {
+  background-color: #F6F6F6;
+  position: relative;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 912px;
+  z-index: 1;
+  height: 35px;
+}
+
+.menu__row a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.menu__item, .menu__item_fake {
+  text-align: center;
+  border-radius: 20px;
+  margin: 2px;
+  color: #8C8C8C;
+  width: 150px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.menu__item_active {
+  color: black;
+  background: transparent;
+}
+
+.menu__item div, .menu__item_fake div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.menu__item_fake {
+  position: absolute;
+  background-color: white;
+  width: 150px;
+  margin: auto 0;
+  height: 32px;
+  left: 1px;
+  z-index: 2;
+}

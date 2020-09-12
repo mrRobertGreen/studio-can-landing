@@ -1,0 +1,61 @@
+/* Mixins */
+/* Variables */
+.love {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 190px;
+  margin-bottom: 85px;
+  font-size: 25px;
+  min-width: 550px;
+}
+
+.love__container {
+  position: relative;
+}
+
+.love__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.love__first {
+  color: #8C8C8C;
+  opacity: 0.5;
+  margin-right: 80px;
+}
+
+.love__second {
+  color: #8C8C8C;
+  opacity: 0.5;
+}
+
+.love__third {
+  color: #8C8C8C;
+  opacity: 0.5;
+  padding-left: 40px;
+  margin-right: 70px;
+}
+
+.love__fourth {
+  color: #8C8C8C;
+  opacity: 0.5;
+}

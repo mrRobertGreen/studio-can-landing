@@ -1,0 +1,100 @@
+/* Mixins */
+/* Variables */
+.vacancies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 150px;
+}
+
+.vacancies .img-l {
+  display: block;
+  position: absolute;
+  left: -25px;
+}
+
+.vacancies .img-r {
+  display: block;
+  position: absolute;
+  right: -25px;
+}
+
+.cards {
+  width: 100%;
+  position: relative;
+}
+
+.card {
+  width: 590px;
+  padding: 30px 45px;
+  border: 1px solid #DEDEDE;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto 10px;
+}
+
+.card__main-block {
+  width: 435px;
+}
+
+.card_desc {
+  color: #8C8C8C;
+  font-size: 17px;
+}
+
+.card__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.card__label {
+  font-size: 21px;
+}
+
+.card__percent {
+  font-size: 15px;
+  color: #8C8C8C;
+}
+
+.card__arrow {
+  position: absolute;
+  right: 45px;
+  top: calc(50% - 6.5px);
+  bottom: 0;
+}
