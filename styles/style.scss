@@ -48,6 +48,7 @@ body {
     justify-content: space-between;
     width: 912px;
     z-index: 1;
+    height: 35px;
     a {
       display: block;
       height: 100%; 
@@ -61,7 +62,7 @@ body {
     margin: 2px;
     color: $grey;
     width: 150px;
-    height: 33px;
+    height: 34px;
     @include flex-row;
     z-index: 3;
     &_active {
@@ -79,6 +80,7 @@ body {
     position: absolute;
     background-color: white;
     width: 150px;
+    margin: auto 0;
     height: 32px;
     left: 1px;
     z-index: 2;
@@ -86,13 +88,13 @@ body {
 }
 .page {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 .top {
   @include flex-row;
   justify-content: space-between;
   min-width: 0;
-  padding: 106px 50px 50px;
+  padding: 106px 50px 150px;
 }
 .slider-block {
   flex: 1 1 33.333%;
@@ -107,6 +109,7 @@ body {
   padding-left: 30px;
   flex: 1 1 33.333%;
   @include flex-column;
+  align-items: flex-start;
   &__label {
     line-height: 1.6;
     width: 300px; 
@@ -114,6 +117,7 @@ body {
     position: relative;
     margin-bottom: 20px;
     @include with-yellow-line(4px);
+    margin-left: 14px;
   }
   .form {
     .input-group {
@@ -153,27 +157,32 @@ body {
       }
     }
     &__checkbox {
-      margin: 25px 0;
+      margin: 25px 0 25px 15px;
       @include flex-row;
+      justify-content: flex-start;
       color: $grey;
       font-size: 14px;
-      position: relative;
-      left: 1.5;
-      input {
-        margin-left: 10px;
-        margin-top: 1px;
-      }
     }
-    &__checkbox::before {
-      content: "";
+    &__checkbox {
+      position: relative;
+      & input {
+        display: none;
+      }
+      & label::after {
+        content: "";
+        border: 1px solid $grey;
         display: block;
-        width: 3px;
-        height: 100%;
-        background-color: $almost_white;
+        height: 16px;
+        width: 16px;
         position: absolute;
-        bottom: 0;
         border-radius: 5px;
-        left: 0;
+        right: 25px;
+        top: -1.5px;
+      }
+      & input[type="checkbox"]:checked
+        + label:after {
+          background: url("/icons/check.svg")center/80% 80% no-repeat;
+       }   
     }
     &__button {
       font-size: 16px;
@@ -185,8 +194,8 @@ body {
       border-radius: 5px;
     }
   }
-  
 }
+
 .we-are {
   @include flex-column;
   height: 1100px;
@@ -303,75 +312,39 @@ body {
     border-radius: 30px;
     border: 2px solid $blue;
     bottom: -15px;
-  }
-}
-.services {
-  display: grid;
-  // в медиа запросе следующие 2 строки просто убери при экране меньше ~1120
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 300px 300px;
-  
-  justify-content: center;
-
-  &__item {
-    //тогда как здесь поставь display:block; и марджины снизу
-    display: flex;
-
-    &__right {
-      display: flex;
-      justify-content: end;
-    }
-  }
-
-  &__info {
-    min-width: 300px; // здесь надо бы шрифтов и размеров линий, значение может измениться
-    margin-left: 35px;
-    margin-top: 40px;
-
-    &__price {
-      min-width: 100%;
-    } 
-  }
-
-  &__more {
-    border: none;
     background-color: #fff;
   }
 }
-.info__line {
-  max-width: 90px;
-  color: #000;
-  background-color: #000;
-}
+
+// Alex Start
 .services {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
-  -ms-grid-columns: 55% 45%;
-      grid-template-columns: 55% 45%;
-  -ms-grid-rows: 300px 300px;
-      grid-template-rows: 300px 300px;
-  -webkit-box-pack: center;
-}
-.services__info {
-  min-width: 300px;
-  margin-left: 35px;
-  margin-top: 40px;
-  margin-top: 50px;
-}
-.services__info__head {
-  margin-bottom: 20px;
-}
-.services__info__price {
-  min-width: 100%;
-  line-height: 20px;
-}
-.services__more {
-  background-color: #fff;
-}
-.table {
-  color: grey;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  padding-bottom: 200px;
+  justify-content: center;
+
+  &__item {
+    display: flex;
+  }
+  &__info {
+    margin-left: 35px;
+    margin-top: 50px;
+  }
+  &__price {
+    min-width: 100%;
+    line-height: 20px;
+  }
+  &__head {
+    margin-bottom: 20px;
+  }
+  &__more {
+    display: block;
+    color: black;
+    padding-top: 25px;
+    font-size: 15px;
+    font-weight: 600;
+  }
 }
 .info__line {
   max-width: 90px;
@@ -379,24 +352,115 @@ body {
   background-color: #000;
 }
 .examples {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 510px 510px 510px;
-      grid-template-columns: 510px 510px 510px;
-  -ms-grid-rows: 350px 350px;
-      grid-template-rows: 350px 350px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  gap: 25px;
 }
-.examples__ex__btn {
+.examples__btn {
+  display: block;
   border: 1px solid #000;
   border-radius: 5px;
   background-color: #fff;
-  min-width: 422px;
-  min-height: 300px;
+  width: 100%;
 }
+.love {
+  @include flex-column;
+  margin-top: 190px;
+  margin-bottom: 85px;
+  font-size: 25px;
+  min-width: 550px;
+  
+  &__container {
+    position: relative;
+  }
+  &__main {
+    display: flex;
+    font-size: 25px;
+    font-weight: bold;
+    justify-content: center;
+
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+  &__first {
+    color: $grey;
+    opacity: 0.5;
+    
+    margin-right: 80px;
+  }
+  &__second {
+    color: $grey;
+    opacity: 0.5;
+  }
+  &__third {
+    color: $grey;
+    opacity: 0.5;
+    padding-left: 40px;
+    margin-right: 70px;
+  }
+  &__fourth {
+    color: $grey;
+    opacity: 0.5;
+  }
+}
+.process {
+  @include flex-column;
+  width: 100%;
+  padding-bottom: 210px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    line-height: 1.5;
+  }
+  &__num {
+    @include flex-row;
+    background-color: $yellow;
+    border-radius: 40px;
+    font-size: 25px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 31px;
+  }
+  &__header {
+    font-weight: 600;
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 23px;
+  }
+  &__text {
+    text-align: center;
+  }
+  &__btnContainer {
+    align-self: center;
+    margin-top: 92px;
+  }
+  &__btn {
+    width: 345px;
+    height: 41px;
+    background-color: $blue;
+    align-self: center;
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    color: #fff;
+  }
+}
+// Alex End
+
 .vacancies {
   @include flex-row;
   justify-content: space-between;
-  padding: 100px 0;
+  padding-bottom: 150px;
   .img-l {
     display: block;
     position: absolute;
@@ -500,7 +564,6 @@ body {
       padding-bottom: 0;
     }
   }
-  &__item {}
 }
 .footer {
   @include flex-row;

@@ -5,23 +5,23 @@ $(document).ready(function(){
         const id = $(this).attr('id');
         const fakeItem = $(".menu__item_fake")
         switch (id) {
-            case "item-1":
-                fakeItem.animate({left: "1px"}, 300)
+            case "menu-we":
+                moveFakeItem(1)
                 break
-            case "item-2":
-                fakeItem.animate({left: "152px"}, 300)
+            case "menu-services":
+                moveFakeItem(152)
                 break
-            case "item-3":
-                fakeItem.animate({left: "303px"}, 300)
+            case "menu-examples":
+                moveFakeItem(303)
                 break
-            case "item-4":
-                fakeItem.animate({left: "454px"}, 300)
+            case "menu-process":
+                moveFakeItem(454)
                 break
-            case "item-5":
-                fakeItem.animate({left: "605px"}, 300)
+            case "menu-vacancies":
+                moveFakeItem(605)
                 break
-            case "item-6":
-                fakeItem.animate({left: "756px"}, 300)
+            case "menu-contacts":
+                moveFakeItem(756)
                 break
             default: 
                 fakeItem.animate({left: "", right: "1px"}, 300)
@@ -44,17 +44,42 @@ $(document).ready(function(){
         e.preventDefault();
     });
     
-    // $('.main-menu [href]').each(function() {
-    //     if (this.href == window.location.href) {
-    //       $(this).addClass('active');
-    //     }
-    //   });
+    let visibleElem = null
+    let prevScrollPos = 0
 
+    $(window).on('resize scroll', function() {
+        let pagesArr = [
+            "we",
+            "services",
+            "examples",
+            "process",
+            "vacancies",
+            "contacts",
+        ]
 
-    // $(window).scroll(function() {
-    //     if (0 < $(this).scrollY() < 300) {
+        // pagesArr = prevScrollPos > $(this).scrollTop ? pagesArr.reverse() : pagesArr
+        // prevScrollPos = $(this).scrollTop
 
-    //         $("#item-1" ).find( ".menu__item" ).trigger('click');
-    //     }
-    // });  
+        elem = pagesArr.find(page => $(`#${page}`).isInViewport())
+        if (elem && visibleElem !== elem) {
+            $(`#menu-${elem}`).click()
+            visibleElem = elem
+        }
+    });
 });
+
+
+$.fn.isInViewport = function() {
+    const elementTop = $(this).offset().top;
+    const elementBottom = elementTop + $(this).outerHeight();
+  
+    const viewportTop = $(window).scrollTop();
+    const viewportBottom = viewportTop + $(window).height();
+  
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+const moveFakeItem = (left = 1, delay = 300) => {
+    const fakeItem = $(".menu__item_fake")
+    fakeItem.animate({left: `${left}px`}, delay)
+}

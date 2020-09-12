@@ -93,6 +93,7 @@ body {
           justify-content: space-between;
   width: 912px;
   z-index: 1;
+  height: 35px;
 }
 
 .menu__row a {
@@ -108,7 +109,7 @@ body {
   margin: 2px;
   color: #8C8C8C;
   width: 150px;
-  height: 33px;
+  height: 34px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,6 +160,7 @@ body {
   position: absolute;
   background-color: white;
   width: 150px;
+  margin: auto 0;
   height: 32px;
   left: 1px;
   z-index: 2;
@@ -166,7 +168,7 @@ body {
 
 .page {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .top {
@@ -191,7 +193,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-width: 0;
-  padding: 106px 50px 50px;
+  padding: 106px 50px 150px;
 }
 
 .slider-block {
@@ -227,6 +229,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .form-block__label {
@@ -235,6 +240,7 @@ body {
   font-size: 18px;
   position: relative;
   margin-bottom: 20px;
+  margin-left: 14px;
 }
 
 .form-block__label:before {
@@ -320,7 +326,7 @@ body {
 }
 
 .form-block .form__checkbox {
-  margin: 25px 0;
+  margin: 25px 0 25px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -338,27 +344,35 @@ body {
       flex-direction: row;
   align-items: center;
   justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   color: #8C8C8C;
   font-size: 14px;
+}
+
+.form-block .form__checkbox {
   position: relative;
-  left: 1.5;
 }
 
 .form-block .form__checkbox input {
-  margin-left: 10px;
-  margin-top: 1px;
+  display: none;
 }
 
-.form-block .form__checkbox::before {
+.form-block .form__checkbox label::after {
   content: "";
+  border: 1px solid #8C8C8C;
   display: block;
-  width: 3px;
-  height: 100%;
-  background-color: #F6F6F6;
+  height: 16px;
+  width: 16px;
   position: absolute;
-  bottom: 0;
   border-radius: 5px;
-  left: 0;
+  right: 25px;
+  top: -1.5px;
+}
+
+.form-block .form__checkbox input[type="checkbox"]:checked + label:after {
+  background: url("/icons/check.svg") center/80% 80% no-repeat;
 }
 
 .form-block .form__button {
@@ -557,15 +571,17 @@ body {
   border-radius: 30px;
   border: 2px solid #0095F6;
   bottom: -15px;
+  background-color: #fff;
 }
 
 .services {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 300px 300px;
       grid-template-rows: 300px 300px;
+  padding-bottom: 200px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -577,70 +593,26 @@ body {
   display: flex;
 }
 
-.services__item__right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-}
-
 .services__info {
-  min-width: 300px;
   margin-left: 35px;
-  margin-top: 40px;
-}
-
-.services__info__price {
-  min-width: 100%;
-}
-
-.services__more {
-  border: none;
-  background-color: #fff;
-}
-
-.info__line {
-  max-width: 90px;
-  color: #000;
-  background-color: #000;
-}
-
-.services {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50% 50%;
-  grid-template-columns: 50% 50%;
-  -ms-grid-columns: 55% 45%;
-  grid-template-columns: 55% 45%;
-  -ms-grid-rows: 300px 300px;
-  grid-template-rows: 300px 300px;
-  -webkit-box-pack: center;
-}
-
-.services__info {
-  min-width: 300px;
-  margin-left: 35px;
-  margin-top: 40px;
   margin-top: 50px;
 }
 
-.services__info__head {
-  margin-bottom: 20px;
-}
-
-.services__info__price {
+.services__price {
   min-width: 100%;
   line-height: 20px;
 }
 
-.services__more {
-  background-color: #fff;
+.services__head {
+  margin-bottom: 20px;
 }
 
-.table {
-  color: grey;
+.services__more {
+  display: block;
+  color: black;
+  padding-top: 25px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .info__line {
@@ -652,18 +624,185 @@ body {
 .examples {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 510px 510px 510px;
-  grid-template-columns: 510px 510px 510px;
-  -ms-grid-rows: 350px 350px;
-  grid-template-rows: 350px 350px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 300px 300px;
+      grid-template-rows: 300px 300px;
+  gap: 25px;
 }
 
-.examples__ex__btn {
+.examples__btn {
+  display: block;
   border: 1px solid #000;
   border-radius: 5px;
   background-color: #fff;
-  min-width: 422px;
-  min-height: 300px;
+  width: 100%;
+}
+
+.love {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 190px;
+  margin-bottom: 85px;
+  font-size: 25px;
+  min-width: 550px;
+}
+
+.love__container {
+  position: relative;
+}
+
+.love__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.love__first {
+  color: #8C8C8C;
+  opacity: 0.5;
+  margin-right: 80px;
+}
+
+.love__second {
+  color: #8C8C8C;
+  opacity: 0.5;
+}
+
+.love__third {
+  color: #8C8C8C;
+  opacity: 0.5;
+  padding-left: 40px;
+  margin-right: 70px;
+}
+
+.love__fourth {
+  color: #8C8C8C;
+  opacity: 0.5;
+}
+
+.process {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-bottom: 210px;
+}
+
+.process__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.process__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 300px;
+  line-height: 1.5;
+}
+
+.process__num {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #FDD706;
+  border-radius: 40px;
+  font-size: 25px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 31px;
+}
+
+.process__header {
+  font-weight: 600;
+  text-align: center;
+  font-size: 23px;
+  margin-bottom: 23px;
+}
+
+.process__text {
+  text-align: center;
+}
+
+.process__btnContainer {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 92px;
+}
+
+.process__btn {
+  width: 345px;
+  height: 41px;
+  background-color: #0095F6;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border: none;
+  border-radius: 7px;
+  font-size: 17px;
+  color: #fff;
 }
 
 .vacancies {
@@ -687,7 +826,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 100px 0;
+  padding-bottom: 150px;
 }
 
 .vacancies .img-l, .vacancies .we-are .img-l_with-cut, .we-are .vacancies .img-l_with-cut {

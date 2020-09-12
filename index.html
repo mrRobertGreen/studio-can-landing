@@ -34,12 +34,12 @@
                 <nav class="menu">
                     <div class="menu__row">
                         <div class="menu__item_fake"></div>
-                        <div id="item-1" class="menu__item menu__item_active"><a href="#we"><div>Мы</div> </a></div>
-                        <div id="item-2" class="menu__item"><a href="#services"><div>Услуги</div></a></div>
-                        <div id="item-3" class="menu__item"><a href="#examples"><div>Портфолио</div></a></div>
-                        <div id="item-4" class="menu__item"><a href="#vacancies"><div>Как работаем</div></a> </div>
-                        <div id="item-5" class="menu__item"><a href="#vacancies"><div>Вакансии</div></a></div>
-                        <div id="item-6" class="menu__item"><a href="#contacts"><div>Контакты</div></a></div>
+                        <div id="menu-we" class="menu__item menu__item_active"><a href="#we"><div>Мы</div> </a></div>
+                        <div id="menu-services" class="menu__item"><a href="#services"><div>Услуги</div></a></div>
+                        <div id="menu-examples" class="menu__item"><a href="#examples"><div>Портфолио</div></a></div>
+                        <div id="menu-process" class="menu__item"><a href="#process"><div>Как работаем</div></a> </div>
+                        <div id="menu-vacancies" class="menu__item"><a href="#vacancies"><div>Вакансии</div></a></div>
+                        <div id="menu-contacts" class="menu__item"><a href="#contacts"><div>Контакты</div></a></div>
                     </div>
                 </nav>
 				<div class="top">
@@ -87,8 +87,8 @@
 								</div>
 							</div>
 							<div class="form__checkbox">
-								<label for="input" class="form__label">Согласие на обработку данных</label>
-								<input type="checkbox" checked >
+                                <input type="checkbox" checked class="checkbox" id="form-checkbox-1">
+                                <label for="form-checkbox-1" class="form__label">Согласие на обработку данных</label>
 							</div>
 							<button type="submit" class="form__button">Оставить заявку</button>
 						</form>
@@ -149,37 +149,33 @@
 					<button class="clouds__button">Нажав сюда</button>
 				</div>
             </div>
+            <!-- Alex Start -->
             <div class="services" id="services">
                 <div class="services__item">
                     <img class="" src="./icons/logo_product.svg" alt="">
                     <div class="services__info">
-                        <div>
-                            <p><b>Разработка логотипа</b></p>
+                        <div  class="services__head">
+                            <p style="margin-bottom: 9px;"><b>Разработка логотипа</b></p>
                             <hr align="left" size="3" class="info__line">
                         </div>
-                        <table class="services__info__price">
-                            <tr>
+                        <table class="services__price">
+                            <tr class="service__text">
                                 <td>объем</td>
-                                <td >~ 75 часов</td>
+                                <td style="color:#000;">~ 75 часов</td>
                             </tr>
-                            <tr>
+                            <tr class="service__text">
                                 <td>срок исполнения</td>
-                                <td>~2 недели</td>
+                                <td style="color:#000;">~2 недели</td>
                             </tr>
                             <tr>
                                 <td>стоимость</td>
-                                <td>~27,000 ₽</td>
+                                <td style="color:#000;">~27,000 ₽</td>
                             </tr>
-                            <tr>
+                            <tr class="service__text">
                                 <td>
-                                    <button class="services__more">
-                                        Детали >
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="services__more">
-                                        Примеры > 
-                                    </button>
+                                    <a class="services__more">
+                                        Детали и примеры >
+                                    </a>
                                 </td>
                             </tr>
                         </table>
@@ -188,33 +184,28 @@
                 <div class="services__item">
                     <img class="" src="./icons/logo_product.svg" alt="">
                     <div class="services__info">
-                        <div>
-                            <p>Seo-продвижение</p>
+                        <div class="services__head">
+                            <p style="margin-bottom: 9px;"><b>Seo-продвижение</b></p>
                             <hr align="left" size="3" class="info__line">
                         </div>
-                        <table class="services__info__price">
+                        <table class="services__price">
                             <tr>
                                 <td>объем</td>
-                                <td >~250 часов</td>
+                                <td style="color:#000;">~250 часов</td>
                             </tr>
                             <tr>
                                 <td>срок исполнения</td>
-                                <td>~3 месяца</td>
+                                <td style="color:#000;">~3 месяца</td>
                             </tr>
                             <tr>
                                 <td>стоимость</td>
-                                <td>~80,000 ₽</td>
+                                <td style="color:#000;">~80,000 ₽</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <button class="services__more">
-                                        Детали >
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="services__more">
-                                        Примеры > 
-                                    </button>
+                                    <a class="services__more">
+                                        Детали и примеры >
+                                    </a>
                                 </td>
                             </tr>
                         </table>
@@ -223,33 +214,28 @@
                 <div class="services__item">
                     <img class="" src="./icons/logo_product.svg" alt="">
                     <div class="services__info">
-                        <div>
-                            <p cla>Создание лендинга</p>
+                        <div class="services__head">
+                            <p style="margin-bottom: 9px;"><b>Создание лендинга</b></p>
                             <hr align="left" size="3" class="info__line">
                         </div>  
-                        <table class="services__info__price">
+                        <table class="services__price">
                             <tr>
                                 <td>объем</td>
-                                <td >~ 65 часов</td>
+                                <td style="color:#000;">~ 65 часов</td>
                             </tr>
                             <tr>
                                 <td>срок исполнения</td>
-                                <td>~2 недели</td>
+                                <td style="color:#000;">~2 недели</td>
                             </tr>
                             <tr>
                                 <td>стоимость</td>
-                                <td>~40,000 ₽</td>
+                                <td style="color:#000;">~40,000 ₽</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <button class="services__more">
-                                        Детали >
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="services__more">
-                                        Примеры > 
-                                    </button>
+                                    <a class="services__more">
+                                        Детали и примеры >
+                                    </a>
                                 </td>
                             </tr>
                         </table>
@@ -258,33 +244,28 @@
                 <div class="services__item">
                     <img class="" src="./icons/logo_product.svg" alt="">
                     <div class="services__info">
-                        <div>
-                            <p>Контекстная реклама</p>
+                        <div class="services__head">
+                            <p style="margin-bottom: 9px;"><b> Контекстная реклама </b></p>
                             <hr align="left" size="3" class="info__line">
                         </div>
-                        <table class="services__info__price">
+                        <table class="services__price">
                             <tr>
                                 <td>объем</td>
-                                <td>~ 90 часов</td>
+                                <td style="color:#000;">~ 90 часов</td>
                             </tr>
-                            <tr>
+                            <tr class="service__text">
                                 <td>срок исполнения</td>
-                                <td>~ 1 месяц</td>
+                                <td style="color:#000;">~ 1 месяц</td>
                             </tr>
                             <tr>
                                 <td>стоимость</td>
-                                <td>~45,000 ₽</td>
+                                <td style="color:#000;">~45,000 ₽</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <button class="services__more">
-                                        Детали >
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="services__more">
-                                        Примеры >
-                                    </button>
+                                    <a class="services__more">
+                                        Детали и примеры >
+                                    </a>
                                 </td>
                             </tr>
                         </table>
@@ -292,37 +273,82 @@
                 </div>
             </div>
             <div class="examples" id="examples">
-                <div class="examples__ex">
-                    <button class="examples__ex__btn">
-                         Сайт для пивоварни
-                    </button>
-                </div>
-                <div class="examples__ex">
-                    <button class="examples__ex__btn">
+                <a class="examples__btn">
                         Сайт для пивоварни
-                    </button>
-                </div>
-                <div class="examples__ex">
-                    <button class="examples__ex__btn">
+                </a>
+                <a class="examples__btn">
+                    Сайт для пивоварни
+                </a>
+                <a class="examples__btn">
+                    Сайт для пивоварни
+                </a>
+                <a class="examples__btn">
+                    Сайт для пивоварни
+                </a>
+                <a class="examples__btn">
                         Сайт для пивоварни
-                    </button>
+                </a>
+                <a class="examples__btn">
+                    Сайт для пивоварни
+                </a>
+            </div>
+            <div class="love">
+                <div class="love__container">
+                    <span class="love__first">С любовью.</span>
+                    <span class="love__second">С любовью.</span>
+                    <p class="love__main">С любовью.</p>
+                    <span class="love__third">С любовью.</span>
+                    <span class="love__fourth">С любовью.</span>
                 </div>
-                <div class="examples__ex">
-                    <button class="examples__ex__btn">
-                        Сайт для пивоварни
-                    </button>
+            </div>
+            <div class="process" id="process">
+                <div class="process__container">
+                    <div class="process__item">
+                        <div>
+                            <div class="process__num">
+                                <p>1</p>
+                            </div>
+                        </div>
+                        <div class="process__header">Свяжитесь с нами
+                        удобным способом</div>
+                        <div class="process__text">Оставьте заявку, позвоните
+                        или напишите в мессенджере
+                        и мы обсудим Ваш проект</div>
+                    </div>
+                    <div class="process__item">
+                        <div>
+                        <div class="process__num">
+                            <p>2</p>
+                        </div>
+                        </div>
+                        <div class="process__header">Заключите договор
+                        об оказании услуг</div>
+                        <div class="process__text">Определим сроки и стоимость
+                        выполнения работы
+                        </div>
+                    </div>
+                    <div class="process__item">
+                        <div>
+                        <div class="process__num">
+                            <p>
+                            3</p>
+                        </div>
+                        </div>
+                        <div class="process__header">Читайте ежедневные
+                        отчеты о результатах
+                        работы</div>
+                        <div class="process__text">Вплоть до завершения проекта
+                        будем держать постоянный контакт</div>
+                    </div>
                 </div>
-                <div class="examples__ex">
-                    <button class="examples__ex__btn">
-                         Сайт для пивоварни
-                    </button>
-                </div>
-                <div class="examples__ex">
-                    <button class="examples__ex__btn">
-                        Сайт для пивоварни
+                <div class="process__btnContainer">
+                    <button class="process__btn">
+                        Связаться с нами
                     </button>
                 </div>
             </div>
+
+            <!-- Alex End -->
             <div class="vacancies"  id="vacancies">
                 <img class="img-l" src="icons/bg-l-5.svg" alt=""/>
                 <div class="cards">
@@ -414,8 +440,8 @@
                                     </div>
                                 </div>
                                 <div class="form__checkbox">
-                                    <label for="input" class="form__label">Согласие на обработку данных</label>
-                                    <input type="checkbox" checked >
+                                    <input type="checkbox" checked class="checkbox" id="form-checkbox-2">
+                                    <label for="form-checkbox-2" class="form__label">Согласие на обработку данных</label>
                                 </div>
                                 <button type="submit" class="form__button">Оставить заявку</button>
                             </form>
