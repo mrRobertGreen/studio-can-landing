@@ -80,14 +80,12 @@
 /* Variables */
 .menu {
   width: 100%;
-  background: white;
+  border-radius: 25px;
 }
 
-.menu__row {
-  font-size: 17px;
+.menu__track {
   background-color: #F6F6F6;
-  position: relative;
-  border-radius: 25px;
+  font-size: 17px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,25 +103,18 @@
       flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 818px;
   margin: 0 auto;
-  width: 912px;
-  z-index: 1;
+  border-radius: 25px;
+  line-height: 23;
+  position: relative;
   height: 49px;
 }
 
-.menu__row a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-
-.menu__item, .menu__item_fake {
+.menu__item {
   text-align: center;
   border-radius: 25px;
-  margin: 2px;
   color: #8C8C8C;
-  width: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,42 +132,32 @@
       flex-direction: row;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  height: 43px;
+  padding: 12px 30px;
+  z-index: 2;
+}
+
+.menu__item:last-child {
+  padding-right: 33px;
+}
+
+.menu__item:first-child {
+  padding-left: 33px;
 }
 
 .menu__item_active {
-  color: black;
   background: transparent;
-}
-
-.menu__item div, .menu__item_fake div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  color: black;
 }
 
 .menu__item_fake {
+  border-radius: 25px;
+  padding: 12px 33px;
   position: absolute;
   background-color: white;
-  width: 150px;
-  margin: auto 0;
-  height: 45px;
-  left: 1px;
+  margin: auto;
+  height: 43px;
+  left: 3px;
   z-index: 2;
 }
 

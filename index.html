@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,
      initial-scale=1, minimum-scale=1.0,
      maximum-scale=1, user-scalable=0" />
-     <!-- Disable auto telephone link on IOS -->
+    <!-- Disable auto telephone link on IOS -->
     <meta name="format-detection" content="telephone=no">
     <!-- Fonts -->
     <link
@@ -27,6 +27,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/sly.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -35,28 +36,43 @@
         <div class="container">
             <div class="header">
                 <div class="header__links">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" class="header__link">
-                        <g id="Сгруппировать_952" data-name="Сгруппировать 952" transform="translate(-35 -26)" >
-                          <text id="VK" transform="translate(35 26)" fill="#e9e9e9" font-size="30" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="32">VK</tspan></text>
-                          <path id="Многоугольник_1" data-name="Многоугольник 1" d="M4,0,8,7H0Z" transform="translate(48 40) rotate(180)" fill="#0095f6"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41"
+                        class="header__link">
+                        <g id="Сгруппировать_952" data-name="Сгруппировать 952" transform="translate(-35 -26)">
+                            <text id="VK" transform="translate(35 26)" fill="#e9e9e9" font-size="30"
+                                font-family="OpenSans-Bold, Open Sans" font-weight="700">
+                                <tspan x="0" y="32">VK</tspan>
+                            </text>
+                            <path id="Многоугольник_1" data-name="Многоугольник 1" d="M4,0,8,7H0Z"
+                                transform="translate(48 40) rotate(180)" fill="#0095f6" />
                         </g>
-                      </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="41" viewBox="0 0 38 41" class="header__link">
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="41" viewBox="0 0 38 41"
+                        class="header__link">
                         <g id="Сгруппировать_953" data-name="Сгруппировать 953" transform="translate(-105 -33)">
-                          <text id="Be" transform="translate(105 33)" fill="#e9e9e9" font-size="30" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="32">Be</tspan></text>
-                          <rect id="Прямоугольник_1069" data-name="Прямоугольник 1069" width="9" height="3" transform="translate(130 44)" fill="#ffc758"/>
+                            <text id="Be" transform="translate(105 33)" fill="#e9e9e9" font-size="30"
+                                font-family="OpenSans-Bold, Open Sans" font-weight="700">
+                                <tspan x="0" y="32">Be</tspan>
+                            </text>
+                            <rect id="Прямоугольник_1069" data-name="Прямоугольник 1069" width="9" height="3"
+                                transform="translate(130 44)" fill="#ffc758" />
                         </g>
-                      </svg>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="41" viewBox="0 0 59 41" class="header__link">
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="41" viewBox="0 0 59 41"
+                        class="header__link">
                         <g id="Сгруппировать_951" data-name="Сгруппировать 951" transform="translate(-70 -81)">
-                          <text id="Inst" transform="translate(70 81)" fill="#e9e9e9" font-size="30" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="32">Inst</tspan></text>
-                          <circle id="Эллипс_139" data-name="Эллипс 139" cx="2.5" cy="2.5" r="2.5" transform="translate(103 89)" fill="#f476c7"/>
+                            <text id="Inst" transform="translate(70 81)" fill="#e9e9e9" font-size="30"
+                                font-family="OpenSans-Bold, Open Sans" font-weight="700">
+                                <tspan x="0" y="32">Inst</tspan>
+                            </text>
+                            <circle id="Эллипс_139" data-name="Эллипс 139" cx="2.5" cy="2.5" r="2.5"
+                                transform="translate(103 89)" fill="#f476c7" />
                         </g>
-                      </svg>
+                    </svg>
                 </div>
                 <img src="./icons//logo-header.svg" alt="" class="header__logo">
             </div>
-             <nav class="menu">
+            <!-- <nav class="menu" id="frame">
                 <div class="menu__row">
                     <div class="menu__item_fake"></div>
                     <div id="menu-we" class="menu__item menu__item_active"><a href="#we"><div>Мы</div> </a></div>
@@ -66,6 +82,45 @@
                     <div id="menu-vacancies" class="menu__item"><a href="#vacancies"><div>Вакансии</div></a></div>
                     <div id="menu-contacts" class="menu__item"><a href="#contacts"><div>Контакты</div></a></div>
                 </div>
+            </nav> -->
+
+            <nav class="menu" id="frame">
+
+                <div class="menu__track">
+                    <div class="menu__item_fake" id="menu-fake"></div>
+                    <div id="menu-we" class="menu__item menu__item_active">
+                        <a href="#we">
+                            Мы
+                        </a>
+                    </div>
+                    <div id="menu-services" class="menu__item">
+                        <a href="#services">
+                            <div>Услуги</div>
+                        </a>
+                    </div>
+                    <div id="menu-examples" class="menu__item">
+                        <a href="#examples">
+                            <div>Портфолио</div>
+                        </a>
+                    </div>
+                    <div id="menu-process" class="menu__item" >
+                        <a href="#process">
+                            <div>Как работаем</div>
+                        </a>
+                    </div>
+                    <div id="menu-vacancies" class="menu__item" >
+                        <a href="#vacancies">
+                            <div>Вакансии</div>
+                        </a>
+                    </div>
+                    <div id="menu-contacts" class="menu__item">
+                        <a href="#contacts">
+                            <div>Контакты</div>
+                        </a>
+                    </div>
+                </div>
+
+
             </nav>
             <!-- <div class="main">
                 <div class="slider-block">
