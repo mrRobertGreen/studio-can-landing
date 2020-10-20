@@ -2,35 +2,36 @@
 /* Mixins */
 /* Variables */
 .slider {
-  width: 350px;
+  width: 100%;
   min-width: 0;
   overflow: hidden;
-  padding: 0 0 50px;
+}
+
+.slider__item {
+  padding: 15px 0 62px;
+  font-size: 19px;
+  padding-left: 15px;
+}
+
+.slider__title {
+  font-weight: 600;
+  color: black;
+  margin-bottom: 11px;
+}
+
+.slider__subTitle {
+  color: #8C8C8C;
 }
 
 .slider__label {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   display: inline-block;
   color: white;
   background-color: #F476C7;
-  padding: 10px 12px 11px;
-  border-radius: 20px;
-  margin-bottom: 40px;
-}
-
-.slider__item {
-  padding: 20px 0 70px;
-  font-size: 25px;
-}
-
-.slider__item p {
-  color: #8C8C8C;
-  padding-bottom: 10px;
-}
-
-.slider__item b {
-  color: black;
+  padding: 12px 18px;
+  border-radius: 142px;
+  margin-bottom: 15px;
 }
 
 /* Слайдер */
@@ -86,6 +87,10 @@
       flex-direction: row;
   align-items: center;
   justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  max-height: 7px;
 }
 
 /* Активная точка */
@@ -95,10 +100,10 @@
 
 /* Элемент точки */
 .slick-dots li button {
-  margin: 0 5px;
+  margin: 0 7px;
   font-size: 0;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: #DEDEDE;
 }

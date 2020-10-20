@@ -66,6 +66,11 @@
     }
   }
 }
+@media (min-width: 900px) {
+  .header {
+    padding: 23px 0;
+  }
+}
 
 @media (min-width: 1350px) {
   .header {

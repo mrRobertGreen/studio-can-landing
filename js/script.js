@@ -103,48 +103,48 @@ $(document).ready(function () {
         })
     }
 
-    $(window).scroll(function () {
-        // make menu fixed on top
-        if ($(this).scrollTop() >= 70) {
-            $('.menu').addClass('stickytop');
-            $('.top').addClass('p-top-184')
-        } else {
-            $('.menu').removeClass('stickytop');
-            $('.top').removeClass('p-top-184')
-        }
-    });
+    // $(window).scroll(function () {
+    //     // make menu fixed on top
+    //     if ($(this).scrollTop() >= 70) {
+    //         $('.menu').addClass('stickytop');
+    //         $('.top').addClass('p-top-184')
+    //     } else {
+    //         $('.menu').removeClass('stickytop');
+    //         $('.top').removeClass('p-top-184')
+    //     }
+    // });
 
-    $(".menu__row").on('click', '[href*="#"]', function (e) {
-        // make smooth scroll to anchor
-        $.scrollTo($(this.hash), 500, {
-            'offset': -70
-        });
-        e.preventDefault();
-    });
+    // $(".menu__row").on('click', '[href*="#"]', function (e) {
+    //     // make smooth scroll to anchor
+    //     $.scrollTo($(this.hash), 500, {
+    //         'offset': -70
+    //     });
+    //     e.preventDefault();
+    // });
 
-    let visibleElem = null
-    // let prevScrollPos = 0
+    // let visibleElem = null
+    // // let prevScrollPos = 0
 
-    $(window).on('resize scroll', function () {
-        // switch menu items when scrolling
-        let pagesArr = [
-            "we",
-            "services",
-            "examples",
-            "process",
-            "vacancies",
-            "contacts",
-        ]
+    // $(window).on('resize scroll', function () {
+    //     // switch menu items when scrolling
+    //     let pagesArr = [
+    //         "we",
+    //         "services",
+    //         "examples",
+    //         "process",
+    //         "vacancies",
+    //         "contacts",
+    //     ]
 
-        // pagesArr = prevScrollPos > $(this).scrollTop ? pagesArr.reverse() : pagesArr
-        // prevScrollPos = $(this).scrollTop
+    //     // pagesArr = prevScrollPos > $(this).scrollTop ? pagesArr.reverse() : pagesArr
+    //     // prevScrollPos = $(this).scrollTop
 
-        elem = pagesArr.find(page => $(`#${page}`).isInViewport())
-        if (elem && visibleElem !== elem) {
-            $(`#menu-${elem}`).click()
-            visibleElem = elem
-        }
-    });
+    //     elem = pagesArr.find(page => $(`#${page}`).isInViewport())
+    //     if (elem && visibleElem !== elem) {
+    //         $(`#menu-${elem}`).click()
+    //         visibleElem = elem
+    //     }
+    // });
 
 
 
