@@ -33,24 +33,24 @@ $(document).ready(function () {
                     fakeItem.width($(this).width()) // установили ему ширину равную размеру блока, по которому он едет
                     break
                 case "menu-services":
-                    moveFakeItem($("#menu-we").outerWidth() + 3)  // подвинули бегунок на ширину предыдущего блока + 3px
+                    moveFakeItem($("#menu-we").width() + 3)  // подвинули бегунок на ширину предыдущего блока + 3px
                     fakeItem.width($(this).width()) // установили ему ширину равную размеру блока, по которому он едет
                     break
                     // далее все аналогично
                 case "menu-examples":
-                    moveFakeItem($("#menu-we").outerWidth() + $("#menu-services").outerWidth() + 3)
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + 3)
                     fakeItem.width($(this).width())
                     break
                 case "menu-process":
-                    moveFakeItem($("#menu-we").outerWidth() + $("#menu-services").outerWidth() + $("#menu-examples").outerWidth() + 3)
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + 3)
                     fakeItem.width($(this).width())
                     break
                 case "menu-vacancies":
-                    moveFakeItem($("#menu-we").outerWidth() + $("#menu-services").outerWidth() + $("#menu-examples").outerWidth() + $("#menu-process").outerWidth() + 3)
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + $("#menu-process").width() + 3)
                     fakeItem.width($(this).width())
                     break
                 case "menu-contacts":
-                    moveFakeItem($("#menu-we").outerWidth() + $("#menu-services").outerWidth() + $("#menu-examples").outerWidth() + $("#menu-process").outerWidth() + $("#menu-vacancies").outerWidth())
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + $("#menu-process").width() + $("#menu-vacancies").width() + 6)
                     fakeItem.width($(this).width())
                     break
                 default:
@@ -93,7 +93,10 @@ $(document).ready(function () {
                     slider.slideTo($("#menu-we").outerWidth() + $("#menu-services").outerWidth() + $("#menu-examples").outerWidth() + $("#menu-process").outerWidth() / 2 + 2)
                     break
                 case "menu-contacts":
-                    moveFakeItem($("#menu-we").outerWidth() + $("#menu-services").outerWidth() + $("#menu-examples").outerWidth() + $("#menu-process").outerWidth() + $("#menu-vacancies").outerWidth())
+                    // moveFakeItem($("#menu-we").outerWidth() + $("#menu-services").outerWidth() + $("#menu-examples").outerWidth() + $("#menu-process").outerWidth() + $("#menu-vacancies").outerWidth())
+                    fakeItem.animate({
+                        right: "3px"
+                    }, 300)
                     fakeItem.width($(this).width())
                     slider.slideTo($("#menu-we").outerWidth() + $("#menu-services").outerWidth() + $("#menu-examples").outerWidth() + $("#menu-process").outerWidth() + $("#menu-vacancies").outerWidth())
                     break
