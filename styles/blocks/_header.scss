@@ -24,6 +24,12 @@
     width: 206px;
     height: 39px;
   }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
 }
 
 
@@ -31,6 +37,12 @@
   .header {
     &__logo {
       width: 199px;
+    }
+    .desktop {
+      display: block;
+    }
+    .mobile {
+      display: none;
     }
   }
 }
