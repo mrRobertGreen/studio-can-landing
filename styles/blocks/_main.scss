@@ -1,16 +1,14 @@
 @import "../vars";
 
 .main {
-    @include flex-row;
-    justify-content: space-between;
+    // @include flex-row;
+    // justify-content: space-between;
     min-width: 0;
     padding: 57px 0 0;
 }
-
 .slider-block {
     width: 100%;
     min-width: 0;
-    
 }
 
 .logo {
@@ -18,9 +16,9 @@
     flex: 0 1 33.333%;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 600px) {
     .logo {
-        display: none;
+        display: block;
         flex: 0 1 33.333%;
     }
 }

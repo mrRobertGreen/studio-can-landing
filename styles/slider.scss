@@ -29,6 +29,18 @@
       }
 }
 
+@media (min-width: 450px) {
+    .slick-slide{
+        @include flex-column;
+    }
+}
+
+@media (min-width: 1300px) {
+    .slick-slide{
+       display: block;
+    }
+}
+
 /* Слайдер */
 .slick-slider{
 }
