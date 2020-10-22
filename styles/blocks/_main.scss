@@ -1,55 +1,64 @@
 @import "../vars";
 
 .main {
-    // @include flex-row;
-    // justify-content: space-between;
     min-width: 0;
     padding: 57px 0 0;
+
+    &__container_600 {
+        width: 100%;
+    }
 }
+
 .slider-block {
     width: 100%;
     min-width: 0;
+    padding-bottom: 53px;
 }
 
 .logo {
     display: none;
-    flex: 0 1 33.333%;
 }
 
-@media (min-width: 600px) {
-    .logo {
-        display: block;
-        flex: 0 1 33.333%;
-    }
+.logo_900 {
+    display: none;
+}
+
+.logo-circle {
+    display: none;
 }
 
 .form-block {
-    height: 100%;
-    padding-left: 30px;
-    flex: 1 1 33.333%;
     @include flex-column;
     align-items: flex-start;
+    width: 100%;
 
     &__label {
-        line-height: 1.6;
-        width: 300px;
-        font-size: 18px;
+        width: 100%;
+        font-size: 19px;
         position: relative;
-        margin-bottom: 20px;
-        @include with-yellow-line(4px);
-        margin-left: 14px;
+        margin-bottom: 25px;
+        @include with-yellow-line(5px);
+        margin-left: 10px;
+        padding-left: 15px;
+
+        p:first-child {
+            font-weight: 600;
+            margin-bottom: 17px;
+        }
     }
 
     .form {
+        width: 100%;
         .input-group {
-            width: 280px;
-            padding: 10px;
+            width: 100%;
+            padding: 18px 0 18px 10px;
             box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
             border-radius: 10px;
 
             &__input {
-                padding: 10px 5px;
+                padding: 10px 0 18px;
                 width: 100%;
+                font-size: 15px;
                 position: relative;
 
                 input {
@@ -60,23 +69,22 @@
 
                 input::placeholder {
                     color: $grey;
-                    font-size: 14px;
                 }
             }
 
             &__input::after {
                 content: "";
                 display: block;
-                width: 80px;
+                width: 111px;
                 height: 1px;
                 background-color: $grey;
                 position: absolute;
                 bottom: 2px;
-                left: 5px;
+                left: 0px;
             }
 
             &__input:first-child::after {
-                width: 50px;
+                width: 77px;
             }
 
             &__input::placeholder {
@@ -85,18 +93,18 @@
         }
 
         &__checkbox {
-            margin: 25px 0 25px 15px;
+            margin: 29px 0 32px 16px;
             @include flex-row;
             justify-content: flex-start;
             color: $grey;
             font-size: 14px;
-        }
-
-        &__checkbox {
-            position: relative;
 
             & input {
                 display: none;
+            }
+
+            & label {
+                position: relative;
             }
 
             & label::after {
@@ -107,8 +115,8 @@
                 width: 16px;
                 position: absolute;
                 border-radius: 5px;
-                right: 25px;
-                top: -1.5px;
+                right: -30px;
+                top: 0;
             }
 
             & input[type="checkbox"]:checked+label:after {
@@ -117,13 +125,114 @@
         }
 
         &__button {
-            font-size: 16px;
+            font-size: 17px;
             display: block;
             background-color: $blue;
             color: white;
             width: 100%;
             padding: 8px 10px;
-            border-radius: 5px;
+            border-radius: 7px;
         }
+    }
+}
+
+
+@media (min-width: 600px) {
+    .logo-circle {
+        display: block;
+        margin: 0;
+        min-width: 235px;
+        min-height: 235px;
+        max-width: 235px;
+        max-height: 235px;
+        margin-right: 35px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .main {
+        &__container_600 {
+            width: 100%;
+            @include flex-row;
+            justify-content: space-between;
+        }
+    }
+
+    .form-block {
+        max-width: 338px;
+    }
+}
+
+@media (min-width: 900px) {
+    .logo-circle {
+        display: none;
+    }
+
+    .logo_900 {
+        display: block;
+    }
+
+    .main {
+        &__container_600 {
+            padding: 0 15px;
+        }
+    }
+
+    .form-block {
+        max-width: 338px;
+
+        &__label {
+            font-size: 21px;
+        }
+    }
+}
+
+@media (min-width: 1350px) {
+    .main {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        min-width: 100%;
+
+        &__container_600 {
+            display: flex;
+            justify-content: flex-end;
+            flex: 1 1 33.33%;
+            padding: 0;
+            min-width: 333px;
+            max-width: 333px;
+        }
+    }
+
+    .logo-circle {
+        display: none;
+    }
+
+    .logo_900 {
+        display: none;
+    }
+
+    .logo {
+        display: block;
+        flex: 1 1 33.33%;
+        margin-right: 100px;
+    }
+
+    .slider-block {
+        flex: 1 1 33.33%;
+        margin-right: 100px;
+        max-width: 333px;
+    }
+
+    .form-block {
+        width: 100%;
+        // min-width: 330px;
+        // max-width: 330px;
+        padding-right: 0;
     }
 }

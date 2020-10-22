@@ -8,6 +8,7 @@
         padding: 15px 0 62px;
         font-size: 19px; 
         padding-left: 15px;
+        // background-color: red;
     }
     &__title {
         font-weight: 600;
@@ -35,10 +36,31 @@
     }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 900px) {
+    .slider {
+        &__item {
+            font-size: 29px; 
+        }
+        &__label {
+            font-size: 17px;
+            margin-bottom: 22px;
+          }
+    }
+}
+
+@media (min-width: 1350px) {
     .slick-slide{
        display: block;
     }
+    .slider {
+        max-width: 333px;
+        &__item {
+            font-size: 27px;
+            padding-left: 0;
+            
+        }
+    }
+    
 }
 
 /* Слайдер */

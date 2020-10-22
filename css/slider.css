@@ -52,9 +52,26 @@
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 900px) {
+  .slider__item {
+    font-size: 29px;
+  }
+  .slider__label {
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (min-width: 1350px) {
   .slick-slide {
     display: block;
+  }
+  .slider {
+    max-width: 333px;
+  }
+  .slider__item {
+    font-size: 27px;
+    padding-left: 0;
   }
 }
 

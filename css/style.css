@@ -245,33 +245,29 @@
   padding: 57px 0 0;
 }
 
+.main__container_600 {
+  width: 100%;
+}
+
 .slider-block {
   width: 100%;
   min-width: 0;
+  padding-bottom: 53px;
 }
 
 .logo {
   display: none;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 33.333%;
-          flex: 0 1 33.333%;
 }
 
-@media (min-width: 600px) {
-  .logo {
-    display: block;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 33.333%;
-            flex: 0 1 33.333%;
-  }
+.logo_900 {
+  display: none;
+}
+
+.logo-circle {
+  display: none;
 }
 
 .form-block {
-  height: 100%;
-  padding-left: 30px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 33.333%;
-          flex: 1 1 33.333%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,15 +284,16 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  width: 100%;
 }
 
 .form-block__label {
-  line-height: 1.6;
-  width: 300px;
-  font-size: 18px;
+  width: 100%;
+  font-size: 19px;
   position: relative;
-  margin-bottom: 20px;
-  margin-left: 14px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  padding-left: 15px;
 }
 
 .form-block__label:before {
@@ -304,23 +301,33 @@
   border-radius: 5px;
   left: -10px;
   content: "";
-  width: 4px;
+  width: 5px;
   background-color: #FDD706;
   height: 100%;
   display: inline-block;
 }
 
+.form-block__label p:first-child {
+  font-weight: 600;
+  margin-bottom: 17px;
+}
+
+.form-block .form {
+  width: 100%;
+}
+
 .form-block .form .input-group {
-  width: 280px;
-  padding: 10px;
+  width: 100%;
+  padding: 18px 0 18px 10px;
   -webkit-box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
           box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
   border-radius: 10px;
 }
 
 .form-block .form .input-group__input {
-  padding: 10px 5px;
+  padding: 10px 0 18px;
   width: 100%;
+  font-size: 15px;
   position: relative;
 }
 
@@ -332,37 +339,33 @@
 
 .form-block .form .input-group__input input::-webkit-input-placeholder {
   color: #8C8C8C;
-  font-size: 14px;
 }
 
 .form-block .form .input-group__input input:-ms-input-placeholder {
   color: #8C8C8C;
-  font-size: 14px;
 }
 
 .form-block .form .input-group__input input::-ms-input-placeholder {
   color: #8C8C8C;
-  font-size: 14px;
 }
 
 .form-block .form .input-group__input input::placeholder {
   color: #8C8C8C;
-  font-size: 14px;
 }
 
 .form-block .form .input-group__input::after {
   content: "";
   display: block;
-  width: 80px;
+  width: 111px;
   height: 1px;
   background-color: #8C8C8C;
   position: absolute;
   bottom: 2px;
-  left: 5px;
+  left: 0px;
 }
 
 .form-block .form .input-group__input:first-child::after {
-  width: 50px;
+  width: 77px;
 }
 
 .form-block .form .input-group__input::-webkit-input-placeholder {
@@ -382,7 +385,7 @@
 }
 
 .form-block .form__checkbox {
-  margin: 25px 0 25px 15px;
+  margin: 29px 0 32px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,12 +410,12 @@
   font-size: 14px;
 }
 
-.form-block .form__checkbox {
-  position: relative;
-}
-
 .form-block .form__checkbox input {
   display: none;
+}
+
+.form-block .form__checkbox label {
+  position: relative;
 }
 
 .form-block .form__checkbox label::after {
@@ -423,8 +426,8 @@
   width: 16px;
   position: absolute;
   border-radius: 5px;
-  right: 25px;
-  top: -1.5px;
+  right: -30px;
+  top: 0;
 }
 
 .form-block .form__checkbox input[type="checkbox"]:checked + label:after {
@@ -432,13 +435,128 @@
 }
 
 .form-block .form__button {
-  font-size: 16px;
+  font-size: 17px;
   display: block;
   background-color: #0095F6;
   color: white;
   width: 100%;
   padding: 8px 10px;
-  border-radius: 5px;
+  border-radius: 7px;
+}
+
+@media (min-width: 600px) {
+  .logo-circle {
+    display: block;
+    margin: 0;
+    min-width: 235px;
+    min-height: 235px;
+    max-width: 235px;
+    max-height: 235px;
+    margin-right: 35px;
+  }
+  .logo-circle img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .main__container_600 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .form-block {
+    max-width: 338px;
+  }
+}
+
+@media (min-width: 900px) {
+  .logo-circle {
+    display: none;
+  }
+  .logo_900 {
+    display: block;
+  }
+  .main__container_600 {
+    padding: 0 15px;
+  }
+  .form-block {
+    max-width: 338px;
+  }
+  .form-block__label {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .main {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    min-width: 100%;
+  }
+  .main__container_600 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 33.33%;
+            flex: 1 1 33.33%;
+    padding: 0;
+    min-width: 333px;
+    max-width: 333px;
+  }
+  .logo-circle {
+    display: none;
+  }
+  .logo_900 {
+    display: none;
+  }
+  .logo {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 33.33%;
+            flex: 1 1 33.33%;
+    margin-right: 100px;
+  }
+  .slider-block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 33.33%;
+            flex: 1 1 33.33%;
+    margin-right: 100px;
+    max-width: 333px;
+  }
+  .form-block {
+    width: 100%;
+    padding-right: 0;
+  }
 }
 
 /* Mixins */
