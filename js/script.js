@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    // тут я добавляю слайдер на меню с помощью sly библиотеки
+
     let slider;
+
     if (window.matchMedia('(max-width: 768px)').matches) {
         // если ширина экрана не больше 768 пикселей
         const options = {
@@ -12,12 +13,26 @@ $(document).ready(function () {
         slider = new Sly('#frame', options).init();
     }
 
-    // тут реализована логика движения менюшки 
-    // все грязновато, непонятно и трудночитаемо, но я пока оставлю так
+    $(window).resize(function (e) {
+        slider.reload()
+
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            $('#frame').sly(false);
+            slider = null;
+            // если ширина экрана не больше 768 пикселей
+            const options = {
+                horizontal: 1,
+                speed: 300,
+                mouseDragging: 1,
+                touchDragging: 1,
+            };
+            slider = new Sly('#frame', options).init();
+        }
+    });
 
     $("#menu-fake").width($("#menu-we").width()) // установили начальную ширину бегунку
 
-    if (window.matchMedia('(min-width: 900px)').matches) { 
+    if (window.matchMedia('(min-width: 900px)').matches) {
         // если ширина экрана больше 900 пикселей
         $(".menu__item").click(function () { // подписались на событие клика по менюшке
             // listen menu-item click  
@@ -31,7 +46,7 @@ $(document).ready(function () {
                     fakeItem.width($(this).width()) // установили ему ширину равную размеру блока, по которому он едет
                     break
                 case "menu-services":
-                    moveFakeItem($("#menu-we").width() + 3)  // подвинули бегунок на ширину предыдущего блока + 3px
+                    moveFakeItem($("#menu-we").width() + 3) // подвинули бегунок на ширину предыдущего блока + 3px
                     fakeItem.width($(this).width()) // установили ему ширину равную размеру блока, по которому он едет
                     break
                     // далее все аналогично
@@ -104,6 +119,12 @@ $(document).ready(function () {
         })
     }
 
+    // $(window).resize(function (e) {
+    //     slider = slideMenuWorker()
+    //     moveMenuActiveCellWorker(slider)
+    // });
+
+
     // $(window).scroll(function () {
     //     // make menu fixed on top
     //     if ($(this).scrollTop() >= 70) {
@@ -151,6 +172,118 @@ $(document).ready(function () {
 
 
 });
+
+const slideMenuWorker = () => {
+    // тут я добавляю слайдер на меню с помощью sly библиотеки
+    let slider;
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        // если ширина экрана не больше 768 пикселей
+        const options = {
+            horizontal: 1,
+            speed: 300,
+            mouseDragging: 1,
+            touchDragging: 1,
+        };
+        slider = new Sly('#frame', options).init();
+    } else {
+        $('#frame').sly(false);
+    }
+    return slider;
+}
+
+const moveMenuActiveCellWorker = (slider) => {
+    // тут реализована логика движения менюшки 
+    // все грязновато, непонятно и трудночитаемо, но я пока оставлю так
+    $("#menu-fake").width($("#menu-we").width()) // установили начальную ширину бегунку
+
+    if (window.matchMedia('(min-width: 900px)').matches) {
+        // если ширина экрана больше 900 пикселей
+        $(".menu__item").click(function () { // подписались на событие клика по менюшке
+            // listen menu-item click  
+            $(".menu__item").removeClass("menu__item_active") // удалили активный класс со всех блочков
+            $(this).addClass("menu__item_active") // добавили активный класс к блоку, на который тыкнули
+            const id = $(this).attr('id'); // взяли id у активного блока
+            const fakeItem = $("#menu-fake") // нашли наш бегающий блок
+            switch (id) {
+                case "menu-we":
+                    moveFakeItem(3) // подвинули бегунок на 3 пикселя вправо
+                    fakeItem.width($(this).width()) // установили ему ширину равную размеру блока, по которому он едет
+                    break
+                case "menu-services":
+                    moveFakeItem($("#menu-we").width() + 3) // подвинули бегунок на ширину предыдущего блока + 3px
+                    fakeItem.width($(this).width()) // установили ему ширину равную размеру блока, по которому он едет
+                    break
+                    // далее все аналогично
+                case "menu-examples":
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + 3)
+                    fakeItem.width($(this).width())
+                    break
+                case "menu-process":
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + 3)
+                    fakeItem.width($(this).width())
+                    break
+                case "menu-vacancies":
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + $("#menu-process").width() + 3)
+                    fakeItem.width($(this).width())
+                    break
+                case "menu-contacts":
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + $("#menu-process").width() + $("#menu-vacancies").width() + 6)
+                    fakeItem.width($(this).width())
+                    break
+                default:
+                    break
+            }
+        })
+    } else {
+        // тут все то же самое
+        // отличается только ширина сдвига бегунка
+        // и добавляется новая фича - слайдер автоматически скроллится при переключении блоков
+        $(".menu__item").click(function () {
+            $(".menu__item").removeClass("menu__item_active")
+            $(this).addClass("menu__item_active")
+            const id = $(this).attr('id');
+            const fakeItem = $("#menu-fake")
+            switch (id) {
+                case "menu-we":
+                    moveFakeItem(2) // подвинули бегунок на 2 пикселя вправо
+                    fakeItem.width($(this).width()) // установили ему ширину равную размеру блока, по которому он едет
+                    slider.slideTo(0) // сдвинули слайдер в начало
+                    break
+                case "menu-services":
+                    moveFakeItem($("#menu-we").width() + 2)
+                    fakeItem.width($(this).width())
+                    slider.slideTo($("#menu-we").width() / 4 + 2) // сдвинули на ширину предыдущего блока + 2px вправо
+                    break
+                case "menu-examples":
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + 2)
+                    fakeItem.width($(this).width())
+                    slider.slideTo($("#menu-we").width() + $("#menu-we").width() / 2 + 2)
+                    break
+                case "menu-process":
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + 2)
+                    fakeItem.width($(this).width())
+                    slider.slideTo($("#menu-we").width() + $("#menu-services").width() + $("#menu-services").width() / 2 + 2)
+                    break
+                case "menu-vacancies":
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + $("#menu-process").width() + 2)
+                    fakeItem.width($(this).width())
+                    slider.slideTo($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + $("#menu-process").width() / 2 + 2)
+                    break
+                case "menu-contacts":
+                    moveFakeItem($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + $("#menu-process").width() + $("#menu-vacancies").width() + 2)
+                    // fakeItem.animate({
+                    //     right: "3px"
+                    // }, 300)
+                    fakeItem.width($(this).width())
+                    slider.slideTo($("#menu-we").width() + $("#menu-services").width() + $("#menu-examples").width() + $("#menu-process").width() + $("#menu-vacancies").width())
+                    break
+                default:
+                    break
+            }
+        })
+    }
+}
+
 
 $.fn.isInViewport = function () {
     // check element visibility

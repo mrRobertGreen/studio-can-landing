@@ -193,7 +193,8 @@
 
 @media (min-width: 1350px) {
     .main {
-        width: 100%;
+        padding-top: 90px;
+        width: 1200px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -206,6 +207,7 @@
             padding: 0;
             min-width: 333px;
             max-width: 333px;
+            // background-color: red;
         }
     }
 
@@ -220,13 +222,15 @@
     .logo {
         display: block;
         flex: 1 1 33.33%;
-        margin-right: 100px;
+        max-width: 333px;
+        // margin-right: 100px;
     }
 
     .slider-block {
         flex: 1 1 33.33%;
-        margin-right: 100px;
+        // margin-right: 100px;
         max-width: 333px;
+        min-width: 333px;
     }
 
     .form-block {

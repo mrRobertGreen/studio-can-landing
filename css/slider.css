@@ -65,6 +65,8 @@
 @media (min-width: 1350px) {
   .slick-slide {
     display: block;
+    width: 333px;
+    margin-left: 1px;
   }
   .slider {
     max-width: 333px;
@@ -72,6 +74,7 @@
   .slider__item {
     font-size: 27px;
     padding-left: 0;
+    padding-top: 33px;
   }
 }
 
