@@ -56,7 +56,7 @@
             width: 100%;
             padding: 10px 0 17px 15px;
             box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
-            border-radius: 10px;
+            border-radius: 7px;
 
             &__input {
                 padding: 10px 0 18px;
@@ -81,7 +81,7 @@
                 display: block;
                 width: 111px;
                 height: 1px;
-                background-color: $grey;
+                background-color: #7D7D7D;
                 position: absolute;
                 bottom: 2px;
                 left: 0px;
@@ -100,7 +100,7 @@
             margin: 29px 0 32px 16px;
             @include flex-row;
             justify-content: flex-start;
-            color: $grey;
+            color: #7D7D7D;
             position: relative;
             @include with-left-line($width: 5px, $left: -15px, $color: $almost_white, $height: 35px, $bottom: -10px);
             font-size: 15px;
@@ -120,13 +120,14 @@
                 height: 16px;
                 width: 16px;
                 position: absolute;
-                border-radius: 5px;
-                right: -30px;
-                top: 1px;
+                border-radius: 3px;
+                right: -27px;
+                top: 0px;
             }
 
             & input[type="checkbox"]:checked+label:after {
-                background: url("/icons/check.svg")center 1px/80% 80% no-repeat;
+                z-index: 999;
+                background: url("/icons/check.svg")center/80% 80% no-repeat;
             }
         }
 
@@ -198,8 +199,9 @@
         max-width: 338px;
 
         &__label {
+            margin-top: 5px;
             font-size: 21px;
-            @include with-left-line($width: 5px, $left: -15px, $color: $yellow, $height: 68px, $bottom: -2.5px);
+            @include with-left-line($width: 5px, $left: -15px, $color: $yellow, $height: 68px, $bottom: -5px);
         }
     }
 }
@@ -212,7 +214,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        min-width: 100%;
+        margin: 0 auto;
 
         &__container_600 {
             margin: 0;
