@@ -633,13 +633,14 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-bottom: 150px;
-  font-size: 23px;
+  font-size: 17px;
 }
 
 .we-are__title {
   font-weight: 600;
   text-align: center;
-  line-height: 33px;
+  line-height: 35px;
+  font-size: 23px;
 }
 
 .we-are__item {
@@ -659,7 +660,6 @@
 .we-are__text, .we-are__text_with-line {
   padding: 0 15px;
   position: relative;
-  font-size: 17px;
   line-height: 33px;
   text-align: center;
 }
@@ -700,8 +700,12 @@
   width: 15px;
   background-color: #FDD706;
   height: 163px;
-  bottom: -32px;
+  bottom: -28px;
   display: inline-block;
+}
+
+.we-are__text_with-line b {
+  font-size: 23px;
 }
 
 .we-are__label {
@@ -709,6 +713,7 @@
 }
 
 .we-are__link {
+  margin-top: 27.5px;
   font-weight: 600;
   display: inline-block;
   font-size: 15px;
@@ -731,7 +736,66 @@
 }
 
 .we-are__sub-label {
-  font-size: 16px;
+  margin-top: 25px;
+  font-size: 17px;
+}
+
+@media (min-width: 600px) {
+  .we-are__item:first-child {
+    margin-bottom: 90px;
+  }
+  .we-are__text_with-line {
+    width: 380px;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 40px;
+  }
+  .we-are__text_with-line:before {
+    position: absolute;
+    border-radius: 5px;
+    left: 0px;
+    content: "";
+    width: 15px;
+    background-color: #FDD706;
+    height: 135px;
+    bottom: -15px;
+    display: inline-block;
+  }
+}
+
+@media (min-width: 900px) {
+  .we-are {
+    font-size: 25px;
+  }
+  .we-are__title {
+    font-size: 30px;
+  }
+  .we-are__link {
+    font-size: 19px;
+    margin-top: 22.5px;
+  }
+  .we-are__sub-label {
+    font-size: 19px;
+    margin-top: 11px;
+  }
+  .we-are__text_with-line {
+    line-height: 40px;
+    width: 480px;
+  }
+  .we-are__text_with-line:before {
+    position: absolute;
+    border-radius: 5px;
+    left: 0px;
+    content: "";
+    width: 15px;
+    background-color: #FDD706;
+    height: 135px;
+    bottom: -7px;
+    display: inline-block;
+  }
+  .we-are__text_with-line b {
+    font-size: 25px;
+  }
 }
 
 /* Mixins */
