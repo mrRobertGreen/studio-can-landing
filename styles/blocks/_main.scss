@@ -72,7 +72,7 @@
                 }
 
                 input::placeholder {
-                    color: $grey;
+                    color: $dark-grey;
                 }
             }
 
@@ -81,7 +81,7 @@
                 display: block;
                 width: 111px;
                 height: 1px;
-                background-color: #7D7D7D;
+                background-color: $dark-grey;
                 position: absolute;
                 bottom: 2px;
                 left: 0px;
@@ -92,7 +92,7 @@
             }
 
             &__input::placeholder {
-                color: $grey;
+                color: $dark-grey;
             }
         }
 
@@ -100,7 +100,7 @@
             margin: 29px 0 32px 16px;
             @include flex-row;
             justify-content: flex-start;
-            color: #7D7D7D;
+            color: $grey;
             position: relative;
             @include with-left-line($width: 5px, $left: -15px, $color: $almost_white, $height: 35px, $bottom: -10px);
             font-size: 15px;
@@ -199,7 +199,7 @@
         max-width: 338px;
 
         &__label {
-            margin-top: 5px;
+            margin-top: 8px;
             font-size: 21px;
             @include with-left-line($width: 5px, $left: -15px, $color: $yellow, $height: 68px, $bottom: -5px);
         }

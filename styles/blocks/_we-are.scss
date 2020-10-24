@@ -1,71 +1,97 @@
 @import "../vars";
 
 .we-are {
-    @include flex-column;
-    height: 1100px;
-    justify-content: space-between;
+  @include flex-column;
+  justify-content: space-between;
+
+  padding-bottom: 150px;
+  font-size: 23px;
+
+  &__title {
+    font-weight: 600;
     text-align: center;
-    padding-bottom: 150px;
-    font-size: 28px;
-    &__title {
-      text-align: center;
-      
-    }
-    &__text {
-      position: relative;
-      font-size: 20px;
-    }
-    &__item {
-      @include flex-row;
-      height: 100%;
-      line-height: 1.7;
-      width: 100%;
-      position: relative;
-    }
-    .img-l {
-      display: block;
-      position: absolute;
-      left: 25px;
-    }
-    .img-l_with-cut {
-      @extend .img-l;
-      left: -100px;
-    }
-    .img-r {
-      display: block;
-      position: absolute;
-      right: 25px;
-    }
-    .img-r_with-cut {
-      @extend .img-r;
-      right: -100px;
-    }
-    &__text_with-line {
-      @extend .we-are__text;
-      @include with-left-line(8px, -20px, 5px);
-    }
-    &__label {
-      padding-bottom: 5px;
-    }
-    &__link {
-      font-weight: 600;
-      display: inline-block;
-      font-size: 14px;
-      color: $blue;
-      position: relative;
-      &::after {
-        font-weight: 800;
-        background: url("/icons/arrow-right.svg") center/100% 100% no-repeat;
-        width: 10px;
-        height: 10px;
-        color: $blue;
-        content: "";
-        position: absolute;
-        right: -16px;
-        top: 7px;
-      }
-    }
-    &__sub-label {
-      font-size: 16px;
+    line-height: 33px;
+  }
+
+  &__item {
+    width: 100%;
+
+    &:first-child {
+      margin-bottom: 55px;
     }
   }
+
+  .img-l {
+    display: block;
+    margin-left: calc(-15px - 39px);
+    margin-bottom: -33px;
+  }
+
+  &__text {
+    padding: 0 15px;
+    position: relative;
+    font-size: 17px;
+    line-height: 33px;
+    text-align: center;
+    b {
+      font-weight: 600;
+    }
+  }
+
+  .mt-30 {
+    margin-top: 30px;
+  }
+  .p-l-r-15 {
+    // background: #000;
+    padding: 0 23px;
+    text-align: center;
+  }
+
+  .img-r {
+    float: right;
+    display: block;
+    margin-right: calc(-15px - 24px);
+    margin-top: 33px;
+  }
+  .img-r-last {
+    @extend .img-r;
+    margin-top: 0;
+  }
+
+  &__text_with-line {
+    text-align: left;
+    @extend .we-are__text;
+    @include with-left-line($yellow, 15px, -15px, -32px, 163px);
+  }
+
+  &__label {
+    margin-bottom: 26px;
+  }
+  
+
+  &__link {
+    font-weight: 600;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 15px;
+    color: $blue;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      font-weight: 800;
+      background: url("/icons/arrow-right.svg") center/100% 100% no-repeat;
+      width: 10px;
+      height: 10px;
+      color: $blue;
+      content: "";
+      position: absolute;
+      right: -16px;
+      top: 4px;
+    }
+  }
+
+  &__sub-label {
+    font-size: 16px;
+  }
+}

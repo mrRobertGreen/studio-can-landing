@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Mixins */
 /* Variables */
+/* Classes */
 .slider {
   width: 100%;
   min-width: 0;
@@ -20,7 +21,7 @@
 }
 
 .slider__subTitle {
-  color: #8C8C8C;
+  color: #7D7D7D;
 }
 
 .slider__label {
@@ -32,50 +33,6 @@
   padding: 12px 18px;
   border-radius: 142px;
   margin-bottom: 19px;
-}
-
-@media (min-width: 450px) {
-  .slick-slide {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-@media (min-width: 900px) {
-  .slider__item {
-    font-size: 29px;
-  }
-  .slider__label {
-    font-size: 17px;
-    margin-bottom: 22px;
-  }
-}
-
-@media (min-width: 1350px) {
-  .slick-slide {
-    display: block;
-    width: 333px;
-    margin-left: 1px;
-  }
-  .slider {
-    max-width: 333px;
-  }
-  .slider__item {
-    font-size: 27px;
-    padding-left: 0;
-    padding-top: 33px;
-  }
 }
 
 /* Слайдер */
@@ -150,4 +107,56 @@
   height: 7px;
   border-radius: 50%;
   background-color: #DEDEDE;
+}
+
+@media (min-width: 450px) {
+  .slick-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .slider__item {
+    font-size: 29px;
+  }
+  .slider__label {
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .slick-slide {
+    display: block;
+    width: 333px;
+    margin-left: 1px;
+  }
+  .slider {
+    max-width: 333px;
+  }
+  .slider__item {
+    font-size: 27px;
+    padding-left: 0;
+    padding-top: 33px;
+  }
+  .slick-dots {
+    max-height: 11px;
+  }
+  .slick-dots li button {
+    margin: 0 0 0 11px;
+    width: 11px;
+    height: 11px;
+  }
 }
