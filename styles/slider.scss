@@ -4,11 +4,12 @@
     width: 100%;
     min-width: 0;
     overflow: hidden;
+   
     &__item {
-        padding: 15px 0 62px;
+        padding: 0 0 62px;
+        
         font-size: 19px; 
         padding-left: 15px;
-        // background-color: red;
     }
     &__title {
         font-weight: 600;
@@ -26,7 +27,7 @@
         background-color: $pink;
         padding: 12px 18px;
         border-radius: 142px;
-        margin-bottom: 15px;
+        margin-bottom: 19px;
       }
 }
 
@@ -111,7 +112,7 @@
 }
 /* Элемент точки */
 .slick-dots li button{
-    margin: 0 7px;
+    margin: 0 0 0 7px;
     font-size: 0;
     width: 7px;
     height: 7px;

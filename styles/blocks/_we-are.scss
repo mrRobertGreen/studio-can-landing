@@ -42,7 +42,7 @@
     }
     &__text_with-line {
       @extend .we-are__text;
-      @include with-yellow-line(8px, -20px);
+      @include with-left-line(8px, -20px, 5px);
     }
     &__label {
       padding-bottom: 5px;

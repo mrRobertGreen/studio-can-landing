@@ -11,15 +11,16 @@
     align-items: center;
     justify-content: center;
 }
-@mixin with-yellow-line($width: 3px, $left: -10px) {
+@mixin with-left-line($color, $width, $left, $bottom: 0, $height: 100%) {
     &:before {
         position: absolute;
         border-radius: 5px;
         left: $left;
         content: "";
         width: $width;
-        background-color: $yellow;
-        height: 100%;
+        background-color: $color;
+        height: $height;
+        bottom: $bottom;
         display: inline-block;
     }
 }
