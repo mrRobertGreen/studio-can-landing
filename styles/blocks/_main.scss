@@ -127,7 +127,7 @@
 
             & input[type="checkbox"]:checked+label:after {
                 z-index: 999;
-                background: url("/icons/check.svg")center/80% 80% no-repeat;
+                background: url("./icons/check.svg")center/80% 80% no-repeat;
             }
         }
 
