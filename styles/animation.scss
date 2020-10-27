@@ -1,11 +1,13 @@
 .stickytop {
-    position:fixed;
+    position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 10;
-    padding: 15px;
+    margin: 20px auto 0;
 }
-.p-top-184{
-    padding-top: 171px;
+
+@media (min-width: 900px) {
+    .stickytop {
+        left: 0;
+        margin: 25px auto 0;
+    }
 }

@@ -33,10 +33,11 @@
     position: relative;
     line-height: 33px;
     text-align: center;
+
     b {
       font-weight: 600;
     }
-    
+
   }
 
   .mt-30 {
@@ -62,10 +63,12 @@
 
   &__text_with-line {
     text-align: left;
+    font-size: 15px;
     @extend .we-are__text;
     @include with-left-line($yellow, 15px, -15px, -28px, 163px);
+
     b {
-      font-size: 23px;
+      font-size: 19px;
     }
   }
 
@@ -86,7 +89,7 @@
 
     &::after {
       font-weight: 800;
-      background: url("/icons/arrow-right.svg") center/100% 100% no-repeat;
+      background: url("../../icons/arrow-right.svg") center/100% 100% no-repeat;
       width: 10px;
       height: 10px;
       color: $blue;
@@ -103,15 +106,36 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 350px) {
   .we-are {
-    &__item {
-      &:first-child {
-        margin-bottom: 90px;
+    &__text_with-line {
+      font-size: 17px;
+
+      b {
+        font-size: 19px;
       }
     }
+  }
+
+}
+
+@media (min-width: 375px) {
+  .we-are {
     &__text_with-line {
-      width: 380px;
+      font-size: 17px;
+
+      b {
+        font-size: 23px;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 448px) {
+  .we-are {
+    &__text_with-line {
+      width: 375px;
       margin: 0 auto;
       text-align: left;
       padding-left: 40px;
@@ -120,25 +144,40 @@
   }
 }
 
+@media (min-width: 600px) {
+  .we-are {
+    &__item {
+      &:first-child {
+        margin-bottom: 90px;
+      }
+    }
+  }
+}
+
 @media (min-width: 900px) {
   .we-are {
     font-size: 25px;
+
     &__title {
       font-size: 30px;
     }
+
     &__link {
       font-size: 19px;
       margin-top: 22.5px;
     }
+
     &__sub-label {
       font-size: 19px;
       margin-top: 11px;
     }
+
     &__text_with-line {
       line-height: 40px;
-      
-      width: 480px;
-      @include with-left-line($yellow, 15px, 0px, -7px, 135px);
+
+      width: 425px;
+      @include with-left-line($yellow, 15px, 0px, -1px, 135px);
+
       b {
         font-size: 25px;
       }
