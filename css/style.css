@@ -642,7 +642,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-bottom: 150px;
+  padding-bottom: 90px;
   font-size: 17px;
 }
 
@@ -834,6 +834,21 @@
 /* Variables */
 /* Classes */
 .clouds {
+  width: 100%;
+  padding-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.clouds__item {
+  color: white;
+  background: #000;
+  background-color: #0095F6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -847,40 +862,47 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  padding-bottom: 100px;
-}
-
-.clouds__item-r, .clouds__item-l {
-  color: white;
-  line-height: 1.5;
-  background-color: #0095F6;
-  padding: 15px 35px;
-  border-radius: 50px;
+  border-radius: 17px;
+  font-size: 17px;
   position: relative;
+  line-height: 20px;
 }
 
-.clouds__item-r:after, .clouds__item-l:after {
+.clouds__item-r {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 19px 52px;
+  width: 100%;
+  max-width: 345px;
+}
+
+.clouds__item-r p, .clouds__item-r b {
+  display: block;
+}
+
+.clouds__item-r:after {
   content: '';
   position: absolute;
   width: 0;
   height: 0;
-  -webkit-transform: rotate(140deg);
-          transform: rotate(140deg);
-  border-bottom: 30px solid #0095F6;
+  -webkit-transform: rotate(130deg);
+          transform: rotate(130deg);
+  border-bottom: 35px solid #0095F6;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  bottom: -13px;
-  right: 5px;
+  bottom: -7px;
+  right: -3px;
+}
+
+.clouds__item-l {
+  line-height: 17px;
+  margin-bottom: 20px;
+  width: 241px;
+  height: 39px;
+}
+
+.clouds__item-l p {
+  padding-bottom: 2px;
 }
 
 .clouds__item-l:after {
@@ -888,13 +910,13 @@
   position: absolute;
   width: 0;
   height: 0;
-  -webkit-transform: rotate(220deg);
-          transform: rotate(220deg);
+  -webkit-transform: rotate(235deg);
+          transform: rotate(235deg);
   border-bottom: 30px solid #0095F6;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  bottom: -13px;
-  left: 5px;
+  bottom: -15px;
+  left: -5px;
 }
 
 .clouds__button {
