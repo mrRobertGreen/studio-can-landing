@@ -107,6 +107,10 @@
   border-radius: 25px;
 }
 
+.menu a, .menu-copy a {
+  z-index: 2;
+}
+
 .menu__track {
   background-color: #F6F6F6;
   font-size: 15px;
@@ -135,6 +139,7 @@
 }
 
 .menu__item {
+  display: block;
   font-weight: 200;
   text-align: center;
   border-radius: 25px;
@@ -964,12 +969,118 @@
 /* Classes */
 .services {
   margin-top: 77px;
+  width: 100%;
+}
+
+.services__block {
+  width: 100%;
+}
+
+.services__title {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 55px;
+  padding-left: 50px;
+}
+
+.services__grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  -ms-grid-columns: (minmax(245px, auto))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(245px, auto));
+  grid-gap: 61px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.offer {
+  width: 100%;
+  min-width: 245px;
+  max-width: 272px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.offer__icon {
+  display: block;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+
+.offer__title {
+  font-size: 21px;
+  text-align: center;
+  padding: 0 7px;
+  margin-bottom: 14px;
+  line-height: 27px;
+}
+
+.offer__timing {
+  width: 100%;
+  padding: 0 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+
+.offer__days, .offer__hours {
+  width: 50%;
+  text-align: center;
+  position: relative;
+}
+
+.offer__days::before, .offer__hours::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 100%;
+  background: #FF7276;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 5px);
+}
+
+.offer__days {
+  margin-right: 11px;
+}
+
+.offer__hours::before {
+  background: #F476C7;
+}
+
+.offer__price {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 7px;
+  background: #F8F8F8;
+  font-size: 19px;
+  padding: 0 7px;
+  text-align: center;
+  height: 40px;
+  padding: 10px 0;
 }
 
 /* Mixins */

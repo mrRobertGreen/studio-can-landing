@@ -3,28 +3,102 @@
 
 .services {
   margin-top: 77px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  width: 100%;
 
-  &__block {}
+  &__block {
+    width: 100%;
+  }
 
-  &__title {}
+  &__title {
+    align-self: flex-start;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 55px;
+    padding-left: 50px;
+  }
 
-  &__grid {}
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(245px, auto));  
+    grid-gap: 61px;
+    justify-content: center; // центрирование элементов сетки
+  }
 
-  &__item {}
+  &__item {
+  }
 }
 
 .offer {
+  width: 100%;
+  min-width: 245px;
+  max-width: 272px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  &__title {}
 
-  &__timing {}
+  &__icon {
+   
+    display: block;
+    border-radius: 7px; 
+    margin-bottom: 20px;
+  }
 
-  &__days {}
+  &__title {
+    font-size: 21px;
+    text-align: center;
+    padding: 0 7px;
+    margin-bottom: 14px;
+    line-height: 27px;
+  }
 
-  &__hours {}
+  &__timing {
+    width: 100%;
+    padding: 0 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 22px;
+  }
 
-  &__price {}
+  &__days, &__hours {
+    width: 50%;
+    text-align: center;
+    position: relative;
+    &::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      border-radius: 100%;
+      background: #FF7276;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 5px);
+    }
+  }
+
+  &__days {
+    margin-right: 11px;
+  }
+
+  &__hours {
+    &::before {
+      background:#F476C7;
+    }
+  }
+
+  &__price {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 7px;
+    background: #F8F8F8;
+    font-size: 19px;
+    padding: 0 7px;
+    text-align: center;
+    height: 40px;
+    padding: 10px 0;
+  }
 }
