@@ -2,7 +2,7 @@
 
 .clouds {
   width: 100%;
-  padding-bottom: 100px;
+  // padding-bottom: 100px;
   display: flex;
   flex-direction: column;
 
@@ -22,7 +22,6 @@
 
   &__item-r {
     align-self: flex-end;
-    // height: 128px;
     padding: 19px 52px;
    
     width: 100%;
@@ -72,12 +71,38 @@
   }
 
   &__button {
-    right: 45px;
-    padding: 4px 28px;
+    font-size: 17px;
+    right: 38px;
     position: absolute;
-    border-radius: 30px;
-    border: 2px solid $blue;
-    bottom: -15px;
+    border-radius: 17px;
+    width: 203px;
+    height: 41px;
+    border: 3px solid $blue;
+    bottom: -31px;
     background-color: #fff;
+  }
+}
+
+@media (min-width: 700px) {
+  .clouds {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    &__item-l {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 1350px) {
+  .clouds {
+    &__item-l {
+      width: 309px;
+      height: 48px;
+    }
+    &__item-r {
+      max-width: 510px;
+    }
   }
 }
