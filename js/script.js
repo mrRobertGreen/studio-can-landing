@@ -124,8 +124,7 @@ $(document).ready(function () {
     $(".menu__track").on('click', '[href*="#"]', function (e) {
         // make smooth scroll to anchor
         e.preventDefault()
-        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-        ;
+        $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
     });
 });
 

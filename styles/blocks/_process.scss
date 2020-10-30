@@ -1,53 +1,112 @@
 @import "../vars";
 
 .process {
-    @include flex-column;
+  width: 100%;
+  margin-bottom: 55px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    padding-bottom: 210px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 345px;
+    margin-bottom: 61px;
+  }
+
+  &__num {
+    @include flex-row;
+    background-color: $yellow;
+    border-radius: 100%;
+    font-size: 25px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+  &__header {
+    font-weight: 600;
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 23px;
+    line-height: 34px;
+  }
+
+  &__text {
+    font-size: 17px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    height: 41px;
+    background-color: $blue;
+    border-radius: 7px;
+    font-size: 17px;
+    color: #fff;
+  }
+}
+
+@media (min-width: 600px) {
+  .process {
+    &__btn {
+      margin: 0 auto;
+      width: 300px;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .process {
+    margin-bottom: 150px;
+    &__num {
+      font-size: 25px;
+    }
+  
+    &__header {
+      font-size: 25px;
+    }
+  
+    &__text {
+      font-size: 19px;
+    }
+  
+    &__btn {
+      margin: 0 auto;
+      width: 300px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .process {
+    margin-bottom: 90px;
     &__container {
-      display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      width: 100%;
       align-items: flex-start;
+      margin-bottom: 90px;
     }
     &__item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 300px;
-      line-height: 1.5;
+      max-width: 330px;
+      margin-bottom: 0;
     }
-    &__num {
-      @include flex-row;
-      background-color: $yellow;
-      border-radius: 40px;
-      font-size: 25px;
-      width: 64px;
-      height: 64px;
-      margin-bottom: 31px;
-    }
+
     &__header {
-      font-weight: 600;
-      text-align: center;
       font-size: 23px;
-      margin-bottom: 23px;
     }
+  
     &__text {
-      text-align: center;
-    }
-    &__btnContainer {
-      align-self: center;
-      margin-top: 92px;
-    }
-    &__btn {
-      width: 345px;
-      height: 41px;
-      background-color: $blue;
-      align-self: center;
-      border: none;
-      border-radius: 7px;
       font-size: 17px;
-      color: #fff;
     }
+  }
 }

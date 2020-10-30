@@ -3,10 +3,15 @@
 
 .services {
   margin-top: 77px;
+  margin-bottom: 90px;
   width: 100%;
 
   &__block {
     width: 100%;
+    margin-bottom: 77px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__title {
@@ -40,10 +45,10 @@
 
 
   &__icon {
-   
     display: block;
     border-radius: 7px; 
     margin-bottom: 20px;
+    width: 100%;
   }
 
   &__title {
@@ -100,5 +105,11 @@
     text-align: center;
     height: 40px;
     padding: 10px 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .services {
+    margin-bottom: 150px;
   }
 }
