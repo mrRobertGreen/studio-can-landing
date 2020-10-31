@@ -1,54 +1,90 @@
 @import "../vars";
 
 .vacancies {
-    @include flex-row;
-    justify-content: space-between;
-    padding-bottom: 150px;
+  @include flex-column;
+  padding-bottom: 150px;
+
+  .img-l,
+  .img-r {
+    display: none;
+  }
+
+  .img-top {
+    width: 120%;
+    margin-bottom: 55px;
+  }
+
+  &__title {
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 55px;
+  }
+
+  .cards {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    padding: 30px 30px 33px;
+    border: 1px solid $light-grey;
+    border-radius: 10px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto 30px;
+    &:last-child {
+      margin-bottom: 55px;
+    }
+
+    &__main-block {
+      @include flex-column;
+      text-align: center;
+    }
+
+    &_desc {
+      color: $grey;
+      font-size: 17px;
+      line-height: 27px;
+    }
+
+    &__top {
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    &__label {
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    &__percent {
+      font-size: 15px;
+      color: #AAAAAA;
+    }
+
+    &__arrow {
+      display: none;
+      // position: absolute;
+      // right: 45px;
+      // top: calc(50% - 6.5px);
+      // bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 1350px) {
+  .vacancies {
     .img-l {
       display: block;
       position: absolute;
       left: -25px;
     }
+
     .img-r {
       display: block;
       position: absolute;
       right: -25px;
     }
   }
-  .cards {
-    width: 100%;
-    position: relative;
-  }
-  .card {
-    width: 590px;
-    padding: 30px 45px;
-    border: 1px solid $light-grey;
-    border-radius: 10px;
-    position: relative;
-    margin: 0 auto 10px; // прости меня великий бэм
-      &__main-block {
-        width: 435px;
-      }
-          &_desc {
-        color: $grey;
-        font-size: 17px;
-          }
-          &__top {
-        @include flex-row;
-        justify-content: space-between;
-        margin-bottom: 15px;
-          }
-          &__label {
-        font-size: 21px;
-          }
-          &__percent {
-        font-size: 15px;
-        color: $grey;
-          }
-          &__arrow {
-        position: absolute;
-        right: 45px;
-        top: calc(50% - 6.5px);
-        bottom: 0;
-          }
-  }
+}

@@ -89,6 +89,8 @@
 
 @media (min-width: 1200px) {
   .process {
+    width: 1200px;
+    margin: 0 auto;
     margin-bottom: 90px;
     &__container {
       flex-direction: row;
