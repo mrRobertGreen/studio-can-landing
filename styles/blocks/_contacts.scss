@@ -1,58 +1,260 @@
 @import "../vars";
 
-.contacts { 
-    padding: 200px 230px;
-      &__main {
-        @include flex-row;
-        justify-content: space-between;
-        margin: 0 auto;
-        padding-bottom: 110px;
-      }
+.contacts {
+  width: 100%;
+
+  &__logo {
+    display: block;
+    margin: 0 auto 55px;
+  }
+
+  &__logo_circle {
+    display: none;
+  }
+
+  &__main {
+    width: 100%;
+    @include flex-column;
+
+    .form-block {
+      margin-bottom: 90px;
+      @include flex-column;
+      align-items: flex-start;
+      background-color: #fff;
+
       &__label {
-        width: 425px;
-        font-size: 30px;
+        width: 100%;
+        font-size: 19px;
+        position: relative;
+        margin-bottom: 25px;
+        @include with-left-line($width: 5px, $left: -15px, $color: $yellow, $height: 55px, $bottom: -3.5px);
+        margin-left: 15px;
+        padding-left: 5px;
         font-weight: 600;
-        padding-bottom: 40px;
-        p {
-          padding-bottom: 10px;
+
+        p:first-child {
+          margin-bottom: 13px;
         }
-        .pink {
-          background-color: $pink;
+      }
+
+      .form {
+        width: 100%;
+
+        .input-group {
+          width: 100%;
+          padding: 10px 0 17px 15px;
+          box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
+          border-radius: 7px;
+
+          &__input {
+            padding: 10px 0 18px;
+            width: 100%;
+            font-size: 15px;
+            position: relative;
+            padding-right: 15px;
+
+            input {
+              color: black;
+              font-size: 16px;
+              width: 100%;
+            }
+
+            input::placeholder {
+              color: $dark-grey;
+            }
+          }
+
+          &__input::after {
+            content: "";
+            display: block;
+            width: 111px;
+            height: 1px;
+            background-color: $dark-grey;
+            position: absolute;
+            bottom: 2px;
+            left: 0px;
+          }
+
+          &__input:first-child::after {
+            width: 77px;
+          }
+
+
+          &__input:last-child::after {
+            width: 155px;
+          }
+
+          &__input::placeholder {
+            color: $dark-grey;
+          }
+        }
+
+        &__checkbox {
+          margin: 29px 0 32px 16px;
+          @include flex-row;
+          justify-content: flex-start;
+          color: $grey;
+          position: relative;
+          @include with-left-line($width: 5px, $left: -15px, $color: $almost_white, $height: 35px, $bottom: -10px);
+          font-size: 15px;
+
+          & input {
+            display: none;
+          }
+
+          & label {
+            position: relative;
+          }
+
+          & label::after {
+            content: "";
+            border: 1px solid $grey;
+            display: block;
+            height: 16px;
+            width: 16px;
+            position: absolute;
+            border-radius: 3px;
+            right: -27px;
+            top: 0px;
+          }
+
+          & input[type="checkbox"]:checked+label:after {
+            background: url("../../icons/check.svg")center/80% 80% no-repeat;
+          }
+        }
+
+        &__button {
+          font-size: 17px;
+          display: block;
+          background-color: $blue;
           color: white;
+          width: 100%;
+          text-align: center;
+          height: 41px;
+          border-radius: 7px;
         }
       }
-      &__footer {
-        @include flex-row;
-        justify-content: space-between;
-      } 
+    }
   }
-  .contacts-items {
-    &__row {
-      @include flex-row;
-      justify-content: space-between;
-      width: 330px;
-      font-size: 19px;
-      padding-bottom: 16px;
+
+
+  &__label {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 25px;
+    margin-bottom: 24px;
+
+    p {
+      margin-bottom: 5px;
       &:last-child {
-        padding-bottom: 0;
+        margin-bottom: 0;
       }
     }
-    &__key {
-      color: $grey;
-      
-    }
-    &__value {
-      color: $blue;
+
+    .pink {
+      background-color: $pink;
+      color: white;
     }
   }
-  .links {
-    width: 171px;
-    &__row {
-      @include flex-row;
+
+  &__footer {
+    @include flex-row;
+    justify-content: space-between;
+  }
+}
+
+.contacts-items {
+  margin-bottom: 55px;
+  &__row {
+    @include flex-row;
+    justify-content: space-between;
+    width: 330px;
+    font-size: 19px;
+    padding-bottom: 16px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__key {
+    color: $grey;
+  }
+
+  &__value {
+    color: $blue;
+  }
+}
+
+.contact-links {
+  margin: 0 auto;
+  width: 100%;
+  &__item_big {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 9px;
+    &:nth-child(2) {
+      margin-bottom: 55px;
+    }
+  }
+  &__item {
+    display: block;
+  }
+  &__row {
+    margin: 0 auto;
+    width: 188px;
+    @include flex-row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 600px) {
+  .contacts {
+    max-width: 650px;
+    margin: 0 auto;
+    &__logo {
+      display: none;
+
+    }
+    .form-block {
+      margin-bottom: 0;
+    }
+    &__logo_circle {
+      display: block;
+      margin-right: 35px;
+    }
+
+    &__main {
+      flex-direction: row;
       justify-content: space-between;
-      padding-bottom: 35px;
-      &:last-child {
-        padding-bottom: 0;
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .contacts {
+    max-width: 808px;
+    width: 100%;
+    margin: 0 auto;
+    &__logo {
+      display: block;
+      margin-right: 97px;
+      align-self: flex-end;
+    }
+    &__logo_circle {
+      display: none;
+    }
+    .form-block {
+      &__label {
+        font-size: 21px;
       }
     }
+    &__main {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   }
+}
