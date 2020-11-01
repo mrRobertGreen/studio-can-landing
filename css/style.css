@@ -1389,6 +1389,12 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .process {
+    margin-bottom: 150px;
+  }
+}
+
 /* Mixins */
 /* Variables */
 /* Classes */
@@ -1406,7 +1412,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 150px;
+  margin-bottom: 55px;
 }
 
 .vacancies .img-l,
@@ -1479,7 +1485,7 @@
 
 .vacancies .card__label {
   font-size: 21px;
-  margin-bottom: 14px;
+  margin-bottom: 17px;
 }
 
 .vacancies .card__percent {
@@ -1492,16 +1498,36 @@
 }
 
 @media (min-width: 600px) {
+  .vacancies {
+    margin-bottom: 90px;
+  }
+  .vacancies .img-top, .vacancies .img-bottom {
+    display: none;
+  }
+  .vacancies .img-top-600, .vacancies .img-bottom-600 {
+    display: block;
+  }
   .vacancies .card {
+    max-width: 574px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-radius: 7px;
     height: auto;
-    padding: 29px 35px 19px;
+    padding: 25px 41px 25px 35px;
   }
   .vacancies .card__main-block {
+    width: 100%;
+    margin-right: 41px;
     text-align: left;
   }
   .vacancies .card__label {
-    line-height: 35px;
     margin-bottom: 0;
   }
   .vacancies .card__top {
@@ -1526,19 +1552,37 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin-bottom: 3px;
+    margin-bottom: 17px;
   }
   .vacancies .card_desc {
-    line-height: 35px;
     width: 100%;
+  }
+  .vacancies .card__arrow {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (min-width: 900px) {
+  .vacancies .img-top, .vacancies .img-bottom {
+    display: block;
+  }
+  .vacancies .img-top-600, .vacancies .img-bottom-600 {
+    display: none;
   }
 }
 
 @media (min-width: 1350px) {
+  .vacancies {
+    margin-bottom: 195px;
+  }
+  .vacancies .img-top, .vacancies .img-bottom {
+    display: none;
+  }
   .vacancies .img-l {
     display: block;
     position: absolute;
-    left: -25px;
+    left: -30px;
   }
   
   .vacancies .img-r,
@@ -1546,7 +1590,10 @@
   .we-are .vacancies .img-r-last {
     display: block;
     position: absolute;
-    right: -25px;
+    right: -30px;
+  }
+  .vacancies__title {
+    display: none;
   }
 }
 

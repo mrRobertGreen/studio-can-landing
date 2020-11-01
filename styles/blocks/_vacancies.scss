@@ -2,7 +2,7 @@
 
 .vacancies {
   @include flex-column;
-  padding-bottom: 150px;
+  margin-bottom: 55px;
 
   .img-l,
   .img-r {
@@ -44,13 +44,11 @@
       @include flex-column;
       text-align: center;
     }
-
     &_desc {
       color: $grey;
       font-size: 17px;
       line-height: 27px;
     }
-
     &__top {
       font-weight: 600;
       margin-bottom: 25px;
@@ -58,20 +56,14 @@
 
     &__label {
       font-size: 21px;
-      margin-bottom: 14px;
+      margin-bottom: 17px;
     }
-
     &__percent {
       font-size: 15px;
       color: #AAAAAA;
     }
-
     &__arrow {
       display: none;
-      // position: absolute;
-      // right: 45px;
-      // top: calc(50% - 6.5px);
-      // bottom: 0;
     }
   }
 }
@@ -79,43 +71,75 @@
 
 @media (min-width: 600px) {
   .vacancies {
+    margin-bottom: 90px;
+    .img-top, .img-bottom {
+      display: none;
+    }
+    .img-top-600, .img-bottom-600 {
+      display: block;
+    }
     .card {
+      max-width: 574px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       border-radius: 7px;
       height: auto;
-      padding: 29px 35px 19px;
+      padding: 25px 41px 25px 35px;
       &__main-block {
+        width: 100%;
+        margin-right: 41px;
         text-align: left;
       }
       &__label {
-        line-height: 35px;
         margin-bottom: 0;
       }
       &__top {
         width: 100%;
         @include flex-row;
         justify-content: space-between;
-        margin-bottom: 3px;
+        margin-bottom: 17px;
       }
       &_desc {
-        line-height: 35px;
         width: 100%;
       }
+      &__arrow {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .vacancies {
+    .img-top, .img-bottom {
+      display: block;
+    }
+    .img-top-600, .img-bottom-600 {
+      display: none;
     }
   }
 }
 
 @media (min-width: 1350px) {
   .vacancies {
+    margin-bottom: 195px;
+    .img-top, .img-bottom {
+      display: none;
+    }
     .img-l {
       display: block;
       position: absolute;
-      left: -25px;
+      left: -30px;
     }
-
     .img-r {
       display: block;
       position: absolute;
-      right: -25px;
+      right: -30px;
+    }
+    &__title {
+      display: none;
     }
   }
 }
