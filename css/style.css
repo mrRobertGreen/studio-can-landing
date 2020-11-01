@@ -1417,8 +1417,11 @@
 }
 
 .vacancies .img-top {
-  width: 120%;
   margin-bottom: 55px;
+}
+
+.vacancies .img-top-600, .vacancies .img-bottom-600 {
+  display: none;
 }
 
 .vacancies__title {
@@ -1486,6 +1489,49 @@
 
 .vacancies .card__arrow {
   display: none;
+}
+
+@media (min-width: 600px) {
+  .vacancies .card {
+    border-radius: 7px;
+    height: auto;
+    padding: 29px 35px 19px;
+  }
+  .vacancies .card__main-block {
+    text-align: left;
+  }
+  .vacancies .card__label {
+    line-height: 35px;
+    margin-bottom: 0;
+  }
+  .vacancies .card__top {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 3px;
+  }
+  .vacancies .card_desc {
+    line-height: 35px;
+    width: 100%;
+  }
 }
 
 @media (min-width: 1350px) {

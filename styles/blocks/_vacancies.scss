@@ -10,8 +10,11 @@
   }
 
   .img-top {
-    width: 120%;
     margin-bottom: 55px;
+  }
+  
+  .img-top-600, .img-bottom-600 {
+    display: none;
   }
 
   &__title {
@@ -69,6 +72,34 @@
       // right: 45px;
       // top: calc(50% - 6.5px);
       // bottom: 0;
+    }
+  }
+}
+
+
+@media (min-width: 600px) {
+  .vacancies {
+    .card {
+      border-radius: 7px;
+      height: auto;
+      padding: 29px 35px 19px;
+      &__main-block {
+        text-align: left;
+      }
+      &__label {
+        line-height: 35px;
+        margin-bottom: 0;
+      }
+      &__top {
+        width: 100%;
+        @include flex-row;
+        justify-content: space-between;
+        margin-bottom: 3px;
+      }
+      &_desc {
+        line-height: 35px;
+        width: 100%;
+      }
     }
   }
 }
