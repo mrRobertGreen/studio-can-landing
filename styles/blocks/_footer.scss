@@ -1,19 +1,41 @@
 @import "../vars";
+
 .footer {
-    @include flex-row;
-    justify-content: space-between;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 56px;
+  @include flex-column;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 55px;
+  font-size: 17px;
+}
+
+.company-came {
+  margin-bottom: 30px;
+
+  span {
+    font-weight: 600;
+    color: $dark-grey;
+  }
+}
+
+.user-terms {
+  flex: 1 1 50%;
+  color: $dark-grey;
+}
+
+@media (min-width: 600px) {
+  .footer {
     font-size: 19px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    
   }
   .company-came {
     flex: 1 1 50%;
-    span {
-      color: $grey;
-    }
+    margin-bottom: 0;
   }
-  .user-terms {
-    flex: 1 1 50%;
-    color: $grey;
-  }
+}
