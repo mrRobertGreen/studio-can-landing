@@ -124,8 +124,21 @@ $(document).ready(function () {
     $(".menu__track").on('click', '[href*="#"]', function (e) {
         // make smooth scroll to anchor
         e.preventDefault()
-        $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+
+        if (this.hash== "#we") {
+            $('html,body').animate({scrollTop: $(this.hash).offset().top + 1}, 500);
+        } else {
+            $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+        }
+        
     });
+
+    $("#textarea").on('keyup', function() {
+        // textarea resizing
+        if (this.scrollTop > 0){
+          this.style.height = this.scrollHeight + "px";
+        }
+      });
 });
 
 $.fn.isInViewport = function () {

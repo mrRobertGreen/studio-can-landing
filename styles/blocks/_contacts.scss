@@ -23,6 +23,8 @@
       align-items: flex-start;
       background-color: #fff;
 
+
+
       &__label {
         width: 100%;
         font-size: 19px;
@@ -42,6 +44,8 @@
         width: 100%;
 
         .input-group {
+          overflow-y: auto;
+          max-height: 179px;
           width: 100%;
           padding: 10px 0 17px 15px;
           box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.15);
@@ -74,6 +78,22 @@
             position: absolute;
             bottom: 2px;
             left: 0px;
+          }
+
+          &__textarea {
+            @extend .input-group__input;
+
+            textarea {
+              overflow: hidden;
+              resize: none;
+              width: 100%;
+              color: black;
+              font-size: 16px;
+            }
+
+            textarea::placeholder {
+              color: $dark-grey;
+            }
           }
 
           &__input:first-child::after {
@@ -116,7 +136,7 @@
             position: absolute;
             border-radius: 3px;
             right: -27px;
-            top: 0px;
+            top: -1px;
           }
 
           & input[type="checkbox"]:checked+label:after {
@@ -133,6 +153,21 @@
           text-align: center;
           height: 41px;
           border-radius: 7px;
+        }
+
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          border-radius: 5px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          background: $dark-grey;
         }
       }
     }
@@ -202,19 +237,24 @@
 
     &:nth-child(1) {
       &:hover {
-        text, path {
-          fill:#FF7276;
+
+        text,
+        path {
+          fill: #FF7276;
         }
       }
     }
 
     &:nth-child(2) {
       margin-bottom: 55px;
+
       &:hover {
-        text, path {
+
+        text,
+        path {
           fill: #58F3FF;
         }
-        
+
       }
     }
   }
@@ -222,6 +262,7 @@
   &__item {
     display: block;
     cursor: pointer;
+
     &:nth-child(1) {
       &:hover {
         text {
@@ -260,7 +301,7 @@
 @media (min-width: 600px) {
   .contacts {
     margin: 0 auto 185px;
-    
+
     &__label {
       margin-bottom: 90px;
       font-size: 30px;
@@ -273,7 +314,7 @@
 
     .form-block {
       margin-bottom: 0;
-      
+
     }
 
     &__logo_circle {
@@ -295,22 +336,29 @@
 @media (min-width: 900px) {
   .contacts {
     width: 100%;
+    max-width: 808px;
+    margin: 0 auto 185px;
+
     .contacts-items {
+
       margin-bottom: 0;
     }
+
     .contact-links {
       margin-left: 100px;
     }
+
     &__row_900 {
       @include flex-row;
       justify-content: space-around;
     }
-    
+
 
     &__logo {
       display: block;
-      margin-right: 97px;
-      align-self: flex-end;
+      margin: 0 97px 0 0;
+      height: 100%;
+      width: 100%;
     }
 
     &__logo_circle {
@@ -318,6 +366,7 @@
     }
 
     .form-block {
+
       &__label {
         font-size: 21px;
       }
@@ -327,29 +376,27 @@
       max-width: 808px;
       flex-direction: row;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
     }
   }
 }
 
 @media (min-width: 1350px) {
   .contacts {
-    max-width: 808px;
-    margin: 0 auto 185px;
     .contact-links {
       width: auto;
       margin: 0;
     }
+
     &__row_900 {
       @include flex-row;
       justify-content: space-between;
     }
-   
+
 
     &__logo {
       display: block;
       margin-right: 97px;
-      align-self: flex-end;
     }
 
     &__logo_circle {
@@ -360,13 +407,6 @@
       &__label {
         font-size: 21px;
       }
-    }
-
-    &__main {
-      max-width: 808px;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
     }
   }
 }
