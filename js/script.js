@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     let slider;
-    const ids = ["we", "services","examples", "process", "vacancies", "contacts"] // массив id блоков
+    const ids = ["we", "services", "examples", "process", "vacancies", "contacts"] // массив id блоков
     let isAllowedAutoSwitching = true; // разрешено ли автопролистывание меню
     let viewedBlockIdx = 0 // блок, находящийся в поле зрения
     let lastScrollTop = 0;
-   
+
     if (window.matchMedia('(max-width: 768px)').matches) {
         // если ширина экрана не больше 768 пикселей
         const options = {
@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     if (window.matchMedia('(min-width: 900px)').matches) {
         // если ширина экрана больше 900 пикселей
-        $(".menu__item").click(async function  () { // подписались на событие клика по менюшке
+        $(".menu__item").click(async function () { // подписались на событие клика по менюшке
             // isAllowedAutoSwitching = false // запрещаем автопролистывание меню
             await bigMenuController($(this).attr('id')) // двигаем ползунок в менюшке
             // viewedBlockIdx = ids.findIndex(item => item === $(this).attr('id').substr(5))
@@ -66,7 +66,7 @@ $(document).ready(function () {
         if (this.hash == "#we") {
             await $('html,body').animate({
                 scrollTop: $(this.hash).offset().top + 1
-            }, 500, "swing", () => isAllowedAutoSwitching = true); 
+            }, 500, "swing", () => isAllowedAutoSwitching = true);
             // последним параметром идет функция, которая выполняется послео кончания анимации
             // в ней мы вкючаем автопролистывание
             viewedBlockIdx = ids.findIndex(item => item === "we")
@@ -93,7 +93,7 @@ $(document).ready(function () {
                     } else {
                         smallMenuController(`menu-${ids[i]}`, slider)
                     }
-                    viewedBlockIdx = i   
+                    viewedBlockIdx = i
                     return
                 }
             }
@@ -107,7 +107,7 @@ $(document).ready(function () {
                     } else {
                         smallMenuController(`menu-${ids[i]}`, slider)
                     }
-                    viewedBlockIdx = i   
+                    viewedBlockIdx = i
                     return
                 }
             }
@@ -115,12 +115,26 @@ $(document).ready(function () {
         lastScrollTop = scrollTop;
     });
 
-    $("#textarea").on('keyup', function () {
+
+    // $("#textarea").on('keyup', function () {
+    //     // textarea resizing
+    //     if (this.scrollTop > 0) {
+    //         this.style.height = this.scrollHeight + "px";
+    //     } else {
+    //         this.style.height = this.scrollHeight + "px";
+    //     }
+    // });
+
+    $("#textarea").on('input', function (e) {
         // textarea resizing
-        if (this.scrollTop > 0) {
-            this.style.height = this.scrollHeight + "px";
-        }
+        fixTextareaSize(e.target)
     });
+
+    function fixTextareaSize(textarea) {
+        textarea.style.height = 'auto'
+        textarea.style.height = textarea.scrollHeight + 0 + "px"
+    }
+
 });
 
 function isInViewport(id) {
@@ -136,6 +150,21 @@ function isInViewport(id) {
 
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
+
+function isInViewportFromBottom(id) {
+    // check element visibility
+    const element = $(id)
+    const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
+    const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
+
+    const menuHeight = 20 + 39 // height of top fixed menu
+
+    const viewportTop = $(window).scrollTop() // значение отступа прокрутки сверху 
+    const viewportBottom = viewportTop + $(window).height(); // значение отступа прокрутки сверху + высота окна 
+
+    return elementBottom < viewportBottom
+};
+
 
 const moveFakeItem = async (left = 1, delay = 300) => {
     // move fake menu item to left with delay
