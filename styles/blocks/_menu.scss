@@ -5,6 +5,7 @@
 .menu {
   width: 100%;
   border-radius: 25px;
+  
 
   a {
     z-index: 2;
@@ -22,6 +23,7 @@
   }
 
   &__item {
+    cursor: pointer;
     display: block;
     font-weight: 200;
     text-align: center;
@@ -35,6 +37,7 @@
       background: transparent;
       color: black;
       font-weight: 400;
+      cursor: pointer;
     }
   }  
 
@@ -46,6 +49,7 @@
     left: 2px;
     top: 2px;
     z-index: 2;
+    cursor: pointer;
   }
 
   #menu-we {

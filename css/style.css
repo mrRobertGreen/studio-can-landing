@@ -139,6 +139,7 @@
 }
 
 .menu__item {
+  cursor: pointer;
   display: block;
   font-weight: 200;
   text-align: center;
@@ -169,6 +170,7 @@
   background: transparent;
   color: black;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .menu__item_fake {
@@ -179,6 +181,7 @@
   left: 2px;
   top: 2px;
   z-index: 2;
+  cursor: pointer;
 }
 
 .menu #menu-we, .menu-copy #menu-we {
