@@ -78,42 +78,82 @@ $(document).ready(function () {
         }
     });
 
-    $(window).on("scroll", function (event) {
-        if (!isAllowedAutoSwitching) return // если запрещено автопролистывание, то выходим
 
+
+    let currentIndex = 0
+    let lastCurrentIndex = 0
+    $(window).on("scroll", function () {
         let scrollTop = $(this).scrollTop();
+        
+        if (!isAllowedAutoSwitching) return
 
         if (scrollTop > lastScrollTop) {
             // скролл вниз
-            for (let i = viewedBlockIdx; i < ids.length; ++i) {
-                if (isInViewport($(`#${ids[i]}`)) && !isInViewport($(`#${ids[viewedBlockIdx]}`))) {
-                    if (window.matchMedia('(min-width: 900px)').matches) {
-                        // если ширина экрана больше 900 пикселей
-                        bigMenuController(`menu-${ids[i]}`)
-                    } else {
-                        smallMenuController(`menu-${ids[i]}`, slider)
-                    }
-                    viewedBlockIdx = i
-                    return
+            for (let i = currentIndex; i < ids.length; ++i) {
+                if (isVisible("#" + ids[i] + "-start")) {
+                    currentIndex = i
                 }
             }
         } else {
             // скролл вверх
-            for (let i = viewedBlockIdx; i >= 0; --i) {
-                if (isInViewport($(`#${ids[i]}`)) && !isInViewport($(`#${ids[viewedBlockIdx]}`))) {
-                    if (window.matchMedia('(min-width: 900px)').matches) {
-                        // если ширина экрана больше 900 пикселей
-                        bigMenuController(`menu-${ids[i]}`)
-                    } else {
-                        smallMenuController(`menu-${ids[i]}`, slider)
-                    }
-                    viewedBlockIdx = i
-                    return
+            for (let i = currentIndex; i >= 0; --i) {
+                if (isVisible("#" + ids[i] + "-end")) {
+                    currentIndex = i
                 }
             }
         }
+
+        if (lastCurrentIndex !== currentIndex) {
+            console.log("currentIndex: ", currentIndex)
+            console.log("lastCurrentIndex: ", lastCurrentIndex)
+            lastCurrentIndex = currentIndex
+            if (window.matchMedia('(min-width: 900px)').matches) {
+                // если ширина экрана больше 900 пикселей
+                bigMenuController(`menu-${ids[currentIndex]}`)
+            } else {
+                smallMenuController(`menu-${ids[currentIndex]}`, slider)
+            }
+        }
         lastScrollTop = scrollTop;
-    });
+    })
+
+
+    // $(window).on("scroll", function (event) {
+    //     if (!isAllowedAutoSwitching) return // если запрещено автопролистывание, то выходим
+
+    //     let scrollTop = $(this).scrollTop();
+
+    //     if (scrollTop > lastScrollTop) {
+    //         // скролл вниз
+    //         for (let i = viewedBlockIdx; i < ids.length; ++i) {
+    //             if (isInViewport($(`#${ids[i]}`)) && !isInViewport($(`#${ids[viewedBlockIdx]}`))) {
+    //                 if (window.matchMedia('(min-width: 900px)').matches) {
+    //                     // если ширина экрана больше 900 пикселей
+    //                     bigMenuController(`menu-${ids[i]}`)
+    //                 } else {
+    //                     smallMenuController(`menu-${ids[i]}`, slider)
+    //                 }
+    //                 viewedBlockIdx = i
+    //                 return
+    //             }
+    //         }
+    //     } else {
+    //         // скролл вверх
+    //         for (let i = viewedBlockIdx; i >= 0; --i) {
+    //             if (isInViewport($(`#${ids[i]}`)) && !isInViewport($(`#${ids[viewedBlockIdx]}`))) {
+    //                 if (window.matchMedia('(min-width: 900px)').matches) {
+    //                     // если ширина экрана больше 900 пикселей
+    //                     bigMenuController(`menu-${ids[i]}`)
+    //                 } else {
+    //                     smallMenuController(`menu-${ids[i]}`, slider)
+    //                 }
+    //                 viewedBlockIdx = i
+    //                 return
+    //             }
+    //         }
+    //     }
+    //     lastScrollTop = scrollTop;
+    // });
 
 
     // $("#textarea").on('keyup', function () {
@@ -137,9 +177,48 @@ $(document).ready(function () {
 
 });
 
+function isVisible(id) {
+    // check element visibility
+    const element = $(id)
+    const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
+    const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
+
+    const viewportTop = $(window).scrollTop() + $(window).height() / 2.5 // значение отступа прокрутки сверху 
+    const viewportBottom = viewportTop + $(window).height() - $(window).height() / 2.5; // значение отступа прокрутки сверху + высота окна 
+
+    return elementBottom > viewportTop  && elementTop < viewportBottom; 
+};
+
+function isVisibleForScrollDown(id) {
+    // check element visibility
+    const element = $(id)
+    const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
+    const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
+
+    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
+    const viewportBottom = viewportTop + $(window).height(); // значение отступа прокрутки сверху + высота окна 
+
+    return elementBottom - viewportTop >  $(window).height() / 2
+};
+
+function isVisibleForScrollUp(id) {
+    // check element visibility
+    const element = $(id)
+    const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
+    const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
+
+    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
+    const viewportBottom = viewportTop + $(window).height(); // значение отступа прокрутки сверху + высота окна 
+
+    return viewportBottom - elementTop >  $(window).height() / 2
+};
+
+
+
 function isInViewport(id) {
     // check element visibility
     const element = $(id)
+      
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
     const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
 
