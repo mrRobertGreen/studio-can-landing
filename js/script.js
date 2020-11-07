@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+$(document).ready(function () { 	
     let slider;
     const ids = ["we", "services", "examples", "process", "vacancies", "contacts"] // массив id блоков
     let isAllowedAutoSwitching = true; // разрешено ли автопролистывание меню
@@ -82,6 +81,22 @@ $(document).ready(function () {
 
     let currentIndex = 0
     let lastCurrentIndex = 0
+
+    window.addEventListener("load", () => {
+        // после загрузки страницы ставим пункт меню в правильное положение
+        while (isVisibleFromTop("#" + ids[currentIndex] + "-end")) {
+            currentIndex++
+            lastCurrentIndex++
+        }
+        if (window.matchMedia('(min-width: 900px)').matches) {
+            // если ширина экрана больше 900 пикселей
+            bigMenuController(`menu-${ids[currentIndex]}`)
+        } else {
+            smallMenuController(`menu-${ids[currentIndex]}`, slider)
+        }
+    });
+
+    
     $(window).on("scroll", function () {
         let scrollTop = $(this).scrollTop();
         
@@ -104,8 +119,6 @@ $(document).ready(function () {
         }
 
         if (lastCurrentIndex !== currentIndex) {
-            console.log("currentIndex: ", currentIndex)
-            console.log("lastCurrentIndex: ", lastCurrentIndex)
             lastCurrentIndex = currentIndex
             if (window.matchMedia('(min-width: 900px)').matches) {
                 // если ширина экрана больше 900 пикселей
@@ -116,54 +129,6 @@ $(document).ready(function () {
         }
         lastScrollTop = scrollTop;
     })
-
-
-    // $(window).on("scroll", function (event) {
-    //     if (!isAllowedAutoSwitching) return // если запрещено автопролистывание, то выходим
-
-    //     let scrollTop = $(this).scrollTop();
-
-    //     if (scrollTop > lastScrollTop) {
-    //         // скролл вниз
-    //         for (let i = viewedBlockIdx; i < ids.length; ++i) {
-    //             if (isInViewport($(`#${ids[i]}`)) && !isInViewport($(`#${ids[viewedBlockIdx]}`))) {
-    //                 if (window.matchMedia('(min-width: 900px)').matches) {
-    //                     // если ширина экрана больше 900 пикселей
-    //                     bigMenuController(`menu-${ids[i]}`)
-    //                 } else {
-    //                     smallMenuController(`menu-${ids[i]}`, slider)
-    //                 }
-    //                 viewedBlockIdx = i
-    //                 return
-    //             }
-    //         }
-    //     } else {
-    //         // скролл вверх
-    //         for (let i = viewedBlockIdx; i >= 0; --i) {
-    //             if (isInViewport($(`#${ids[i]}`)) && !isInViewport($(`#${ids[viewedBlockIdx]}`))) {
-    //                 if (window.matchMedia('(min-width: 900px)').matches) {
-    //                     // если ширина экрана больше 900 пикселей
-    //                     bigMenuController(`menu-${ids[i]}`)
-    //                 } else {
-    //                     smallMenuController(`menu-${ids[i]}`, slider)
-    //                 }
-    //                 viewedBlockIdx = i
-    //                 return
-    //             }
-    //         }
-    //     }
-    //     lastScrollTop = scrollTop;
-    // });
-
-
-    // $("#textarea").on('keyup', function () {
-    //     // textarea resizing
-    //     if (this.scrollTop > 0) {
-    //         this.style.height = this.scrollHeight + "px";
-    //     } else {
-    //         this.style.height = this.scrollHeight + "px";
-    //     }
-    // });
 
     $("#textarea").on('input', function (e) {
         // textarea resizing
@@ -183,9 +148,11 @@ function isVisible(id) {
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
     const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
 
-    const viewportTop = $(window).scrollTop() + $(window).height() / 2.5 // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height() / 10; // значение отступа прокрутки сверху + высота окна 
+    // формируем область по центру экрана и будем проверять видимость элемента в этой области
+    const viewportTop = $(window).scrollTop() + $(window).height() / 2.5 
+    const viewportBottom = viewportTop + $(window).height() / 10; 
     
+    // чтоб наглядно увидеть эту область раскомментируй этот код
     // $('#scanner').remove()
     // $('#body').append('<div id="scanner"></div>');
    
@@ -204,30 +171,13 @@ function isVisible(id) {
     return elementBottom > viewportTop  && elementTop < viewportBottom; 
 };
 
-function isVisibleForScrollDown(id) {
-    // check element visibility
+function isVisibleFromTop(id) {
     const element = $(id)
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
-    const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
-
     const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height(); // значение отступа прокрутки сверху + высота окна 
-
-    return elementBottom - viewportTop >  $(window).height() / 2
-};
-
-function isVisibleForScrollUp(id) {
-    // check element visibility
-    const element = $(id)
-    const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
-    const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
-
-    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height(); // значение отступа прокрутки сверху + высота окна 
-
-    return viewportBottom - elementTop >  $(window).height() / 2
-};
-
+    
+    return elementTop < viewportTop
+}
 
 
 function isInViewport(id) {
@@ -244,21 +194,6 @@ function isInViewport(id) {
 
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
-
-function isInViewportFromBottom(id) {
-    // check element visibility
-    const element = $(id)
-    const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
-    const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
-
-    const menuHeight = 20 + 39 // height of top fixed menu
-
-    const viewportTop = $(window).scrollTop() // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height(); // значение отступа прокрутки сверху + высота окна 
-
-    return elementBottom < viewportBottom
-};
-
 
 const moveFakeItem = async (left = 1, delay = 300) => {
     // move fake menu item to left with delay

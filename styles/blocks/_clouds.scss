@@ -53,8 +53,6 @@
     p {
       padding-bottom: 2px;
     }
-   
-    
 
     &:after {
       content: '';
@@ -91,6 +89,21 @@
     align-items: flex-end;
     &__item-l {
       margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .clouds {
+    &__container {
+      display: flex;
+      justify-content: center;
+      flex: 0 0 50%;
+    }
+    &__item {
+      &::after {
+        display: none;
+      }
     }
   }
 }
