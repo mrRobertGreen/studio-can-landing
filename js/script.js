@@ -184,7 +184,22 @@ function isVisible(id) {
     const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
 
     const viewportTop = $(window).scrollTop() + $(window).height() / 2.5 // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height() - $(window).height() / 2.5; // значение отступа прокрутки сверху + высота окна 
+    const viewportBottom = viewportTop + $(window).height() / 10; // значение отступа прокрутки сверху + высота окна 
+    
+    // $('#scanner').remove()
+    // $('#body').append('<div id="scanner"></div>');
+   
+    // const props = {
+    //     background: "#000",
+    //     opacity: 0.5,
+    //     position: "fixed",
+    //     width: "100%",
+    //     height: viewportBottom - viewportTop + "px",
+
+    //     top: $(window).height() / 2.5 + "px",
+    //     bottom: $(window).height() / 2.1 + "px",
+    // }
+    // $("#scanner").css(props)
 
     return elementBottom > viewportTop  && elementTop < viewportBottom; 
 };
