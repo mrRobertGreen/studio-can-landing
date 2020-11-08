@@ -73,16 +73,16 @@
     margin-right: 26px;
   }
   .header__link:nth-child(1):hover text {
-    fill: #0095f6;
+    fill: url("#colorVk");
   }
   .header__link:nth-child(2):hover text {
-    fill: #ffc758;
+    fill: url("#colorBe");
   }
   .header__link:nth-child(3) {
     margin-right: 0;
   }
   .header__link:nth-child(3):hover text {
-    fill: #f476c7;
+    fill: url("#colorInst");
   }
 }
 
@@ -474,7 +474,7 @@
 }
 
 .form-block .form__checkbox input[type="checkbox"]:checked + label:after {
-  background: url("./../../icons/check.svg") center/80% 80% no-repeat;
+  background: url("../../icons/check.svg") center/80% 80% no-repeat;
 }
 
 .form-block .form__button {
@@ -1863,7 +1863,7 @@
 }
 
 .contacts__main .form-block .form__checkbox input[type="checkbox"]:checked + label:after {
-  background: url("./../../icons/check.svg") center/80% 80% no-repeat;
+  background: url("../../icons/check.svg") center/80% 80% no-repeat;
 }
 
 .contacts__main .form-block .form__button {
@@ -2008,11 +2008,11 @@
 }
 
 .contact-links__item:nth-child(1):hover text {
-  fill: #0095f6;
+  fill: url("#colorVk");
 }
 
 .contact-links__item:nth-child(2):hover text {
-  fill: #ffc758;
+  fill: url("#colorBe");
 }
 
 .contact-links__item:nth-child(3) {
@@ -2020,7 +2020,7 @@
 }
 
 .contact-links__item:nth-child(3):hover text {
-  fill: #f476c7;
+  fill: url("#colorInst");
 }
 
 .contact-links__row {

@@ -56,21 +56,21 @@
       &:nth-child(1) {
         &:hover {
           text {
-            fill: #0095f6;
+            fill : url("#colorVk");
           }
         }
       }
       &:nth-child(2) {
         &:hover {
           text {
-            fill: #ffc758;
+            fill : url("#colorBe");
           }
         }
       }
       &:nth-child(3) {
         &:hover {
           text {
-            fill: #f476c7;
+            fill : url("#colorInst");
           }
         }
         margin-right: 0;

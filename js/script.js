@@ -2,8 +2,9 @@ $(document).ready(function () {
     let slider;
     const ids = ["we", "services", "examples", "process", "vacancies", "contacts"] // массив id блоков
     let isAllowedAutoSwitching = true; // разрешено ли автопролистывание меню
-    let viewedBlockIdx = 0 // блок, находящийся в поле зрения
-    let lastScrollTop = 0;
+    
+    let currentIndex = 0 // индекс текущего блока
+    let lastCurrentIndex = 0 
 
     if (window.matchMedia('(max-width: 768px)').matches) {
         // если ширина экрана не больше 768 пикселей
@@ -21,17 +22,13 @@ $(document).ready(function () {
     if (window.matchMedia('(min-width: 900px)').matches) {
         // если ширина экрана больше 900 пикселей
         $(".menu__item").click(async function () { // подписались на событие клика по менюшке
-            // isAllowedAutoSwitching = false // запрещаем автопролистывание меню
             await bigMenuController($(this).attr('id')) // двигаем ползунок в менюшке
-            // viewedBlockIdx = ids.findIndex(item => item === $(this).attr('id').substr(5))
-            // isAllowedAutoSwitching = true // разрешаем автопролистывание меню
+            currentIndex = ids.findIndex(id => "menu-" + id === $(this).attr('id')) // ставим индекс текущего блока
         })
     } else {
         $(".menu__item").click(async function () {
-            // isAllowedAutoSwitching = false
             await smallMenuController($(this).attr('id'), slider)
-            // viewedBlockIdx = ids.findIndex(item => item === $(this).attr('id').substr(5))
-            // isAllowedAutoSwitching = true
+            currentIndex = ids.findIndex(id => "menu-" + id === $(this).attr('id')) // ставим индекс текущего блока
         })
     }
 
@@ -68,19 +65,13 @@ $(document).ready(function () {
             }, 500, "swing", () => isAllowedAutoSwitching = true);
             // последним параметром идет функция, которая выполняется послео кончания анимации
             // в ней мы вкючаем автопролистывание
-            viewedBlockIdx = ids.findIndex(item => item === "we")
         } else {
             await $('html,body').animate({
                 scrollTop: $(this.hash).offset().top - 100
             }, 500, "swing", () => isAllowedAutoSwitching = true);
-            viewedBlockIdx = ids.findIndex(item => item === this.hash.substr(1))
         }
     });
-
-
-
-    let currentIndex = 0
-    let lastCurrentIndex = 0
+    
 
     window.addEventListener("load", () => {
         // после загрузки страницы ставим пункт меню в правильное положение
@@ -96,7 +87,8 @@ $(document).ready(function () {
         }
     });
 
-    
+    let lastScrollTop = 0;
+
     $(window).on("scroll", function () {
         let scrollTop = $(this).scrollTop();
         
