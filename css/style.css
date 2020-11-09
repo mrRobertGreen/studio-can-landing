@@ -1990,7 +1990,7 @@
 
 .contact-links__item_big:nth-child(1):hover text,
 .contact-links__item_big:nth-child(1):hover path {
-  fill: #FF7276;
+  fill: url("#colorTelegram");
 }
 
 .contact-links__item_big:nth-child(2) {
@@ -1999,7 +1999,7 @@
 
 .contact-links__item_big:nth-child(2):hover text,
 .contact-links__item_big:nth-child(2):hover path {
-  fill: #58F3FF;
+  fill: url("#colorWhatsApp");
 }
 
 .contact-links__item {
@@ -2008,11 +2008,11 @@
 }
 
 .contact-links__item:nth-child(1):hover text {
-  fill: url("#colorVk");
+  fill: url("#colorVk2");
 }
 
 .contact-links__item:nth-child(2):hover text {
-  fill: url("#colorBe");
+  fill: url("#colorBe2");
 }
 
 .contact-links__item:nth-child(3) {
@@ -2020,7 +2020,7 @@
 }
 
 .contact-links__item:nth-child(3):hover text {
-  fill: url("#colorInst");
+  fill: url("#colorInst2");
 }
 
 .contact-links__row {

@@ -240,7 +240,7 @@
 
         text,
         path {
-          fill: #FF7276;
+          fill: url("#colorTelegram");
         }
       }
     }
@@ -249,10 +249,9 @@
       margin-bottom: 55px;
 
       &:hover {
-
         text,
         path {
-          fill: #58F3FF;
+          fill: url("#colorWhatsApp");
         }
 
       }
@@ -266,7 +265,7 @@
     &:nth-child(1) {
       &:hover {
         text {
-          fill : url("#colorVk");
+          fill : url("#colorVk2");
         }
       }
     }
@@ -274,7 +273,7 @@
     &:nth-child(2) {
       &:hover {
         text {
-          fill : url("#colorBe");
+          fill : url("#colorBe2");
         }
       }
     }
@@ -282,7 +281,7 @@
     &:nth-child(3) {
       &:hover {
         text {
-          fill : url("#colorInst");
+          fill : url("#colorInst2");
         }
       }
 
