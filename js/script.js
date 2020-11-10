@@ -1,10 +1,10 @@
-$(document).ready(function () { 	
+$(document).ready(function () {
     let slider;
     const ids = ["we", "services", "examples", "process", "vacancies", "contacts"] // массив id блоков
     let isAllowedAutoSwitching = true; // разрешено ли автопролистывание меню
-    
+
     let currentIndex = 0 // индекс текущего блока
-    let lastCurrentIndex = 0 
+    let lastCurrentIndex = 0
 
     if (window.matchMedia('(max-width: 768px)').matches) {
         // если ширина экрана не больше 768 пикселей
@@ -71,11 +71,11 @@ $(document).ready(function () {
             }, 500, "swing", () => isAllowedAutoSwitching = true);
         }
     });
-    
+
 
     window.addEventListener("load", () => {
         // после загрузки страницы ставим пункт меню в правильное положение
-        while (isVisibleFromTop("#" + ids[currentIndex] + "-end")) {
+        while (isVisibleForScrollDown("#" + ids[currentIndex] + "-end")) {
             currentIndex++
             lastCurrentIndex++
         }
@@ -91,23 +91,39 @@ $(document).ready(function () {
 
     $(window).on("scroll", function () {
         let scrollTop = $(this).scrollTop();
-        
+
         if (!isAllowedAutoSwitching) return
 
         if (scrollTop > lastScrollTop) {
             // скролл вниз
-            for (let i = currentIndex; i < ids.length; ++i) {
-                if (isVisible("#" + ids[i] + "-start")) {
-                    currentIndex = i
-                }
+            let i = currentIndex
+            while (isVisibleForScrollDown("#" + ids[i] + "-start")) {
+                console.log("i = ", i)
+                    ++i
             }
+            if (i === -1) currentIndex = 0
+            else currentIndex = i - 1
+
+            // for (let i = currentIndex; i < ids.length; ++i) {
+            //     if (isVisible("#" + ids[i] + "-start")) {
+            //         currentIndex = i
+            //     }
+            // }
         } else {
             // скролл вверх
-            for (let i = currentIndex; i >= 0; --i) {
-                if (isVisible("#" + ids[i] + "-end")) {
-                    currentIndex = i
-                }
+            let i = currentIndex
+            while (isVisibleForScrollUp("#" + ids[i] + "-end")) {
+                console.log("i = ", i)
+                --i
             }
+            if (i === 6) currentIndex = 5
+            else currentIndex = i + 1
+    
+            // for (let i = currentIndex; i >= 0; --i) {
+            //     if (isVisible("#" + ids[i] + "-end")) {
+            //         currentIndex = i
+            //     }
+            // }
         }
 
         if (lastCurrentIndex !== currentIndex) {
@@ -141,13 +157,13 @@ function isVisible(id) {
     const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
 
     // формируем область по центру экрана и будем проверять видимость элемента в этой области
-    const viewportTop = $(window).scrollTop() + $(window).height() / 2.5 
-    const viewportBottom = viewportTop + $(window).height() / 10; 
-    
+    const viewportTop = $(window).scrollTop() + $(window).height() / 2.5
+    const viewportBottom = viewportTop + $(window).height() / 10;
+
     // чтоб наглядно увидеть эту область раскомментируй этот код
     // $('#scanner').remove()
     // $('#body').append('<div id="scanner"></div>');
-   
+
     // const props = {
     //     background: "#000",
     //     opacity: 0.5,
@@ -160,22 +176,56 @@ function isVisible(id) {
     // }
     // $("#scanner").css(props)
 
-    return elementBottom > viewportTop  && elementTop < viewportBottom; 
+    return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
-function isVisibleFromTop(id) {
+function isVisibleForScrollDown(id) {
+    // console.log("id: ", id)
+
     const element = $(id)
+
+    if (!element.offset()) return
+
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
     const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
-    
-    return elementTop < viewportTop
+    const viewportBottom = viewportTop + $(window).height();
+
+    // $('#scanner').remove()
+    // $('#body').append('<div id="scanner"></div>');
+
+    // const props = {
+    //     background: "#000",
+    //     opacity: 0.5,
+    //     position: "fixed",
+    //     width: "100%",
+    //     height: "10px",
+    //     top: $(window).height() / 2 + "px",
+    // }
+    // $("#scanner").css(props)
+
+
+    return elementTop < viewportTop + $(window).height() / 2
+}
+
+function isVisibleForScrollUp(id) {
+
+    const element = $(id)
+
+    if (!element.offset()) return
+
+    const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
+    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
+    const viewportBottom = viewportTop + $(window).height();
+
+
+    return elementTop > viewportTop + $(window).height() / 2
 }
 
 
 function isInViewport(id) {
     // check element visibility
     const element = $(id)
-      
+
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
     const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
 

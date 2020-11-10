@@ -19,9 +19,12 @@ if (!in_array($requestMethod, $allowedMethods)) {
     exit;
 }
 
-$name = $_POST['name'];
-$phone = $_POST['phone'];
-$desc = $_POST['description'];
+$json_str = file_get_contents('php://input');
+$json_obj = json_decode($json_str);
+
+$name = $json_obj->name;
+$phone = $json_obj->phone;
+$desc = $json_obj->description;
 
 $name = htmlspecialchars($name);
 $phone = htmlspecialchars($phone);
