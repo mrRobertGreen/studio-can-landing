@@ -153,6 +153,11 @@
           text-align: center;
           height: 41px;
           border-radius: 7px;
+
+          &:hover {
+            transition: 0.2s;
+            background: #0081D6;
+          }
         }
 
         ::-webkit-scrollbar {
@@ -249,6 +254,7 @@
       margin-bottom: 55px;
 
       &:hover {
+
         text,
         path {
           fill: url("#colorWhatsApp");
@@ -265,7 +271,7 @@
     &:nth-child(1) {
       &:hover {
         text {
-          fill : url("#colorVk2");
+          fill: url("#colorVk2");
         }
       }
     }
@@ -273,7 +279,7 @@
     &:nth-child(2) {
       &:hover {
         text {
-          fill : url("#colorBe2");
+          fill: url("#colorBe2");
         }
       }
     }
@@ -281,7 +287,7 @@
     &:nth-child(3) {
       &:hover {
         text {
-          fill : url("#colorInst2");
+          fill: url("#colorInst2");
         }
       }
 

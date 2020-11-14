@@ -9,6 +9,7 @@
   &__block {
     width: 100%;
     margin-bottom: 77px;
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -24,13 +25,12 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(245px, auto));  
+    grid-template-columns: repeat(auto-fill, minmax(245px, auto));
     grid-gap: 61px;
     justify-content: center; // центрирование элементов сетки
   }
 
-  &__item {
-  }
+  &__item {}
 }
 
 .offer {
@@ -43,12 +43,25 @@
   align-items: center;
   justify-content: center;
 
+  &__icon-wrap {
+    &:hover .white {
+      display: none;
+    }
+    &:hover .black {
+      display: block;
+    }
+  }
 
   &__icon {
     display: block;
-    border-radius: 7px; 
+    border-radius: 7px;
     margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     width: 100%;
+  }
+
+  .black {
+    display: none;
   }
 
   &__title {
@@ -69,10 +82,12 @@
     margin-bottom: 22px;
   }
 
-  &__days, &__hours {
+  &__days,
+  &__hours {
     width: 50%;
     text-align: center;
     position: relative;
+
     &::before {
       content: "";
       width: 11px;
@@ -91,7 +106,7 @@
 
   &__hours {
     &::before {
-      background:#F476C7;
+      background: #F476C7;
     }
   }
 
@@ -105,6 +120,13 @@
     text-align: center;
     height: 40px;
     padding: 10px 0;
+    display: block;
+    
+    &:hover {
+      transition: 0.2s;
+      background: $blue;
+      color: #fff;
+    }
   }
 }
 

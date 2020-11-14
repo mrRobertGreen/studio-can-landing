@@ -54,8 +54,9 @@ $(document).ready(function () {
 
     });
 
-    $(".menu__track").on('click', '[href*="#"]', async function (e) {
+    $(".menu__track, .we-are__link, .clouds__item, .process").on('click', '[href*="#"]', async function (e) {
         // плавная прокрутка до якоря
+    
         e.preventDefault()
         isAllowedAutoSwitching = false
 
@@ -71,7 +72,6 @@ $(document).ready(function () {
             }, 500, "swing", () => isAllowedAutoSwitching = true);
         }
     });
-
 
     window.addEventListener("load", () => {
         // после загрузки страницы ставим пункт меню в правильное положение
@@ -104,11 +104,6 @@ $(document).ready(function () {
             if (i === -1) currentIndex = 0
             else currentIndex = i - 1
 
-            // for (let i = currentIndex; i < ids.length; ++i) {
-            //     if (isVisible("#" + ids[i] + "-start")) {
-            //         currentIndex = i
-            //     }
-            // }
         } else {
             // скролл вверх
             let i = currentIndex
@@ -118,12 +113,6 @@ $(document).ready(function () {
             }
             if (i === 6) currentIndex = 5
             else currentIndex = i + 1
-    
-            // for (let i = currentIndex; i >= 0; --i) {
-            //     if (isVisible("#" + ids[i] + "-end")) {
-            //         currentIndex = i
-            //     }
-            // }
         }
 
         if (lastCurrentIndex !== currentIndex) {
@@ -221,22 +210,6 @@ function isVisibleForScrollUp(id) {
     return elementTop > viewportTop + $(window).height() / 2
 }
 
-
-function isInViewport(id) {
-    // check element visibility
-    const element = $(id)
-
-    const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
-    const elementBottom = elementTop + $(element).outerHeight(); // позиция конца элемента от верхнего края документа
-
-    const menuHeight = 20 + 39 // height of top fixed menu
-
-    const viewportTop = $(window).scrollTop() + menuHeight; // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height(); // значение отступа прокрутки сверху + высота окна 
-
-    return elementBottom > viewportTop && elementTop < viewportBottom;
-};
-
 const moveFakeItem = async (left = 1, delay = 300) => {
     // move fake menu item to left with delay
     const fakeItem = $(".menu__item_fake")
@@ -248,7 +221,6 @@ const moveFakeItem = async (left = 1, delay = 300) => {
 const bigMenuController = async (id) => {
     $(".menu__item").removeClass("menu__item_active") // удалили активный класс со всех блочков
     $("#" + id).addClass("menu__item_active") // добавили активный класс к блоку, на который тыкнули
-    // const id = $(this).attr('id'); // взяли id у активного блока
     const fakeItem = $("#menu-fake") // нашли наш бегающий блок
     switch (id) {
         case "menu-we":

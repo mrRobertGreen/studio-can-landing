@@ -488,6 +488,12 @@
   border-radius: 7px;
 }
 
+.form-block .form__button:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background: #0081D6;
+}
+
 @media (min-width: 600px) {
   .logo-circle {
     display: block;
@@ -740,6 +746,12 @@
   color: #0095F6;
   position: relative;
   cursor: pointer;
+}
+
+.we-are__link:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #0081D6;
 }
 
 .we-are__link::after {
@@ -1042,11 +1054,25 @@
           justify-content: center;
 }
 
+.offer__icon-wrap:hover .white {
+  display: none;
+}
+
+.offer__icon-wrap:hover .black {
+  display: block;
+}
+
 .offer__icon {
   display: block;
   border-radius: 7px;
   margin-bottom: 20px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   width: 100%;
+}
+
+.offer .black {
+  display: none;
 }
 
 .offer__title {
@@ -1108,6 +1134,14 @@
   text-align: center;
   height: 40px;
   padding: 10px 0;
+  display: block;
+}
+
+.offer__price:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background: #0095F6;
+  color: #fff;
 }
 
 @media (min-width: 900px) {
@@ -1350,6 +1384,12 @@
   border-radius: 7px;
   font-size: 17px;
   color: #fff;
+}
+
+.process__btn:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background: #0081D6;
 }
 
 @media (min-width: 600px) {
@@ -1875,6 +1915,12 @@
   text-align: center;
   height: 41px;
   border-radius: 7px;
+}
+
+.contacts__main .form-block .form__button:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background: #0081D6;
 }
 
 .contacts__main .form-block .form ::-webkit-scrollbar {
