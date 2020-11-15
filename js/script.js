@@ -54,7 +54,9 @@ $(document).ready(function () {
 
     });
 
-    $(".menu__track, .we-are__link, .clouds__item, .process").on('click', '[href*="#"]', async function (e) {
+    const linkClasses = ".menu__track, .we-are__link, .clouds__item, .process, .offer__icon-wrap"
+
+    $(linkClasses).on('click', '[href*="#"]', async function (e) {
         // плавная прокрутка до якоря
     
         e.preventDefault()
