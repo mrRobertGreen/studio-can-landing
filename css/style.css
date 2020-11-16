@@ -70,19 +70,27 @@
   .header__link {
     cursor: pointer;
     display: block;
+  }
+  .header__link svg {
     margin-right: 26px;
   }
-  .header__link:nth-child(1):hover text {
-    fill: url("#colorVk");
+  .header__link:nth-child(1) svg:hover text {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    fill: #0095f6;
   }
-  .header__link:nth-child(2):hover text {
-    fill: url("#colorBe");
+  .header__link:nth-child(2):hover svg text {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    fill: #ffc758;
   }
   .header__link:nth-child(3) {
     margin-right: 0;
   }
-  .header__link:nth-child(3):hover text {
-    fill: url("#colorInst");
+  .header__link:nth-child(3):hover svg text {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    fill: #f476c7;
   }
 }
 
@@ -2050,24 +2058,33 @@
 }
 
 .contact-links__item_big {
+  text-align: center;
   display: block;
   margin: 0 auto;
   margin-bottom: 9px;
+  max-width: 212px;
+}
+
+.contact-links__item_big:nth-child(1) svg {
   cursor: pointer;
 }
 
-.contact-links__item_big:nth-child(1):hover text,
-.contact-links__item_big:nth-child(1):hover path {
-  fill: url("#colorTelegram");
+.contact-links__item_big:nth-child(1) svg:hover text,
+.contact-links__item_big:nth-child(1) svg:hover path {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  fill: #FF7276;
 }
 
 .contact-links__item_big:nth-child(2) {
   margin-bottom: 55px;
 }
 
-.contact-links__item_big:nth-child(2):hover text,
-.contact-links__item_big:nth-child(2):hover path {
-  fill: url("#colorWhatsApp");
+.contact-links__item_big:nth-child(2) svg:hover text,
+.contact-links__item_big:nth-child(2) svg:hover path {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  fill: #58F3FF;
 }
 
 .contact-links__item {
@@ -2075,20 +2092,26 @@
   cursor: pointer;
 }
 
-.contact-links__item:nth-child(1):hover text {
-  fill: url("#colorVk2");
+.contact-links__item:nth-child(1) svg:hover text {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  fill: #0095f6;
 }
 
-.contact-links__item:nth-child(2):hover text {
-  fill: url("#colorBe2");
+.contact-links__item:nth-child(2):hover svg text {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  fill: #ffc758;
 }
 
 .contact-links__item:nth-child(3) {
   margin-right: 0;
 }
 
-.contact-links__item:nth-child(3):hover text {
-  fill: url("#colorInst2");
+.contact-links__item:nth-child(3):hover svg text {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  fill: #f476c7;
 }
 
 .contact-links__row {

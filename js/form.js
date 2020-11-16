@@ -1,56 +1,34 @@
-$(document).ready(function() {
-	$("#form1").submit(
-		function () {
-			let body = {
-				name: $("#userName1").val(),
-				phone: $("#userPhone1").val(),
-			};
+"use strict"
 
-			console.log(body);
-			fetch("../send.php", {
-				method: "POST",
-				body: JSON.stringify(body),
-				headers: {
-					'Content-Type': 'application/json;charset=utf-8'
-				}
-			}).then(
-				() => {
-					alert("Благодарим Вас за оставленную заявку! Мы свяжемся с Вами в ближайшее время.");
-					$("#data").val("");
-					$("#userPhone").val("");
-					$("#userName").val("");
-				},
-				() => alert("Ой, что-то пошло не так...")
-			);
-			return false
-		}
-    )
-    
-	$("#form2").submit(
-		function () {
-			let body = {
-				name: $("#userName2").val(),
-				phone: $("#userPhone2").val(),
-				description: $("#textarea").val(),
-			};
+document.addEventListener('DOMContentLoaded', function () {
+	const form1 = document.getElementById('form1');
+	const form2 = document.getElementById('form2');
 
-			console.log(body);
-			fetch("../send.php", {
-				method: "POST",
-				body: JSON.stringify(body),
-				headers: {
-					'Content-Type': 'application/json;charset=utf-8'
-				}
-			}).then(
-				() => {
-					alert("Благодарим Вас за оставленную заявку! Мы свяжемся с Вами в ближайшее время.");
-					$("#data").val("");
-					$("#userPhone").val("");
-					$("#userName").val("");
-				},
-				() => alert("Ой, что-то пошло не так...")
-			);
-			return false
+	form1.addEventListener('submit', (e) => formSend(e, form1));
+	form2.addEventListener('submit', (e) => formSend(e, form2));
+
+
+	async function formSend(e, form) {
+		e.preventDefault();
+
+		let formData = new FormData(form);
+
+		form.classList.add('_sending');
+
+		let response = await fetch('sendmail.php', {
+			method: 'POST',
+			body: formData
+		});
+		if (response.ok) {
+			let result = await response.json();
+			alert(result.message);
+			form.reset();
+			form.classList.remove('_sending');
+		} else {
+			alert("Что-то пошло не так... Попробуйте снова");
+			form.classList.remove('_sending');
+			form.classList.remove('_sending');
 		}
-	)
+
+	}
 });

@@ -6,6 +6,7 @@
   height: 86px;
   padding: 20px 0 27px;
   position: relative;
+
   &__links {
     height: 100%;
     left: 0;
@@ -24,9 +25,11 @@
     width: 206px;
     height: 39px;
   }
+
   .desktop {
     display: none;
   }
+
   .mobile {
     display: block;
   }
@@ -38,9 +41,11 @@
     &__logo {
       width: 199px;
     }
+
     .desktop {
       display: block;
     }
+
     .mobile {
       display: none;
     }
@@ -52,25 +57,48 @@
     &__link {
       cursor: pointer;
       display: block;
-      margin-right: 26px;
+      svg {
+        margin-right: 26px;
+      }
+
       &:nth-child(1) {
-        &:hover {
-          text {
-            fill : url("#colorVk");
+        svg {
+          &:hover {
+            // text {
+            //   fill: url("#colorVk2");
+            // }
+            text {
+              transition: 0.2s;
+              fill: #0095f6;
+            }
           }
         }
       }
+
       &:nth-child(2) {
         &:hover {
-          text {
-            fill : url("#colorBe");
+          svg {
+            // text {
+            //   fill: url("#colorBe2");
+            // }
+            text {
+              transition: 0.2s;
+              fill: #ffc758;
+            }
           }
         }
       }
+
       &:nth-child(3) {
         &:hover {
-          text {
-            fill : url("#colorInst");
+          svg {
+            // text {
+            //   fill: url("#colorInst2");
+            // }
+            text {
+              transition: 0.2s;
+              fill: #f476c7;
+            }
           }
         }
         margin-right: 0;
@@ -78,6 +106,7 @@
     }
   }
 }
+
 @media (min-width: 900px) {
   .header {
     padding: 23px 0;
