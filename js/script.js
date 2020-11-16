@@ -6,6 +6,7 @@ $(document).ready(function () {
     let currentIndex = 0 // индекс текущего блока
     let lastCurrentIndex = 0
 
+    // скролл меню
     if (window.matchMedia('(max-width: 768px)').matches) {
         // если ширина экрана не больше 768 пикселей
         const options = {
@@ -54,11 +55,10 @@ $(document).ready(function () {
 
     });
 
-    const linkClasses = ".menu__track, .we-are__link, .clouds__item, .process, .offer__icon-wrap"
+    const linkClasses = ".menu__track, .we-are__link, .clouds__item, .process, .offer"
 
     $(linkClasses).on('click', '[href*="#"]', async function (e) {
         // плавная прокрутка до якоря
-    
         e.preventDefault()
         isAllowedAutoSwitching = false
 
@@ -92,6 +92,7 @@ $(document).ready(function () {
     let lastScrollTop = 0;
 
     $(window).on("scroll", function () {
+        // автопереключение пунктов меню
         let scrollTop = $(this).scrollTop();
 
         if (!isAllowedAutoSwitching) return
@@ -138,7 +139,6 @@ $(document).ready(function () {
         textarea.style.height = 'auto'
         textarea.style.height = textarea.scrollHeight + 0 + "px"
     }
-
 });
 
 function isVisible(id) {

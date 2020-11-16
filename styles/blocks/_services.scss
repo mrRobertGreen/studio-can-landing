@@ -43,13 +43,24 @@
   align-items: center;
   justify-content: center;
 
+  &__link {
+    display: block;
+    width: 100%;
+    background: black;
+    height: 100%;
+    background: url("../../icons/services/landing_site_white.png");
+  }
+
   &__icon-wrap {
+    position: relative;
     cursor: pointer;
     &:hover .white {
-      display: none;
+      opacity: 0;
+      transition: 0.3s;
     }
     &:hover .black {
-      display: block;
+      transition: 0.3s;
+      opacity: 1;
     }
   }
 
@@ -62,7 +73,11 @@
   }
 
   .black {
-    display: none;
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%;
+    opacity: 0;
   }
 
   &__title {
@@ -112,6 +127,7 @@
   }
 
   &__price {
+    display: block;
     cursor: pointer;
     width: 100%;
     border-radius: 7px;

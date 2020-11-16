@@ -1054,12 +1054,29 @@
           justify-content: center;
 }
 
+.offer__link {
+  display: block;
+  width: 100%;
+  background: black;
+  height: 100%;
+  background: url("../../icons/services/landing_site_white.png");
+}
+
+.offer__icon-wrap {
+  position: relative;
+  cursor: pointer;
+}
+
 .offer__icon-wrap:hover .white {
-  display: none;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .offer__icon-wrap:hover .black {
-  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 1;
 }
 
 .offer__icon {
@@ -1072,7 +1089,11 @@
 }
 
 .offer .black {
-  display: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  opacity: 0;
 }
 
 .offer__title {
@@ -1125,6 +1146,7 @@
 }
 
 .offer__price {
+  display: block;
   cursor: pointer;
   width: 100%;
   border-radius: 7px;
