@@ -118,7 +118,6 @@ $(document).ready(function () {
             if (i === 6) currentIndex = 5
             else currentIndex = i + 1
         }
-        console.log(currentIndex)
 
         if (lastCurrentIndex !== currentIndex) {
             lastCurrentIndex = currentIndex

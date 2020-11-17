@@ -1,0 +1,15 @@
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 0 15px;
+  width: 100%;
+}
