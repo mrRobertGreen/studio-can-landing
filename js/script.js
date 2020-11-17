@@ -46,7 +46,7 @@ $(document).ready(function () {
                 $('.menu-copy').css("display", "none");
             }
         } else {
-            if ($(this).scrollTop() >= 66) {
+            if ($(this).scrollTop() >= 57) {
                 $('.menu-copy').css("display", "block");
                 $('.menu').addClass('stickytop');
             } else {
@@ -106,7 +106,7 @@ $(document).ready(function () {
                 // идем вниз до по стартовым чекпоинтам, пока не дойдем до первого не видимого
                 ++i
             }
-            if (i === -1) currentIndex = 0
+            if (i === -1 || i === 0) currentIndex = 0
             else currentIndex = i - 1
 
         } else {

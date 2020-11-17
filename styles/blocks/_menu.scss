@@ -14,13 +14,13 @@
 
   &__track {
     background-color: $almost_white;
-    font-size: 15px;
+    font-size: 16px;
     @include flex-row;
     width: 686px;
     margin: 0 auto;
     border-radius: 25px;
     position: relative;
-    height: 39px;
+    height: 44px;
   }
 
   &__item {
@@ -47,7 +47,7 @@
     border-radius: 25px;
     position: absolute;
     background-color: white;
-    height: 35px;
+    height: 40px;
     left: 2px;
     top: 2px;
     z-index: 2;
