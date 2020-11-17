@@ -124,9 +124,17 @@ $(document).ready(function () {
             lastCurrentIndex = currentIndex
             if (window.matchMedia('(min-width: 900px)').matches) {
                 // если ширина экрана больше 900 пикселей
+                isAllowedAutoSwitching = false
                 bigMenuController(`menu-${ids[currentIndex]}`)
+                setTimeout(() => {
+                    isAllowedAutoSwitching = true
+                }, 300)
             } else {
+                isAllowedAutoSwitching = false
                 smallMenuController(`menu-${ids[currentIndex]}`, slider)
+                setTimeout(() => {
+                    isAllowedAutoSwitching = true
+                }, 300)
             }
         }
         lastScrollTop = scrollTop;
@@ -253,7 +261,6 @@ const bigMenuController = async (id) => {
             fakeItem.width($("#menu-contacts").width())
             break
         default:
-            break
     }
 }
 
