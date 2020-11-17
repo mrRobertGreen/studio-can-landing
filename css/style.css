@@ -117,6 +117,7 @@
 
 .menu a, .menu-copy a {
   z-index: 2;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .menu__track {

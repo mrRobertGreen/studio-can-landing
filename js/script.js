@@ -6,7 +6,6 @@ $(document).ready(function () {
     let currentIndex = 0 // индекс текущего блока
     let lastCurrentIndex = 0
 
-    // скролл меню
     if (window.matchMedia('(max-width: 768px)').matches) {
         // если ширина экрана не больше 768 пикселей
         const options = {
@@ -14,6 +13,9 @@ $(document).ready(function () {
             speed: 300,
             mouseDragging: 1,
             touchDragging: 1,
+            easing: 'swing',
+            releaseSwing: true,
+            swingSpeed: 0.5,
         };
         slider = new Sly('#frame', options).init();
     }
@@ -101,8 +103,8 @@ $(document).ready(function () {
             // скролл вниз
             let i = currentIndex
             while (isVisibleForScrollDown("#" + ids[i] + "-start")) {
-                console.log("i = ", i)
-                    ++i
+                // идем вниз до по стартовым чекпоинтам, пока не дойдем до первого не видимого
+                ++i
             }
             if (i === -1) currentIndex = 0
             else currentIndex = i - 1
@@ -111,12 +113,12 @@ $(document).ready(function () {
             // скролл вверх
             let i = currentIndex
             while (isVisibleForScrollUp("#" + ids[i] + "-end")) {
-                console.log("i = ", i)
                 --i
             }
             if (i === 6) currentIndex = 5
             else currentIndex = i + 1
         }
+        console.log(currentIndex)
 
         if (lastCurrentIndex !== currentIndex) {
             lastCurrentIndex = currentIndex
