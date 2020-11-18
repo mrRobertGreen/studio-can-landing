@@ -35,6 +35,10 @@
   margin-bottom: 19px;
 }
 
+.slider ul {
+  list-style: none;
+}
+
 /* Слайдер */
 /* Слайдер запущен */
 /* Слайдер с точками */
