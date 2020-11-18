@@ -139,8 +139,9 @@ $(document).ready(function () {
         lastScrollTop = scrollTop;
     })
 
+
     $("#textarea").on('input', function (e) {
-        // textarea resizing
+         // резиновый textarea
         fixTextareaSize(e.target)
     });
 
@@ -148,6 +149,15 @@ $(document).ready(function () {
         textarea.style.height = 'auto'
         textarea.style.height = textarea.scrollHeight + 0 + "px"
     }
+
+    $('.card__main').click(function(event) {
+		if($('.cards').hasClass('one')){
+			$('.card__main').not($(this)).removeClass('active');
+			$('.card__addition').not($(this).next()).slideUp(300);
+		}
+		$(this).toggleClass('active').next().slideToggle(300);
+	});
+
 });
 
 function isVisible(id) {

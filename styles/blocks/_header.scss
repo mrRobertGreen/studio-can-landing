@@ -57,11 +57,10 @@
     &__link {
       cursor: pointer;
       display: block;
-      svg {
-        margin-right: 26px;
-      }
+      margin-right: 26px;
 
       &:nth-child(1) {
+        width: 39px;
         svg {
           &:hover {
             // text {
@@ -76,6 +75,7 @@
       }
 
       &:nth-child(2) {
+        width: 38px;
         &:hover {
           svg {
             // text {
@@ -90,6 +90,9 @@
       }
 
       &:nth-child(3) {
+        svg {
+          width: 59px;
+        }
         &:hover {
           svg {
             // text {

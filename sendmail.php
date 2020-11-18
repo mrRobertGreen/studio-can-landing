@@ -11,9 +11,9 @@
 	$mail->IsHTML(true);
 
 	//От кого письмо
-	$mail->setFrom('from@mail.ru', 'StudentCan');
+	$mail->setFrom('hi@studentcan.ru', 'StudentCan');
 	//Кому отправить
-	$mail->addAddress('to@mail.ru');
+	$mail->addAddress('hello@studentcan.ru');
 	//Тема письма
 	$mail->Subject = 'Заявка StudentCan';
 
@@ -37,7 +37,7 @@
 	if (!$mail->send()) {
 		$message = 'Ошибка';
 	} else {
-		$message = 'Данные отправлены!';
+		$message = 'Благодарим за оставленную заявку!';
 	}
 
 	$response = ['message' => $message];

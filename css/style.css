@@ -70,14 +70,18 @@
   .header__link {
     cursor: pointer;
     display: block;
-  }
-  .header__link svg {
     margin-right: 26px;
+  }
+  .header__link:nth-child(1) {
+    width: 39px;
   }
   .header__link:nth-child(1) svg:hover text {
     -webkit-transition: 0.2s;
     transition: 0.2s;
     fill: #0095f6;
+  }
+  .header__link:nth-child(2) {
+    width: 38px;
   }
   .header__link:nth-child(2):hover svg text {
     -webkit-transition: 0.2s;
@@ -86,6 +90,9 @@
   }
   .header__link:nth-child(3) {
     margin-right: 0;
+  }
+  .header__link:nth-child(3) svg {
+    width: 59px;
   }
   .header__link:nth-child(3):hover svg text {
     -webkit-transition: 0.2s;
@@ -1517,7 +1524,8 @@
   margin-bottom: 55px;
 }
 
-.vacancies .img-top-600, .vacancies .img-bottom-600 {
+.vacancies .img-top-600,
+.vacancies .img-bottom-600 {
   display: none;
 }
 
@@ -1534,16 +1542,19 @@
 
 .vacancies .card {
   width: 100%;
-  padding: 30px 30px 33px;
   border: 1px solid #DEDEDE;
   border-radius: 10px;
-  height: 200px;
+  min-height: 200px;
   position: relative;
   margin: 0 auto 30px;
 }
 
 .vacancies .card:last-child {
   margin-bottom: 55px;
+}
+
+.vacancies .card__main {
+  padding: 30px 30px 33px;
 }
 
 .vacancies .card__main-block {
@@ -1584,22 +1595,86 @@
   color: #AAAAAA;
 }
 
-.vacancies .card__arrow {
+.vacancies .card__addition {
   display: none;
+}
+
+.vacancies .description {
+  position: relative;
+  padding: 33px 30px;
+  font-size: 17px;
+  line-height: 1.4em;
+}
+
+.vacancies .description::before {
+  content: "";
+  height: 1px;
+  background: #DEDEDE;
+  width: 125px;
+  top: 0;
+  position: absolute;
+  left: calc(50% - 62.5px);
+}
+
+.vacancies .description h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.vacancies .description a {
+  color: #0095F6;
+  text-decoration: underline;
+}
+
+.vacancies .description ul {
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.vacancies .description ul li {
+  margin-bottom: 10px;
+}
+
+.vacancies .description .list-dots {
+  margin-left: 19px;
+}
+
+.vacancies .description .list-numbers {
+  list-style: none;
 }
 
 @media (min-width: 600px) {
   .vacancies {
     margin-bottom: 90px;
   }
-  .vacancies .img-top, .vacancies .img-bottom {
+  .vacancies .img-top,
+  .vacancies .img-bottom {
     display: none;
   }
-  .vacancies .img-top-600, .vacancies .img-bottom-600 {
+  .vacancies .img-top-600,
+  .vacancies .img-bottom-600 {
     display: block;
+  }
+  .vacancies .active .card__top::before, .vacancies .active .card__top::after {
+    background: #0095F6;
+  }
+  .vacancies .active .card__top::before {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+  }
+  .vacancies .active .card__top::after {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
   }
   .vacancies .card {
     max-width: 574px;
+    border-radius: 7px;
+    height: auto;
+    min-height: 122px;
+  }
+  .vacancies .card__main {
+    padding: 25px 41px 25px 35px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1609,13 +1684,12 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    border-radius: 7px;
-    height: auto;
-    padding: 25px 41px 25px 35px;
+    position: relative;
+    cursor: pointer;
   }
   .vacancies .card__main-block {
     width: 100%;
-    margin-right: 41px;
+    margin-right: 60px;
     text-align: left;
   }
   .vacancies .card__label {
@@ -1645,20 +1719,42 @@
             justify-content: space-between;
     margin-bottom: 17px;
   }
+  .vacancies .card__top::before, .vacancies .card__top::after {
+    content: '';
+    width: 15px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #000;
+    position: absolute;
+    top: calc(50% - 3px);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .vacancies .card__top:before {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+    right: 49px;
+  }
+  .vacancies .card__top:after {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+    right: 40px;
+  }
   .vacancies .card_desc {
     width: 100%;
   }
-  .vacancies .card__arrow {
-    margin: 0 auto;
-    display: block;
+  .vacancies .description {
+    padding: 25px 41px 25px 35px;
   }
 }
 
 @media (min-width: 900px) {
-  .vacancies .img-top, .vacancies .img-bottom {
+  .vacancies .img-top,
+  .vacancies .img-bottom {
     display: block;
   }
-  .vacancies .img-top-600, .vacancies .img-bottom-600 {
+  .vacancies .img-top-600,
+  .vacancies .img-bottom-600 {
     display: none;
   }
 }
@@ -1667,7 +1763,8 @@
   .vacancies {
     margin-bottom: 195px;
   }
-  .vacancies .img-top, .vacancies .img-bottom {
+  .vacancies .img-top,
+  .vacancies .img-bottom {
     display: none;
   }
   .vacancies .img-l {
