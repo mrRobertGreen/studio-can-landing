@@ -81,16 +81,9 @@
     padding: 33px 30px;
     font-size: 17px;
     line-height: 1.4em;
-    &::before {
-      content: "";
-      height: 1px;
-      background: $light-grey;
-      width: 125px;
-      top: 0;
-      position: absolute;
-      left: calc(50% - 62.5px);
-    }
+    // color: $grey;
     h3 {
+      color: black;
       font-size: 17px;
       font-weight: 600;
       margin-bottom: 20px;

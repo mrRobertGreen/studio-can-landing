@@ -1606,17 +1606,8 @@
   line-height: 1.4em;
 }
 
-.vacancies .description::before {
-  content: "";
-  height: 1px;
-  background: #DEDEDE;
-  width: 125px;
-  top: 0;
-  position: absolute;
-  left: calc(50% - 62.5px);
-}
-
 .vacancies .description h3 {
+  color: black;
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 20px;
