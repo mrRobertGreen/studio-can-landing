@@ -1226,11 +1226,22 @@
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  border: 1px solid #D8D8D8;
   border-radius: 5px;
   background-color: #fff;
   width: 345px;
   height: 251px;
+  cursor: pointer;
+}
+
+.examples__btn:hover {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.examples__btn:nth-child(1) {
+  background: url("../../icons/examples/potrfolio_mobyte.svg") 0 0/100% 100% no-repeat;
 }
 
 .examples__label {

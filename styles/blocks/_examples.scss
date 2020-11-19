@@ -2,6 +2,7 @@
 
 .examples {
   margin-bottom: 90px;
+ 
   &__title {
     font-size: 23px;
     text-align: center;
@@ -20,11 +21,19 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    border: 1px solid #D8D8D8;
+    // border: 1px solid #D8D8D8;
     border-radius: 5px;
     background-color: #fff;
     width: 345px;
     height: 251px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      transition: 0.3s;
+    }
+    &:nth-child(1) {
+      background: url("../../icons/examples/potrfolio_mobyte.svg")0 0/ 100% 100% no-repeat;
+    }
   }
 
   &__label {
