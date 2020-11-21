@@ -70,6 +70,12 @@ $(document).ready(function () {
             }, 500, "swing", () => isAllowedAutoSwitching = true);
             // последним параметром идет функция, которая выполняется послео кончания анимации
             // в ней мы вкючаем автопролистывание
+        } else if (this.hash == "#vacancies") {
+            await $('html,body').animate({
+                scrollTop: $(this.hash).offset().top + 30
+            }, 500, "swing", () => isAllowedAutoSwitching = true);
+            // последним параметром идет функция, которая выполняется послео кончания анимации
+            // в ней мы вкючаем автопролистывание
         } else {
             await $('html,body').animate({
                 scrollTop: $(this.hash).offset().top - 100

@@ -2,13 +2,11 @@
 
 .clouds {
   width: 100%;
-  // padding-bottom: 100px;
   display: flex;
   flex-direction: column;
 
   &__item {
     color: white;
-    background: #000;
     background-color: $blue;
     display: flex;
     flex-direction: column;
@@ -18,12 +16,13 @@
     font-size: 17px;
     position: relative;
     line-height: 20px;
+   
   }
 
   &__item-r {
+    float: right;
     align-self: flex-end;
     padding: 19px 52px;
-   
     width: 100%;
     max-width: 345px;
    

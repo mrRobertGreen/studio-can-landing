@@ -882,7 +882,6 @@
 
 .clouds__item {
   color: white;
-  background: #000;
   background-color: #0095F6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -904,6 +903,7 @@
 }
 
 .clouds__item-r {
+  float: right;
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding: 19px 52px;
@@ -1615,10 +1615,10 @@
   padding: 33px 30px;
   font-size: 17px;
   line-height: 1.4em;
+  color: #7D7D7D;
 }
 
 .vacancies .description h3 {
-  color: black;
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 20px;
