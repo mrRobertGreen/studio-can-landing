@@ -79,11 +79,10 @@
   .description {
     position: relative;
     padding: 33px 30px;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.4em;
     color: $grey;
     h3 {
-      // color: black;
       font-size: 17px;
       font-weight: 600;
       margin-bottom: 20px;
@@ -93,19 +92,13 @@
       text-decoration: underline;
     }
     
-    ul {
+    ul, ol {
       padding-left: 10px;
       margin-bottom: 20px;
+      margin-left: 19px;
       li {
         margin-bottom: 10px;
       }
-    }
-    .list-dots {
-      margin-left: 19px;
-    }
-
-    .list-numbers {
-      list-style: none;
     }
 
     p {}

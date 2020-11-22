@@ -11,6 +11,7 @@
 @import "./blocks/_vacancies";
 @import "./blocks/_contacts";
 @import "./blocks/_footer";
+@import "./blocks/_modal";
 
 body {
   width: 100%;
@@ -26,18 +27,6 @@ body {
 .container {
   padding: 0 15px;
   width: 100%;
-}
-
-.success {
-  position: fixed;
-  background: #fff;
-  max-width: 350px;
-  border-radius: 11px;
-  font-size: 17px;
-  padding: 20px 20px 25px;
-  z-index: 10;
-  text-align: center;
-  display: none;
 }
 
 @media (min-width: 1350px) {
