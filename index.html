@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="container">
-            <header class="header lock-padding" >
+            <header class="header lock-padding">
                 <div class="header__links">
                     <a href="https://vk.com/studentcan" class="header__link" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="39" viewBox="0 0 40 41" id="Vk">
@@ -201,17 +201,23 @@
                         <form class="form" action="#" id="form1">
                             <div class="input-group">
                                 <div class="input-group__input">
-                                    <input type="text" name="name" placeholder="Как к Вам обращаться" id="userName1"
-                                        required>
+                                    <input class="_req" type="text" name="name" placeholder="Как к Вам обращаться"
+                                        id="userName1">
+                                    <div class="error">Заполните поле</div>
                                 </div>
                                 <div class="input-group__input">
-                                    <input type="text" name="email" placeholder="Телефон, почта или мессенджер"
-                                        id="userPhone1" required>
+                                    <input class="_req" type="text" name="email"
+                                        placeholder="Телефон, почта или мессенджер" id="userPhone1">
+                                    <div class="error">Заполните поле</div>
                                 </div>
                             </div>
                             <div class="form__checkbox">
-                                <input type="checkbox" checked="true" class="checkbox" id="form-checkbox-1" required>
-                                <label for="form-checkbox-1" class="form__label">Согласие на обработку данных</label>
+                                <input type="checkbox" checked="true" class="checkbox _req" id="form-checkbox-1">
+                                <label for="form-checkbox-1" class="form__label">
+                                    Согласие на обработку данных
+                                    <div class="error_checkbox">Нужно согласие</div>
+                                </label>
+                                
                             </div>
                             <button type="submit" class="form__button">Оставить заявку</button>
                         </form>
@@ -289,8 +295,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/landing_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/landing_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/landing_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/landing_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/landing_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/landing_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -313,8 +321,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/bigsite_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/bigsite_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/bigsite_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/bigsite_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/bigsite_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/bigsite_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -337,8 +347,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/market_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/market_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/market_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/market_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/market_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/market_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -361,8 +373,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/chatbot_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/chatbot_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/chatbot_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/chatbot_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/chatbot_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/chatbot_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -392,8 +406,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/logo_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/logo_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/logo_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/logo_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/logo_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/logo_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -416,8 +432,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/branding_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/branding_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/branding_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/branding_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/branding_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/branding_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -440,8 +458,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/landing_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/landing_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/landing_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/landing_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/landing_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/landing_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -464,8 +484,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/bigsite_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/bigsite_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/bigsite_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/bigsite_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/bigsite_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/bigsite_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -488,8 +510,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/market_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/market_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/market_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/market_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/market_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/market_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -512,8 +536,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/poligraphy_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/poligraphy_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/poligraphy_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/poligraphy_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/poligraphy_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/poligraphy_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -536,8 +562,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/network_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/network_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/network_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/network_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/network_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/network_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -567,8 +595,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/context_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/context_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/context_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/context_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/context_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/context_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -591,8 +621,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/seo_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/seo_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/seo_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/seo_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/seo_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/seo_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -615,8 +647,10 @@
                                 <a href="#contacts">
                                     <!-- <img src="./icons/services/smm_white.webp" alt="" class="offer__icon white">
                                     <img src="./icons/services/smm_black.webp" alt="" class="offer__icon black"> -->
-                                    <img data-src="./icons/services/png/smm_white.png" alt="" class="offer__icon white lazyload">
-                                    <img data-src="./icons/services/png/smm_black.png" alt="" class="offer__icon black lazyload">
+                                    <img data-src="./icons/services/png/smm_white.png" alt=""
+                                        class="offer__icon white lazyload">
+                                    <img data-src="./icons/services/png/smm_black.png" alt=""
+                                        class="offer__icon black lazyload">
                                 </a>
                             </div>
                             <div class="offer__title">
@@ -644,7 +678,8 @@
                     Портфолио
                 </div>
                 <div class="examples__grid">
-                    <a class="examples__btn" href="https://www.behance.net/gallery/105171707/Logo-for-Mobyte" target="_blank">
+                    <a class="examples__btn" href="https://www.behance.net/gallery/105171707/Logo-for-Mobyte"
+                        target="_blank">
                         <div class="examples__label">
                             Логотип для Mobyte
                         </div>
@@ -837,7 +872,7 @@
                             <div class="card__main-block">
                                 <div class="card__top">
                                     <div class="card__label">
-                                        Кто в SEO разбирается   
+                                        Кто в SEO разбирается
                                     </div>
                                     <div class="card__percent">
                                         ~ 30% от заказов
@@ -851,10 +886,12 @@
                         <div class="card__addition description">
                             <h3>Ознакомьтесь с минимальными требованиями:</h3>
                             <ul class="list-dots">
-                                <li>владение SEO-инструментами (например, Key Collector, Screaming Frog, Seowork, TopVisor, Ahrefs, Semparser);</li>
-                                <li>владение инструментами аналитики для сегментирования аудитории и создания целей (Яндекс.Метрика, Google Analytics);</li>
+                                <li>владение SEO-инструментами (например, Key Collector, Screaming Frog, Seowork,
+                                    TopVisor, Ahrefs, Semparser);</li>
+                                <li>владение инструментами аналитики для сегментирования аудитории и создания целей
+                                    (Яндекс.Метрика, Google Analytics);</li>
                                 <li>знание факторов, повышающих конверсионность сайта;</li>
-                                <li>большой плюс —  умение создавать сквозную аналитику.</li>
+                                <li>большой плюс — умение создавать сквозную аналитику.</li>
                             </ul>
                             <h3>Выполните три простых шага:</h3>
                             <ol class="list-numbers">
@@ -873,7 +910,7 @@
                             <div class="card__main-block">
                                 <div class="card__top">
                                     <div class="card__label">
-                                        SMM-принц   
+                                        SMM-принц
                                     </div>
                                     <div class="card__percent">
                                         ~ 35% от заказов
@@ -924,11 +961,13 @@
                             <div class="input-group">
                                 <div class="input-group__input">
                                     <input type="text" name="name" placeholder="Как к Вам обращаться" id="userName2"
-                                        required>
+                                        class="_req">
+                                    <div class="error">Заполните поле</div>
                                 </div>
                                 <div class="input-group__input">
                                     <input type="text" name="email" placeholder="Телефон, почта или мессенджер"
-                                        id="userPhone2" required>
+                                        id="userPhone2" class="_req">
+                                    <div class="error">Заполните поле</div>
                                 </div>
                                 <div class="input-group__textarea">
                                     <textarea type="text" name="message" placeholder="Описание, комментарий"
@@ -936,9 +975,13 @@
                                 </div>
                             </div>
                             <div class="form__checkbox">
-                                <input type="checkbox" checked class="checkbox" id="form-checkbox-2" required>
-                                <label for="form-checkbox-2" class="form__label">Согласие на обработку
-                                    данных</label>
+                                <input type="checkbox" checked class="checkbox _req" id="form-checkbox-2">
+                                <label for="form-checkbox-2" class="form__label">
+                                    Согласие на обработку
+                                    данных
+                                    <div class="error_checkbox">Нужно согласие</div>
+                                </label>
+
                             </div>
                             <button type="submit" class="form__button">Оставить заявку</button>
                         </form>
@@ -1141,7 +1184,7 @@
         <script defer src="js/sly.js"></script>
         <script defer src="js/form.js"></script>
         <script defer src="js/script.js"></script>
-        
+
 
         <!-- Yandex.Metrika counter -->
         <!-- <script type="text/javascript" async>

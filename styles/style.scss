@@ -12,6 +12,7 @@
 @import "./blocks/_contacts";
 @import "./blocks/_footer";
 @import "./blocks/_modal";
+@import "./blocks/_error";
 
 body {
   width: 100%;
@@ -28,6 +29,7 @@ body {
   padding: 0 15px;
   width: 100%;
 }
+
 
 @media (min-width: 1350px) {
   .container {
