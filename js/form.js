@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				form.reset();
 				form.classList.remove('_sending');
 			} else {
-				alert("Что-то пошло не так... Попробуйте снова");
+				showFailModal()
 				form.classList.remove('_sending');
 			}
 		} else {
@@ -46,6 +46,20 @@ const showSuccessModal = () => {
 		setTimeout(() => {
 			$("div.success").removeClass("visible")
 			$("div.success").addClass("hidden")
+		}, 2500)
+	}
+}
+
+const showFailModal = () => {
+	// показ и автозакрытие попапа с сообщением об ошибке
+	if ($("div.fail").hasClass("visible")) {
+		// ...
+	} else {
+		$("div.fail").addClass("visible")
+		$("div.fail").removeClass("hidden")
+		setTimeout(() => {
+			$("div.fail").removeClass("visible")
+			$("div.fail").addClass("hidden")
 		}, 2500)
 	}
 }

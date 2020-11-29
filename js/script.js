@@ -54,7 +54,6 @@ $(document).ready(function () {
                 $('.menu-copy').css("display", "none");
             }
         }
-
     });
 
     const linkClasses = ".menu__track, .we-are__link, .clouds__item, .process, .offer"
