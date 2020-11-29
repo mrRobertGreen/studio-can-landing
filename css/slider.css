@@ -164,3 +164,15 @@
     height: 11px;
   }
 }
+
+.slider > div {
+  display: none;
+}
+
+.slider > div:first-child {
+  display: block;
+}
+
+.slider.slick-initialized > div {
+  display: block;
+}

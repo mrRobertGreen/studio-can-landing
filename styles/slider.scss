@@ -156,3 +156,19 @@
     }
 
 }
+
+.slider {
+    >div {
+      display: none;
+  
+      &:first-child {
+        display: block;
+      }
+    }
+  
+    &.slick-initialized {
+      >div {
+        display: block;
+      }
+    }
+  }
