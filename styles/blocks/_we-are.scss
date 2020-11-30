@@ -111,7 +111,20 @@
   }
 }
 
-@media (min-width: 350px) {
+@media (max-width: 325px) {
+  .we-are {
+    &__text_with-line {
+      font-size: 14px;
+
+      b {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 355px) {
   .we-are {
     &__text_with-line {
       font-size: 17px;
@@ -121,10 +134,10 @@
       }
     }
   }
-
 }
 
-@media (min-width: 375px) {
+
+@media (min-width: 376px) {
   .we-are {
     &__text_with-line {
       font-size: 17px;
