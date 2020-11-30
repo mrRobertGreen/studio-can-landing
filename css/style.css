@@ -1097,7 +1097,7 @@
   padding: 6px 35px 7px 35px;
   background: #0095F6;
   position: absolute;
-  z-index: 10;
+  z-index: 3;
 }
 
 .offer__label-unique {
