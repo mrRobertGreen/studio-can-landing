@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(window).on('load', function () {
     let slider;
     const ids = ["we", "services", "examples", "process", "vacancies", "contacts"] // массив id блоков
     let isAllowedAutoSwitching = true; // разрешено ли автопролистывание меню
@@ -56,14 +56,14 @@ $(document).ready(function () {
         }
     });
 
-    const linkClasses = ".menu__track, .we-are__link, .clouds__item, .process, .offer"
+    const linkClasses = ".menu__link, .menu__track, .we-are__link, .clouds__item, .process, .offer"
 
     $(linkClasses).on('click', '[href*="#"]', async function (e) {
         // плавная прокрутка до якоря
         e.preventDefault()
         isAllowedAutoSwitching = false
 
-        if (this.hash == "#we") {
+        if (this.hash == "#we") {   
             await $('html,body').animate({
                 scrollTop: $(this.hash).offset().top + 1
             }, 500, "swing", () => isAllowedAutoSwitching = true);

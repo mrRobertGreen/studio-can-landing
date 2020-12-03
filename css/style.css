@@ -1272,6 +1272,14 @@
   background: url("../../icons/examples/potrfolio_mobyte.svg") 0 0/100% 100% no-repeat;
 }
 
+.examples__btn:nth-child(2) {
+  background: url("../../icons/examples/potrfolio_sundelux.svg") 0 0/100% 100% no-repeat;
+}
+
+.examples__btn:nth-child(3) {
+  background: url("../../icons/examples/potrfolio_brucelogmun.svg") 0 0/100% 100% no-repeat;
+}
+
 .examples__label {
   text-align: center;
   font-size: 19px;
