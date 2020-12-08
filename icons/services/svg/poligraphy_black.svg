@@ -1,16 +1,16 @@
 <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
 <rect width="500" height="500" fill="black"/>
-<circle cx="374.189" cy="390.218" r="15.0983" transform="rotate(-74.3905 374.189 390.218)" fill="white"/>
-<path d="M370.271 391.072L599.967 500" stroke="white" stroke-width="11"/>
-<rect x="135.581" y="86.9063" width="311.081" height="272.728" rx="5.5" transform="rotate(17 135.581 86.9063)" fill="black" stroke="white" stroke-width="11"/>
-<path d="M135.514 278.931L213.473 187.14L226.047 310.366" stroke="white" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M166.096 247.917L220.727 276.034" stroke="white" stroke-width="11" stroke-linecap="round"/>
-<path d="M332.36 284.487L323.072 330.891" stroke="white" stroke-width="11" stroke-linecap="round"/>
-<ellipse cx="292.491" cy="276.521" rx="35.5012" ry="39.0162" stroke="white" stroke-width="11"/>
-<rect x="252.528" y="79.9947" width="22" height="124.68" rx="11" transform="rotate(-4.60193 252.528 79.9947)" fill="#FFC758" stroke="black" stroke-width="11"/>
-<rect x="423.933" y="134.889" width="22" height="108.268" rx="11" transform="rotate(48.4743 423.933 134.889)" fill="#FFC758" stroke="black" stroke-width="11"/>
-<rect x="454.266" y="294.589" width="22" height="72.5865" rx="11" transform="rotate(102.536 454.266 294.589)" fill="#FFC758" stroke="black" stroke-width="11"/>
+<circle cx="374.604" cy="390.521" r="15.0983" transform="rotate(-74.3905 374.604 390.521)" fill="white"/>
+<path d="M370 391L599.696 499.928" stroke="white" stroke-width="11"/>
+<rect x="135.652" y="86.8677" width="311.081" height="272.728" rx="5.5" transform="rotate(17 135.652 86.8677)" fill="black" stroke="white" stroke-width="11"/>
+<path d="M136 278.791L213.959 187L226.533 310.226" stroke="white" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M166 248L220.631 276.116" stroke="white" stroke-width="11" stroke-linecap="round"/>
+<path d="M332.288 284L323 330.404" stroke="white" stroke-width="11" stroke-linecap="round"/>
+<ellipse cx="292.501" cy="277.016" rx="35.5012" ry="39.0162" stroke="white" stroke-width="11"/>
+<rect x="252.076" y="79.959" width="22" height="124.68" rx="11" transform="rotate(-4.60193 252.076 79.959)" fill="#FDD706" stroke="black" stroke-width="11"/>
+<rect x="423.471" y="135.236" width="22" height="108.268" rx="11" transform="rotate(48.4743 423.471 135.236)" fill="#FDD706" stroke="black" stroke-width="11"/>
+<rect x="454.563" y="294.825" width="22" height="72.5865" rx="11" transform="rotate(102.536 454.563 294.825)" fill="#FDD706" stroke="black" stroke-width="11"/>
 </g>
 <defs>
 <clipPath id="clip0">
