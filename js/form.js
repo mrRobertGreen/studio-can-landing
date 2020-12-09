@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			form.classList.add('_sending');
 			let response = await fetch('sendmail.php', {
 				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				},
 				body: formData
 			});
 			if (response.ok) {
