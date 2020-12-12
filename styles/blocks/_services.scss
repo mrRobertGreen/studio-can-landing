@@ -43,6 +43,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  cursor: pointer;
 
   &__link {
     display: block;
@@ -67,32 +68,18 @@
   }
 
   &__icon-wrap {
+    overflow: hidden;
     position: relative;
     cursor: pointer;
-    &:hover .white {
-      opacity: 0;
-      transition: 0.3s;
-    }
-    &:hover .black {
-      transition: 0.3s;
-      opacity: 1;
-    }
+    margin-bottom: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.11);
+    border-radius: 7px;
   }
 
   &__icon {
-    display: block;
-    border-radius: 7px;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    display: block;    
+    transition: transform ease 0.3s;
     width: 100%;
-  }
-
-  .black {
-    position: absolute;
-    display: block;
-    top: 0;
-    width: 100%;
-    opacity: 0;
   }
 
   &__title {
@@ -146,18 +133,26 @@
     cursor: pointer;
     width: 100%;
     border-radius: 7px;
-    background: #F8F8F8;
     font-size: 19px;
     padding: 0 7px;
     text-align: center;
     height: 40px;
     padding: 10px 0;
     display: block;
-    
-    &:hover {
-      transition: 0.2s;
-      background: $blue;
-      color: #fff;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.11);
+    transition: all ease 0.3s;
+  }
+
+  &:hover {
+    .offer__icon {
+      transition: 0.3s;
+      transform:scale(1.05);
+    }
+    .offer__price {
+      
+      background: #F2F2F2;
+      box-shadow: none;
     }
   }
 }
