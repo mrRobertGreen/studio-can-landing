@@ -1,0 +1,43 @@
+@import "_vars";
+@import "_animation";
+@import "_slider";
+@import "./blocks/_header";
+@import "./blocks/_menu";
+@import "./blocks/_main";
+@import "./blocks/_we-are";
+@import "./blocks/_clouds";
+@import "./blocks/_services";
+@import "./blocks/_examples";
+@import "./blocks/_love";
+@import "./blocks/_process";
+@import "./blocks/_vacancies";
+@import "./blocks/_contacts";
+@import "./blocks/_footer";
+@import "./blocks/_modal";
+@import "./blocks/_error";
+@import "./blocks/_product-popup";
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  padding: 0 15px;
+  width: 100%;
+}
+
+
+@media (min-width: 1350px) {
+  .container {
+    margin: 0 auto;
+    width: 1300px;
+  }
+}

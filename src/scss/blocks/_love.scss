@@ -1,0 +1,63 @@
+@import "../_vars";
+
+.love {
+  @include flex-column;
+  margin-bottom: 90px;
+  font-size: 23px;
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 90px;
+  }
+
+  &__container {
+    color: #DEDEDE;
+    min-width: 375px;
+    overflow: hidden;
+  }
+
+  &__main {
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    margin: 6px 0;
+    color: #000;
+  }
+
+  &__first {
+    margin-right: 52px;
+  }
+
+  &__second {}
+
+  &__third {
+    margin-left: 26px;
+    margin-right: 75px;
+  }
+
+  &__fourth {}
+}
+
+@media (min-width: 900px) {
+  .love {
+    font-size: 25px;
+    &__main {
+      margin: 9px 0;
+    }
+    &__first {
+      margin-right: 39px;
+    }
+    &__third {
+      margin-left: 27px;
+      margin-right: 78px;
+    }
+  }
+}
+
+@media (min-width: 1350px) {
+  .love {
+    &__title {
+      // display: none;
+    }
+  }
+}

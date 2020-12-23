@@ -1,0 +1,5 @@
+@@include('files/router.js', {})
+@@include('files/script.js', {})
+@@include('files/form.js', {})
+@@include('files/products-data.js', {})
+@@include('files/product-popup.js', {})
