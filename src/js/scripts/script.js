@@ -59,7 +59,7 @@ $(window).on('load', function () {
 
     const linkClasses = ".menu__link, .menu__track, .we-are__link, .clouds__item, .process, .offer"
 
-    $(linkClasses).on('click', '[href*="#"]', async function (e) {
+    $(linkClasses).on('click', '[href^="#"]', async function (e) {
         // плавная прокрутка до якоря
         e.preventDefault()
         isAllowedAutoSwitching = false

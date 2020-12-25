@@ -40,7 +40,7 @@ let path = {
 	src: { // пути к исходным файлам	
 		favicon: src_folder + "/favicons/**",
 		html: [src_folder + "/*.html", "!" + src_folder + "/_*.html"],
-		js: [src_folder + "/js/index.js", src_folder + "/js/libs.js",  src_folder + "/js/jquery.js"],
+		js: [src_folder + "/js/index.js", src_folder + "/js/libs.js"],
 		php: [src_folder + "/php/**"],
 		css: [src_folder + "/scss/*.scss", "!" + src_folder + "/_*.scss"],
 		images: [src_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}", "!**/favicon.*"],
@@ -116,14 +116,14 @@ function js() {
 		.pipe(plumber())
 		.pipe(fileinclude())
 		.pipe(dest(path.build.js)) // сохраняем НЕ минифицированную версию js
-		.pipe(uglify(/* options */)) // минификация js файла
-		.pipe(
-			rename({
-				suffix: ".min", // переименовываем, добавляя к имени .min
-				extname: ".js"
-			})
-		)
-		.pipe(dest(path.build.js)) // сохраняем минифицированную версию js
+		//.pipe(uglify(/* options */)) // минификация js файла
+		// .pipe(
+		// 	rename({
+		// 		suffix: ".min", // переименовываем, добавляя к имени .min
+		// 		extname: ".js"
+		// 	})
+		// )
+		// .pipe(dest(path.build.js)) // сохраняем минифицированную версию js
 		.pipe(browsersync.stream());
 }
 function images() {
