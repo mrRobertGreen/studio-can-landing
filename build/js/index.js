@@ -560,15 +560,196 @@ const productsData = {
       "<p>10% — налоги и взносы;</p>" +
       "<p>15% — аммортизация, развитие;</p>" +
       "<p> 15% — вознаграждение старожил-атлантов =D</p>",
+    images: "<img src=\"../img/services/svg/landing_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/landing_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/landing_white.svg\" class=\"product-slider__item\" />",
+  },
+  design_bigsite: {
+    id: "design_bigsite",
+    name: "Большой сайт",
+    category: "Только дизайн",
+    includes: "<p>— Логотип со всеми необходимыми его вариантами;</p>" +
+      "<p>— Подбор шрифтов;</p>" +
+      "<p>— Цветовая палитра;</p>" +
+      "<p>— Руководство по использованию.</p>",
+    time: "<p>11 дней без учета правок</p>",
+    process: "<p>1. Знакомство и ответы на вопросы;</p>" +
+      " <p>2. Заключение договора;</p>" +
+      "<p>3. Поэтапное согласование матриц проекта, шрифтов и самого логотипа.</p>",
+    price: "20,000 ₽",
+    pricing: "<p class=\"mb-21\">Час работы дизайнера: ~ 500 ₽</p>" +
+      "<p>60% — вознаграждение специалиста;</p>" +
+      "<p>10% — налоги и взносы;</p>" +
+      "<p>15% — аммортизация, развитие;</p>" +
+      "<p> 15% — вознаграждение старожил-атлантов =D</p>",
+    images: "<img src=\"../img/services/svg/big_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/big_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/big_white.svg\" class=\"product-slider__item\" />",
+  },
+  design_market: {
+    id: "design_market",
+    name: "Интернет-магазин",
+    category: "Только дизайн",
+    includes: "<p>— Логотип со всеми необходимыми его вариантами;</p>" +
+      "<p>— Подбор шрифтов;</p>" +
+      "<p>— Цветовая палитра;</p>" +
+      "<p>— Руководство по использованию.</p>",
+    time: "<p>11 дней без учета правок</p>",
+    process: "<p>1. Знакомство и ответы на вопросы;</p>" +
+      " <p>2. Заключение договора;</p>" +
+      "<p>3. Поэтапное согласование матриц проекта, шрифтов и самого логотипа.</p>",
+    price: "20,000 ₽",
+    pricing: "<p class=\"mb-21\">Час работы дизайнера: ~ 500 ₽</p>" +
+      "<p>60% — вознаграждение специалиста;</p>" +
+      "<p>10% — налоги и взносы;</p>" +
+      "<p>15% — аммортизация, развитие;</p>" +
+      "<p> 15% — вознаграждение старожил-атлантов =D</p>",
+    images: "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />",
+  },
+  design_polygraphy: {
+    id: "design_polygraphy",
+    name: "Полиграфия",
+    category: "Только дизайн",
+    includes: "<p>— Логотип со всеми необходимыми его вариантами;</p>" +
+      "<p>— Подбор шрифтов;</p>" +
+      "<p>— Цветовая палитра;</p>" +
+      "<p>— Руководство по использованию.</p>",
+    time: "<p>11 дней без учета правок</p>",
+    process: "<p>1. Знакомство и ответы на вопросы;</p>" +
+      " <p>2. Заключение договора;</p>" +
+      "<p>3. Поэтапное согласование матриц проекта, шрифтов и самого логотипа.</p>",
+    price: "20,000 ₽",
+    pricing: "<p class=\"mb-21\">Час работы дизайнера: ~ 500 ₽</p>" +
+      "<p>60% — вознаграждение специалиста;</p>" +
+      "<p>10% — налоги и взносы;</p>" +
+      "<p>15% — аммортизация, развитие;</p>" +
+      "<p> 15% — вознаграждение старожил-атлантов =D</p>",
+    images: "<img src=\"../img/services/svg/poligraphy_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/poligraphy_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/poligraphy_white.svg\" class=\"product-slider__item\" />",
+  },
+  design_networks: {
+    id: "design_networks",
+    name: "Социальные сети",
+    category: "Только дизайн",
+    includes: "<p>— Логотип со всеми необходимыми его вариантами;</p>" +
+      "<p>— Подбор шрифтов;</p>" +
+      "<p>— Цветовая палитра;</p>" +
+      "<p>— Руководство по использованию.</p>",
+    time: "<p>11 дней без учета правок</p>",
+    process: "<p>1. Знакомство и ответы на вопросы;</p>" +
+      " <p>2. Заключение договора;</p>" +
+      "<p>3. Поэтапное согласование матриц проекта, шрифтов и самого логотипа.</p>",
+    price: "20,000 ₽",
+    pricing: "<p class=\"mb-21\">Час работы дизайнера: ~ 500 ₽</p>" +
+      "<p>60% — вознаграждение специалиста;</p>" +
+      "<p>10% — налоги и взносы;</p>" +
+      "<p>15% — аммортизация, развитие;</p>" +
+      "<p> 15% — вознаграждение старожил-атлантов =D</p>",
+    images: "<img src=\"../img/services/svg/network_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/network_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/network_white.svg\" class=\"product-slider__item\" />",
+  },
+  marketing_complex: {
+    id: "marketing_complex",
+    name: "Комплексная реклама",
+    category: "Реклама",
+    includes: "<p>— Логотип со всеми необходимыми его вариантами;</p>" +
+      "<p>— Подбор шрифтов;</p>" +
+      "<p>— Цветовая палитра;</p>" +
+      "<p>— Руководство по использованию.</p>",
+    time: "<p>11 дней без учета правок</p>",
+    process: "<p>1. Знакомство и ответы на вопросы;</p>" +
+      " <p>2. Заключение договора;</p>" +
+      "<p>3. Поэтапное согласование матриц проекта, шрифтов и самого логотипа.</p>",
+    price: "20,000 ₽",
+    pricing: "<p class=\"mb-21\">Час работы дизайнера: ~ 500 ₽</p>" +
+      "<p>60% — вознаграждение специалиста;</p>" +
+      "<p>10% — налоги и взносы;</p>" +
+      "<p>15% — аммортизация, развитие;</p>" +
+      "<p> 15% — вознаграждение старожил-атлантов =D</p>",
+    images: "<img src=\"../img/services/svg/complex_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/complex_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/complex_white.svg\" class=\"product-slider__item\" />",
+  },
+  marketing_context: {
+    id: "marketing_context",
+    name: "Контекстная реклама",
+    category: "Реклама",
+    includes: "<p>— Логотип со всеми необходимыми его вариантами;</p>" +
+      "<p>— Подбор шрифтов;</p>" +
+      "<p>— Цветовая палитра;</p>" +
+      "<p>— Руководство по использованию.</p>",
+    time: "<p>11 дней без учета правок</p>",
+    process: "<p>1. Знакомство и ответы на вопросы;</p>" +
+      " <p>2. Заключение договора;</p>" +
+      "<p>3. Поэтапное согласование матриц проекта, шрифтов и самого логотипа.</p>",
+    price: "20,000 ₽",
+    pricing: "<p class=\"mb-21\">Час работы дизайнера: ~ 500 ₽</p>" +
+      "<p>60% — вознаграждение специалиста;</p>" +
+      "<p>10% — налоги и взносы;</p>" +
+      "<p>15% — аммортизация, развитие;</p>" +
+      "<p> 15% — вознаграждение старожил-атлантов =D</p>",
+    images: "<img src=\"../img/services/svg/context_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/context_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/context_white.svg\" class=\"product-slider__item\" />",
+  },
+  marketing_seo: {
+    id: "marketing_seo",
+    name: "SEO продвижение",
+    category: "Реклама",
+    includes: "<p>— Логотип со всеми необходимыми его вариантами;</p>" +
+      "<p>— Подбор шрифтов;</p>" +
+      "<p>— Цветовая палитра;</p>" +
+      "<p>— Руководство по использованию.</p>",
+    time: "<p>11 дней без учета правок</p>",
+    process: "<p>1. Знакомство и ответы на вопросы;</p>" +
+      " <p>2. Заключение договора;</p>" +
+      "<p>3. Поэтапное согласование матриц проекта, шрифтов и самого логотипа.</p>",
+    price: "20,000 ₽",
+    pricing: "<p class=\"mb-21\">Час работы дизайнера: ~ 500 ₽</p>" +
+      "<p>60% — вознаграждение специалиста;</p>" +
+      "<p>10% — налоги и взносы;</p>" +
+      "<p>15% — аммортизация, развитие;</p>" +
+      "<p> 15% — вознаграждение старожил-атлантов =D</p>",
+    images: "<img src=\"../img/services/svg/seo_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/seo_white.svg\" class=\"product-slider__item\" />" +
+      "<img src=\"../img/services/svg/seo_white.svg\" class=\"product-slider__item\" />",
+  },
+  marketing_smm: {
+    id: "marketing_smm",
+    name: "SMM",
+    category: "Реклама",
+    includes: "<p>— Логотип со всеми необходимыми его вариантами;</p>" +
+      "<p>— Подбор шрифтов;</p>" +
+      "<p>— Цветовая палитра;</p>" +
+      "<p>— Руководство по использованию.</p>",
+    time: "<p>11 дней без учета правок</p>",
+    process: "<p>1. Знакомство и ответы на вопросы;</p>" +
+      " <p>2. Заключение договора;</p>" +
+      "<p>3. Поэтапное согласование матриц проекта, шрифтов и самого логотипа.</p>",
+    price: "20,000 ₽",
+    pricing: "<p class=\"mb-21\">Час работы дизайнера: ~ 500 ₽</p>" +
+      "<p>60% — вознаграждение специалиста;</p>" +
+      "<p>10% — налоги и взносы;</p>" +
+      "<p>15% — аммортизация, развитие;</p>" +
+      "<p> 15% — вознаграждение старожил-атлантов =D</p>",
     images: "<img src=\"../img/services/svg/smm_white.svg\" class=\"product-slider__item\" />" +
       "<img src=\"../img/services/svg/smm_white.svg\" class=\"product-slider__item\" />" +
       "<img src=\"../img/services/svg/smm_white.svg\" class=\"product-slider__item\" />",
   },
-  ids: ["code_design_landing", "code_design_bigsite", "code_design_market", 
-  "design_logo", "design_branding", "design_landing"]
+  ids: ["code_design_landing", "code_design_bigsite", "code_design_market",
+    "design_logo", "design_branding", "design_landing", "design_bigsite", "design_market",
+    "design_polygraphy", "design_networks", "marketing_complex", "marketing_context", "marketing_seo",
+    "marketing_smm"
+  ]
 }
 let currentProductId = ""
 let scrollPos = 0;
+const MENU_ITEM_WIDTH = 90
+const mainBody = document.querySelector('body');
 
 $(window).on('load', function () {
   // слайдер
@@ -587,7 +768,7 @@ $(window).on('load', function () {
     releaseSwing: true,
     swingSpeed: 0.5,
   };
-  slider = new Sly('#product-menu', options).init();
+  const productMenu = new Sly('#product-menu', options).init();
 
   // сами карточки
   const productPopup = document.querySelector(".product-popup")
@@ -609,30 +790,41 @@ $(window).on('load', function () {
       const price = document.querySelector(".product__price")
       const slider = document.querySelector("#product-slider")
       const category = document.querySelector(".product__category")
+      const arrowPrev = document.querySelector(".arrow-wrapper.prev")
+      const arrowNext = document.querySelector(".arrow-wrapper.next")
+
+      const curProductIndex = productsData.ids.findIndex((elem) => elem === id)
+
+      if (curProductIndex !== 0) {
+        const prevProductId = productsData.ids[curProductIndex - 1]
+        arrowPrev.style.opacity = 1;
+        arrowPrev.setAttribute("href", "/#" + prevProductId)
+      } else {
+        arrowPrev.setAttribute("href", "/#back")
+        arrowPrev.style.opacity = 0;
+      }
+      if (curProductIndex !== productsData.ids.length - 1) {
+        const nextProductId = productsData.ids[curProductIndex + 1]
+        arrowNext.style.opacity = 1;
+        arrowNext.setAttribute("href", "/#" + nextProductId)
+      } else {
+        arrowNext.setAttribute("href", "/#back")
+        arrowNext.style.opacity = 0;
+      }
+
 
       title.innerHTML = productsData[id].name
       price.innerHTML = productsData[id].price
       category.innerHTML = productsData[id].category
 
-      
-      // for (let i = 0; i < productsData[id].images.length; ++i) {
-      //   const img =  document.createElement('img');
-      //   img.src = productsData[id].images[i]
-      //   img.className = "product-slider__item"
-      //   $('#product-slider').slick('slickRemove', i)
-      //   slider.appendChild(img);
-      //   //$('#product-slider').slick('refresh')
-      //   //slider.innerHTML = productsData[id].images[i]
-      // }
-
       $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
       slider.innerHTML = productsData[id].images
       $('#product-slider').slick('refresh')
-      
-    
-      menuItems.forEach(item => {
-        if (item.id === id) {
+
+      menuItems.forEach((item, idx) => {
+        if (item.id === "menu_" + id) {
           item.classList.add("active")
+          productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
         } else {
           item.classList.remove("active")
         }
@@ -648,8 +840,14 @@ $(window).on('load', function () {
       if (hash === "#" + id) {
         scrollPos = window.pageYOffset
         productPopup.classList.remove("hidden")
+        if (window.innerWidth <= 600) {
+          mainContainer.classList.add("hidden")
+        }
+        if (window.innerWidth >= 1100) {
+          const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+          mainBody.style.paddingRight = lockPaddingValue;
+        }
         mainMenu.classList.add("hidden")
-        mainContainer.classList.add("hidden")
         $('body').css('overflow', 'hidden');
         setActiveProduct(id)
       }
@@ -660,6 +858,7 @@ $(window).on('load', function () {
       mainMenu.classList.remove("hidden")
       mainContainer.classList.remove("hidden")
       productPopup.classList.add("hidden")
+      mainBody.style.paddingRight = '0px';
       $('body').css('overflow', 'auto');
       window.scrollTo(0, scrollPos)
     }

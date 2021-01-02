@@ -1,5 +1,8 @@
 //let replace = require('gulp-replace'); //.pipe(replace('bar', 'foo'))
-let { src, dest } = require("gulp"); // пара основных функций из gulp
+let {
+	src,
+	dest
+} = require("gulp"); // пара основных функций из gulp
 let fs = require('fs'); // плагин для работы с файловой системой
 let gulp = require("gulp"); // сам gulp
 let browsersync = require("browser-sync").create(); // плагин для синхронизации браузера с изменениями в коде
@@ -55,6 +58,7 @@ let path = {
 	},
 	clean: "./" + project_name + "/" // папка, которые нужно чистить при запуске gulp
 };
+
 function browserSync(done) {
 	// функция, которая обновляет страницу
 	browsersync.init({
@@ -65,29 +69,42 @@ function browserSync(done) {
 		port: 5500, // указываем прт
 	});
 }
+
 function html() { // функция обработки html
- 	return src(path.src.html, {}) // src - функция добавляет в поток файлы из path.src.html
-		.pipe(plumber()) // проверка на синтаксические ошибки
+	return src(path.src.html, {}) // src - функция добавляет в поток файлы из path.src.html
+		.pipe(plumber({ // проверка на синтаксические ошибки
+			errorHandler: function (err) {
+				console.error(err);
+				this.emit('end');
+			}
+		}))
 		.pipe(fileinclude()) // включение возможность использовать @@include
 		.pipe(webphtml()) // интеграция webp
 		.pipe(version({ // добавление номера версии к файлам css
-			value : "%TS%", // значение номера - timestamp
+			value: "%TS%", // значение номера - timestamp
 			append: {
-				key : "v",
+				key: "v",
 				to: ["css"]
 			}
 		}))
 		.pipe(dest(path.build.html)) // dest - функция кладет обработанные в потоке файлы в path.build.html
 		.pipe(browsersync.stream()); // синхронизация с браузером
 }
+
 function php() { // функция обработки php
- 	return src(path.src.php, {}) 
-		.pipe(dest(path.build.php)) 
-		.pipe(browsersync.stream()); 
+	return src(path.src.php, {})
+		.pipe(dest(path.build.php))
+		.pipe(browsersync.stream());
 }
+
 function css() { // функция обработки файлов со стилями
 	return src(path.src.css, {})
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: function (err) {
+				console.error(err);
+				this.emit('end');
+			}
+		}))
 		.pipe( // перевод из scss в css
 			scss({
 				outputStyle: "expanded"
@@ -111,21 +128,28 @@ function css() { // функция обработки файлов со стил
 		.pipe(dest(path.build.css)) // кладем в path.build.css минифицированную версию css
 		.pipe(browsersync.stream());
 }
+
 function js() {
 	return src(path.src.js, {})
-		.pipe(plumber())
+		.pipe(plumber({ // проверка на синтаксические ошибки
+			errorHandler: function (err) {
+				console.error(err);
+				this.emit('end');
+			}
+		}))
 		.pipe(fileinclude())
 		.pipe(dest(path.build.js)) // сохраняем НЕ минифицированную версию js
-		//.pipe(uglify(/* options */)) // минификация js файла
-		// .pipe(
-		// 	rename({
-		// 		suffix: ".min", // переименовываем, добавляя к имени .min
-		// 		extname: ".js"
-		// 	})
-		// )
-		// .pipe(dest(path.build.js)) // сохраняем минифицированную версию js
+		.pipe(uglify(/* options */)) // минификация js файла
+		.pipe(
+			rename({
+				suffix: ".min", // переименовываем, добавляя к имени .min
+				extname: ".js"
+			})
+		)
+		.pipe(dest(path.build.js)) // сохраняем минифицированную версию js
 		.pipe(browsersync.stream());
 }
+
 function images() {
 	return src(path.src.images)
 		.pipe(newer(path.build.images)) // пропуск только новых изображений
@@ -147,29 +171,49 @@ function images() {
 		.pipe(
 			imagemin({ // сжатие изображений
 				progressive: true,
-				svgoPlugins: [{ removeViewBox: false }],
+				svgoPlugins: [{
+					removeViewBox: false
+				}],
 				interlaced: true,
 				optimizationLevel: 3 // 0 to 7
 			})
 		)
 		.pipe(dest(path.build.images))
 }
+
 function favicon() {
 	return src(path.src.favicon)
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: function (err) {
+				console.error(err);
+				this.emit('end');
+			}
+		}))
 		.pipe(dest(path.build.favicon))
 }
+
 function fonts_otf() { // функция для конвертирования otf шрифтов в ttf
 	return src('./' + src_folder + '/fonts/*.otf')
-		.pipe(plumber())
+		.pipe(plumber({ // проверка на синтаксические ошибки
+			errorHandler: function (err) {
+				console.error(err);
+				this.emit('end');
+			}
+		}))
 		.pipe(fonter({
 			formats: ['ttf']
 		}))
 		.pipe(gulp.dest('./' + src_folder + +'/fonts/'));
 }
+
 function fonts() { // функция для конвертирования ttf шрифтов в woff И woff2 
 	src(path.src.fonts)
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: function (err) {
+				console.error(err);
+				this.emit('end');
+			}
+		}))
 		.pipe(ttf2woff())
 		.pipe(dest(path.build.fonts));
 	return src(path.src.fonts)
@@ -177,6 +221,7 @@ function fonts() { // функция для конвертирования ttf �
 		.pipe(dest(path.build.fonts))
 		.pipe(browsersync.stream());
 }
+
 function fontstyle() { // функция для добавления импортов шрифтов в файл fonts.scss
 	/* после выполнения функции стоит зайти в файл /scss/fonts.scss и при надобности изменить
 	   у импортированных шрифтов значения font-weight и font-style
@@ -199,10 +244,13 @@ function fontstyle() { // функция для добавления импор�
 		})
 	}
 }
-function cb() { }
+
+function cb() {}
+
 function clean() { // очистка папки с билдом, нужна после каждого изменения для удаления лишнего и неактуального
 	return del(path.clean);
 }
+
 function watchFiles() { // наблюдение за измениями в указанных папках
 	gulp.watch([path.watch.html], html); // следим за path.watch.html и при изменении выполняем функцию html
 	gulp.watch([path.watch.css], css);

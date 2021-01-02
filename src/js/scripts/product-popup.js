@@ -1,5 +1,7 @@
 let currentProductId = ""
 let scrollPos = 0;
+const MENU_ITEM_WIDTH = 90
+const mainBody = document.querySelector('body');
 
 $(window).on('load', function () {
   // слайдер
@@ -18,7 +20,7 @@ $(window).on('load', function () {
     releaseSwing: true,
     swingSpeed: 0.5,
   };
-  slider = new Sly('#product-menu', options).init();
+  const productMenu = new Sly('#product-menu', options).init();
 
   // сами карточки
   const productPopup = document.querySelector(".product-popup")
@@ -40,30 +42,41 @@ $(window).on('load', function () {
       const price = document.querySelector(".product__price")
       const slider = document.querySelector("#product-slider")
       const category = document.querySelector(".product__category")
+      const arrowPrev = document.querySelector(".arrow-wrapper.prev")
+      const arrowNext = document.querySelector(".arrow-wrapper.next")
+
+      const curProductIndex = productsData.ids.findIndex((elem) => elem === id)
+
+      if (curProductIndex !== 0) {
+        const prevProductId = productsData.ids[curProductIndex - 1]
+        arrowPrev.style.opacity = 1;
+        arrowPrev.setAttribute("href", "/#" + prevProductId)
+      } else {
+        arrowPrev.setAttribute("href", "/#back")
+        arrowPrev.style.opacity = 0;
+      }
+      if (curProductIndex !== productsData.ids.length - 1) {
+        const nextProductId = productsData.ids[curProductIndex + 1]
+        arrowNext.style.opacity = 1;
+        arrowNext.setAttribute("href", "/#" + nextProductId)
+      } else {
+        arrowNext.setAttribute("href", "/#back")
+        arrowNext.style.opacity = 0;
+      }
+
 
       title.innerHTML = productsData[id].name
       price.innerHTML = productsData[id].price
       category.innerHTML = productsData[id].category
 
-      
-      // for (let i = 0; i < productsData[id].images.length; ++i) {
-      //   const img =  document.createElement('img');
-      //   img.src = productsData[id].images[i]
-      //   img.className = "product-slider__item"
-      //   $('#product-slider').slick('slickRemove', i)
-      //   slider.appendChild(img);
-      //   //$('#product-slider').slick('refresh')
-      //   //slider.innerHTML = productsData[id].images[i]
-      // }
-
       $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
       slider.innerHTML = productsData[id].images
       $('#product-slider').slick('refresh')
-      
-    
-      menuItems.forEach(item => {
-        if (item.id === id) {
+
+      menuItems.forEach((item, idx) => {
+        if (item.id === "menu_" + id) {
           item.classList.add("active")
+          productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
         } else {
           item.classList.remove("active")
         }
@@ -79,8 +92,14 @@ $(window).on('load', function () {
       if (hash === "#" + id) {
         scrollPos = window.pageYOffset
         productPopup.classList.remove("hidden")
+        if (window.innerWidth <= 600) {
+          mainContainer.classList.add("hidden")
+        }
+        if (window.innerWidth >= 1100) {
+          const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+          mainBody.style.paddingRight = lockPaddingValue;
+        }
         mainMenu.classList.add("hidden")
-        mainContainer.classList.add("hidden")
         $('body').css('overflow', 'hidden');
         setActiveProduct(id)
       }
@@ -91,6 +110,7 @@ $(window).on('load', function () {
       mainMenu.classList.remove("hidden")
       mainContainer.classList.remove("hidden")
       productPopup.classList.add("hidden")
+      mainBody.style.paddingRight = '0px';
       $('body').css('overflow', 'auto');
       window.scrollTo(0, scrollPos)
     }

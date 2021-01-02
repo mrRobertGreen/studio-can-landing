@@ -67,6 +67,7 @@ a,
 a:visited {
   text-decoration: none;
   color: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a:hover {
