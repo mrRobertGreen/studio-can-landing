@@ -1,5 +1,6 @@
 let currentProductId = ""
 let scrollPos = 0;
+let productScrollPos = 0;
 const MENU_ITEM_WIDTH = 90
 const mainBody = document.querySelector('body');
 
@@ -34,7 +35,7 @@ $(window).on('load', function () {
     body.scroll(0, 0)
   })
 
-  const setActiveProduct = async (id) => {
+  const setActiveProduct = (id) => {
     if (id !== currentProductId) {
       currentProductId = id
 
@@ -84,6 +85,44 @@ $(window).on('load', function () {
     }
   }
 
+  const formPopup = document.querySelector(".form-popup")
+  const formPopupTextarea = document.querySelector("._popup-textarea > textarea")
+
+  const openForm = () => {
+    formPopup.classList.remove("hidden")
+    let value;
+    const productName = productsData[currentProductId].name
+
+
+    switch (currentProductId) {
+      case "design_landing":
+        value = "Я хочу дизайн Лендинга";
+        break;
+      case "design_bigsite":
+        value = "Я хочу дизайн Большого сайта"
+        break;
+      case "design_market":
+        value = "Я хочу дизайн Интернет-магазина"
+        break;
+      case "design_polygraphy":
+        value = "Я хочу Полиграфию"
+        break;
+      case "design_networks":
+        value = "Я хочу дизайн Социальных сетей"
+        break;
+      case "marketing_complex":
+        value = "Я хочу Комплексную рекламу"
+        break;
+      case "marketing_context":
+        value = "Я хочу Контекстную рекламу"
+        break;
+      default:
+        value = "Я хочу " + productName;
+    }
+
+    formPopupTextarea.value = value;
+  }
+
   const onHashChange = () => {
 
     const hash = window.location.hash;
@@ -113,6 +152,19 @@ $(window).on('load', function () {
       mainBody.style.paddingRight = '0px';
       $('body').css('overflow', 'auto');
       window.scrollTo(0, scrollPos)
+    }
+
+    if (hash === "#back-to-product") {
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+      formPopup.classList.add("hidden")
+    }
+
+    if (hash === "#form") {
+      if (currentProductId) {
+        openForm()
+      } else {
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+      }
     }
   }
 

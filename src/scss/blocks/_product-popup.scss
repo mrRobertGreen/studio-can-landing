@@ -104,7 +104,11 @@
             border-radius: 11px;
             width: 885px;
             height: 90%;
-            overflow-y: hidden;
+            //height: auto;
+            overflow-y: scroll;
+            //overflow-y: hidden;
+            padding: 0 0 45px;
+            padding-bottom: 45px;
         }
         ::-webkit-scrollbar-track {
             border-radius: 10px;
@@ -189,7 +193,7 @@
 
     @media (min-width: 600px) {
         &__container {
-            padding: 0 30px 93px;
+            padding: 0 30px 45px;
         }
 
         &__header {
@@ -231,7 +235,6 @@
     @media (min-width: 1100px) {
         display: flex;
         flex-direction: row;
-        padding-bottom: 97px;
 
         &__title {
             font-size: 23px;
@@ -241,15 +244,27 @@
         &__price {
             font-size: 17px;
         }
-
+        &__footer {
+            position: fixed;
+            background: #fff;
+            width: 885px;
+            height: 45px;
+            bottom: 5%;
+            border-radius:0 0 11px 11px;
+        }
         &__container {
-            padding: 80px 45px 0 0;
+            height: auto;
+            overflow-y: visible;
+            width: 375px;
+            padding: 80px 0 30px 0;
         }
 
         &__left-block {
             width: 375px;
+            max-width: 375px;
+            min-width: 375px;
             margin-right: 45px;
-            padding-left: 45px;
+            margin-left: 45px;
         }
 
         &__header {
@@ -275,6 +290,7 @@
     margin-bottom: 15px;
 
     @media (min-width: 1100px) {
+        width: 375px;
         margin-top: 80px;
     }
 
@@ -288,6 +304,7 @@
 
         @media (min-width: 1100px) {
             padding: 0;
+            width: 375px;
         }
 
     }
@@ -327,6 +344,7 @@
 
     @media (min-width: 1100px) {
         max-width: 375px;
+        width: 375px;
         padding: 0;
     }
 
@@ -384,7 +402,7 @@
         line-height: 23px;
         margin-bottom: 20px;
         color: #000;
-    }
+    }  
 }
 
 .products-dots {
@@ -420,6 +438,21 @@
         left: calc(50% - 375px/2);
     }
     @media (min-width: 1100px) {
+        position: static;
+        margin: 0 auto;
+        width: 340px;
+        margin-bottom: 45px;
         bottom: calc(5% + 30px);
+    }
+}
+.product-btn._desktop {
+    display: none;
+    @media (min-width: 1100px) {
+        display: block;
+    }
+}
+.product-btn._mobile {
+    @media (min-width: 1100px) {
+        display: none;
     }
 }
