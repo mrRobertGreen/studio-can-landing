@@ -11,6 +11,9 @@
   top: 0;
   z-index: 10;
   margin: 30px auto 0;
+  padding-right: 0;
+  width: calc(100vw - 30px);
+  overflow: hidden;
 }
 
 /* Mixins */
@@ -18,6 +21,18 @@
 /* Variables */
 
 /* Classes */
+
+.slider__item {
+  visibility: hidden;
+}
+
+.slider__item:nth-child(1) {
+  visibility: visible;
+}
+
+.slider.slick-initialized .slider__item {
+  visibility: visible;
+}
 
 .slider {
   width: 100%;
@@ -148,6 +163,44 @@
 
 /* Classes */
 
+@font-face {
+  font-family: "Open Sans";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-display: swap;
+  src: url("../fonts/OpenSans-SemiBold.woff") format("woff"), url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Mixins */
+
+/* Variables */
+
+/* Classes */
+
 .header {
   width: 100%;
   height: 86px;
@@ -206,7 +259,6 @@
 
 .menu,
 .menu-copy {
-  width: 100%;
   border-radius: 25px;
 }
 
@@ -2162,6 +2214,7 @@
   font-size: 21px;
   line-height: 29px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .product__price {
@@ -2329,7 +2382,7 @@
 .product-btn {
   background: #0095F6;
   border-radius: 7px;
-  height: 37px;
+  height: 42px;
   color: #fff;
   position: fixed;
   font-size: 17px;
@@ -2635,10 +2688,10 @@
 body {
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .wrapper {
-  font-family: 'Open Sans', sans-serif;
   background-color: #fff;
   overflow-x: hidden;
   width: 100%;
@@ -3061,10 +3114,13 @@ body {
     -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
             transform: rotate(0deg);
+    width: 22px;
+    height: 22px;
   }
 
   .product__header .arrow-back::before,
   .product__header .arrow-back::after {
+    right: 11px;
     content: "";
     position: absolute;
     width: 2px;
@@ -3320,6 +3376,11 @@ body {
   .header {
     padding: 23px 0;
     margin-bottom: 25px;
+  }
+
+  .menu,
+  .menu-copy {
+    width: 100%;
   }
 
   .menu__track {
@@ -3595,7 +3656,7 @@ body {
     width: 885px;
     height: 90%;
     overflow-y: scroll;
-    padding: 0 0 45px;
+    padding: 0 45px 0 0;
     padding-bottom: 45px;
   }
 
@@ -3654,8 +3715,10 @@ body {
   }
 
   .product__container {
+    max-height: auto;
+    min-height: auto;
     height: auto;
-    overflow-y: visible;
+    overflow: visible;
     width: 375px;
     padding: 80px 0 30px 0;
   }
@@ -3666,6 +3729,11 @@ body {
     min-width: 375px;
     margin-right: 45px;
     margin-left: 45px;
+  }
+
+  .product__container-wrapper {
+    height: auto;
+    min-height: auto;
   }
 
   .product__header {
@@ -3698,6 +3766,7 @@ body {
   }
 
   .product-btn {
+    height: 37px;
     position: static;
     margin: 0 auto;
     width: 340px;
@@ -3924,6 +3993,7 @@ body {
 
   .vacancies {
     margin-bottom: 195px;
+    position: relative;
   }
 
   .vacancies .img-top,
@@ -3935,6 +4005,7 @@ body {
     display: block;
     position: absolute;
     left: -30px;
+    top: 155px;
   }
 
   .vacancies .img-r,
@@ -3943,6 +4014,7 @@ body {
     display: block;
     position: absolute;
     right: -30px;
+    top: 155px;
   }
 
   .vacancies__title {

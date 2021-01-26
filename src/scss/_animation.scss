@@ -3,6 +3,9 @@
     top: 0;
     z-index: 10;
     margin: 30px auto 0;
+    padding-right: 0;
+    width: calc(100vw - 30px);
+    overflow: hidden;
 }
 
 @media (min-width: 900px) {

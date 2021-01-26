@@ -1,10 +1,23 @@
 @import "vars";
 
 .slider {
+    &__item {
+        visibility: hidden;
+    }
+    &__item:nth-child(1) {
+        visibility: visible;
+    }
+}
+.slider.slick-initialized {
+    .slider__item {
+        visibility: visible;
+    }
+}
+
+.slider {
     width: 100%;
     min-width: 0;
     overflow: hidden;
-
 
     &__item {
         padding: 0 0 62px;

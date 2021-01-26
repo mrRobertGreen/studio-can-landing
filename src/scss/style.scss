@@ -1,6 +1,7 @@
 @import "_vars";
 @import "_animation";
 @import "_slider";
+@import "_fonts";
 @import "./blocks/_header";
 @import "./blocks/_menu";
 @import "./blocks/_main";
@@ -21,10 +22,10 @@
 body {
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .wrapper {
-  font-family: 'Open Sans', sans-serif;
   background-color: #fff;
   overflow-x: hidden;
   width: 100%;

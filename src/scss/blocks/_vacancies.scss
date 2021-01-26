@@ -226,6 +226,7 @@
 @media (min-width: 1350px) {
   .vacancies {
     margin-bottom: 195px;
+    position: relative;
 
     .img-top,
     .img-bottom {
@@ -236,12 +237,14 @@
       display: block;
       position: absolute;
       left: -30px;
+      top: 155px;
     }
 
     .img-r {
       display: block;
       position: absolute;
       right: -30px;
+      top: 155px;
     }
 
     &__title {

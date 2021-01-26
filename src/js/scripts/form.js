@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const form1 = document.getElementById('form1');
 	const form2 = document.getElementById('form2');
+	const formPopup = document.getElementById('form-popup');
 
 	form1.addEventListener('submit', (e) => formSend(e, form1));
 	form2.addEventListener('submit', (e) => formSend(e, form2));
+	formPopup.addEventListener('submit', (e) => formSend(e, formPopup));
 
 
 	async function formSend(e, form) {

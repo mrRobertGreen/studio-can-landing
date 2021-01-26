@@ -4,11 +4,13 @@ let productScrollPos = 0;
 const MENU_ITEM_WIDTH = 90
 const mainBody = document.querySelector('body');
 
+
+
 $(window).on('load', function () {
   // слайдер
   $("#product-slider").slick({
     arrows: false,
-    dots: true,
+    dots: false,
   })
 
   // меню
@@ -35,12 +37,23 @@ $(window).on('load', function () {
     body.scroll(0, 0)
   })
 
+
+
   const setActiveProduct = (id) => {
     if (id !== currentProductId) {
       currentProductId = id
 
+      const htmlDots = `<div class="products-dots">
+        <div class="products-dots__dot"></div>
+        <div class="products-dots__dot"></div>
+        <div class="products-dots__dot"></div>
+      </div>
+`
+
       const title = document.querySelector(".product__title")
-      const price = document.querySelector(".product__price")
+      const detailsWrapper = document.querySelector(".product-details-wrapper")
+      const productDetails = document.querySelectorAll(".product-details")
+      // const price = document.querySelector(".product__price")
       const slider = document.querySelector("#product-slider")
       const category = document.querySelector(".product__category")
       const arrowPrev = document.querySelector(".arrow-wrapper.prev")
@@ -65,9 +78,8 @@ $(window).on('load', function () {
         arrowNext.style.opacity = 0;
       }
 
-
       title.innerHTML = productsData[id].name
-      price.innerHTML = productsData[id].price
+      // price.innerHTML = productsData[id].price
       category.innerHTML = productsData[id].category
 
       $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
@@ -82,6 +94,26 @@ $(window).on('load', function () {
           item.classList.remove("active")
         }
       })
+
+      detailsWrapper.innerHTML = ""
+
+      productsData[id].details.forEach((detail, detailIdx) => {
+        const productDetailsBlock = document.createElement("div");
+        productDetailsBlock.classList.add("product-details")
+        const title = `<div class="product-details__title">${detail.title}</div>`
+        let paragraphs = ""
+        detail.items.forEach((item, itemIdx) => {
+          if (detailIdx === productsData[id].details.length - 1 && itemIdx === 0) {
+            paragraphs += `<p class="mb-21">${item}</p>`
+          } else {
+            paragraphs += `<p>${item}</p>`
+          }
+        })
+        productDetailsBlock.innerHTML = title + paragraphs
+        if (detailIdx === productsData[id].details.length - 1) detailsWrapper.innerHTML += htmlDots
+        detailsWrapper.appendChild(productDetailsBlock)
+      })
+
     }
   }
 
@@ -139,7 +171,7 @@ $(window).on('load', function () {
           mainBody.style.paddingRight = lockPaddingValue;
         }
         mainMenu.classList.add("hidden")
-        $('body').css('overflow', 'hidden');
+        mainBody.style['overflow-y'] = 'hidden'
         setActiveProduct(id)
       }
     })
@@ -150,7 +182,7 @@ $(window).on('load', function () {
       mainContainer.classList.remove("hidden")
       productPopup.classList.add("hidden")
       mainBody.style.paddingRight = '0px';
-      $('body').css('overflow', 'auto');
+      mainBody.style['overflow-y'] = 'auto'
       window.scrollTo(0, scrollPos)
     }
 
