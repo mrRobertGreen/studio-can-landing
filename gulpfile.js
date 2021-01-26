@@ -1,4 +1,3 @@
-//let replace = require('gulp-replace'); //.pipe(replace('bar', 'foo'))
 let {
 	src,
 	dest
@@ -25,7 +24,6 @@ let fonter = require('gulp-fonter'); // плагин для конвертаци
 let ttf2woff = require('gulp-ttf2woff'); // плагин для конвертации ttf шрифтов в woff
 let ttf2woff2 = require('gulp-ttf2woff2'); // плагин для конвертации ttf шрифтов в woff2
 
-// let project_name = require("path").basename(__dirname); // папка с конечными файлами проекта (build)
 let project_name = "build"; // папка с конечными файлами проекта (build)
 let src_folder = "src"; // папка с исходниками
 
@@ -228,6 +226,7 @@ async function add_fonts_to_scss() { // функция для добавлени
 	   */
 	fs.writeFile(src_folder + '/scss/_fonts.scss', '', emptyCallback);
 	fs.readdir(path.build.fonts, async function (err, files) {
+		if (!files) return
 		files = removeExtensionsFromFiles(files)
 		files = removeDuplicatesFromArr(files)
 		if (err) {
@@ -235,9 +234,9 @@ async function add_fonts_to_scss() { // функция для добавлени
 		} else {
 			await fs.appendFile(src_folder + '/scss/_fonts.scss', '@import "_vars.scss";\r\n', emptyCallback)
 
-			for (const file of files) {
-				let fontname = file.split('.')[0];
-				await fs.appendFile(src_folder + '/scss/_fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', emptyCallback);
+			for (const font of files) {
+				
+				await fs.appendFile(src_folder + '/scss/_fonts.scss', '@include font("' + font + '", "' + font + '", "400", "normal");\r\n', emptyCallback);
 			}
 		}
 	})
@@ -257,7 +256,6 @@ function clean() { // очистка папки с билдом, нужна по
 	return del(path.clean);
 }
 
-
 function watchFiles() { // наблюдение за измениями в указанных папках
 	gulp.watch([path.watch.html], html); // следим за path.watch.html и при изменении выполняем функцию html
 	gulp.watch([path.watch.css], css);
@@ -267,7 +265,7 @@ function watchFiles() { // наблюдение за измениями в ук�
 }
 
 // private tasks
-let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, images, php, favicon), fonts, gulp.parallel(add_fonts_to_scss));
+let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, images, php, favicon), fonts);
 let watch = gulp.parallel(build, watchFiles, browserSync); // комбинируем задания, которые нужно выполнять параллельно
 
 // чтобы зарегестрировать задания, их нужно экспортировать
