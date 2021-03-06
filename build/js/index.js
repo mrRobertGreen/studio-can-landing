@@ -1261,7 +1261,7 @@ $(window).on('load', function () {
       slider.innerHTML = productsData[id].images
       $('#product-slider').slick('refresh')
 
-      menuItems.forEach((item, idx) => {
+      menuItems.forEach((item, idx) => {  
         if (item.id === "menu_" + id) {
           item.classList.add("active")
           productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
@@ -1299,8 +1299,7 @@ $(window).on('load', function () {
     formPopup.classList.remove("hidden")
     let value;
     const productName = productsData[currentProductId].name
-
-
+ 
     switch (currentProductId) {
       case "design_landing":
         value = "Я хочу дизайн Лендинга";
