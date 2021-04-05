@@ -7,12 +7,7 @@ const mainBody = document.querySelector('body');
 
 
 $(window).on('load', function () {
-  // слайдер
-  $("#product-slider").slick({
-    arrows: false,
-    dots: false,
-  })
-
+  
   // меню
   const options = {
     horizontal: 1,
@@ -30,14 +25,12 @@ $(window).on('load', function () {
   const mainMenu = document.querySelector("#frame")
   const mainContainer = document.querySelector("#main-container")
   const menuItems = document.querySelectorAll(".product-menu__item")
-  const body = document.querySelector(".product-popup__body")
+  // const body = document.querySelector(".product-popup__body")
 
-  $('#product-slider').on("reInit", () => {
-    productPopup.scroll(0, 0)
-    body.scroll(0, 0)
-  })
-
-
+  // $('#product-slider').on("reInit", () => {
+  //   productPopup.scroll(0, 0)
+  //   body.scroll(0, 0)
+  // })
 
   const setActiveProduct = (id) => {
     if (id !== currentProductId) {
@@ -52,8 +45,6 @@ $(window).on('load', function () {
 
       const title = document.querySelector(".product__title")
       const detailsWrapper = document.querySelector(".product-details-wrapper")
-      const productDetails = document.querySelectorAll(".product-details")
-      // const price = document.querySelector(".product__price")
       const slider = document.querySelector("#product-slider")
       const category = document.querySelector(".product__category")
       const arrowPrev = document.querySelector(".arrow-wrapper.prev")
@@ -79,14 +70,11 @@ $(window).on('load', function () {
       }
 
       title.innerHTML = productsData[id].name
-      // price.innerHTML = productsData[id].price
       category.innerHTML = productsData[id].category
 
-      $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
+      // $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
       slider.innerHTML = productsData[id].images
-      $('#product-slider').slick('refresh')
-
-      menuItems.forEach((item, idx) => {  
+      menuItems.forEach((item, idx) => {
         if (item.id === "menu_" + id) {
           item.classList.add("active")
           productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
@@ -113,7 +101,6 @@ $(window).on('load', function () {
         if (detailIdx === productsData[id].details.length - 1) detailsWrapper.innerHTML += htmlDots
         detailsWrapper.appendChild(productDetailsBlock)
       })
-
     }
   }
 
@@ -124,7 +111,7 @@ $(window).on('load', function () {
     formPopup.classList.remove("hidden")
     let value;
     const productName = productsData[currentProductId].name
- 
+
     switch (currentProductId) {
       case "design_landing":
         value = "Я хочу дизайн Лендинга";

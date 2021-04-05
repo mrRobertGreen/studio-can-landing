@@ -11,15 +11,16 @@
 	$mail->IsHTML(true);
 
 	//От кого письмо
-	$mail->setFrom('hi@studentcan.ru', 'StudentCan');
+	$mail->setFrom('hi@studiocan.ru', 'StudioCan');
 	//Кому отправить
-	$mail->addAddress('hello@studentcan.ru');
+	$mail->addAddress('hello@studiocan.ru');
+	$mail->addAddress('mrrobertgreen17@gmail.com');
 	//Тема письма
 	$mail->Subject = 'Заявка StudentCan';
 
 
 	//Тело письма
-	$body = '<h1>Получена новая заявка с сайта StudentCan!</h1>';
+	$body = '<h1>Получена новая заявка с сайта StudioCan!</h1>';
 	
 	if(trim(!empty($_POST['name']))){
 		$body.='<p><strong>Имя:</strong> '.$_POST['name'].'</p>';

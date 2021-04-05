@@ -25,11 +25,13 @@
 		"gulp-ttf2woff": "latest",
 		"gulp-ttf2woff2": "latest",
 		"gulp-uglify-es": "latest",
+		"gulp-version-number": "^0.2.4",
 		"gulp-webp-html": "^1.0.2",
+		"imagemin-mozjpeg": "^9.0.0",
+		"imagemin-pngquant": "^9.0.2",
 		"imagemin-webp": "latest",
 		"transform-runtime": "0.0.0",
-		"webp-converter": "^2.2.3",
-		"gulp-version-number": "^0.2.4"
+		"webp-converter": "^2.2.3"
 	},
 	"dependencies": {}
 }

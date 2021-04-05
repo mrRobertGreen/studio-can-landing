@@ -14,6 +14,7 @@
 	$mail->setFrom('hi@studiocan.ru', 'StudioCan');
 	//Кому отправить
 	$mail->addAddress('hello@studiocan.ru');
+	$mail->addAddress('mrrobertgreen17@gmail.com');
 	//Тема письма
 	$mail->Subject = 'Заявка StudentCan';
 

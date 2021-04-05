@@ -1,6 +1,6 @@
 $(window).on('load', function () {
     let slider;
-    const ids = ["we", "services", "examples", "process", "vacancies", "contacts"] // массив id блоков
+    const ids = ["services", "we", "examples", "process", "vacancies", "contacts"] // массив id блоков
     let isAllowedAutoSwitching = true; // разрешено ли автопролистывание меню
 
     
@@ -21,7 +21,7 @@ $(window).on('load', function () {
         slider = new Sly('#frame', options).init();
     }
 
-    $("#menu-fake").width($("#menu-we").width()) // установили начальную ширину бегунку
+    $("#menu-fake").width($("#menu-services").width()) // установили начальную ширину бегунку
 
     if (window.matchMedia('(min-width: 900px)').matches) {
         // если ширина экрана больше 900 пикселей
@@ -244,13 +244,13 @@ const bigMenuController = async (id) => {
     $("#" + id).addClass("menu__item_active") // добавили активный класс к блоку, на который тыкнули
     const fakeItem = $("#menu-fake") // нашли наш бегающий блок
     switch (id) {
-        case "menu-we":
-            await moveFakeItem(3) // подвинули бегунок на 3 пикселя вправо
-            fakeItem.width($("#menu-we").width()) // установили ему ширину равную размеру блока, по которому он едет
-            break
         case "menu-services":
-            await moveFakeItem($("#menu-we").width() + 3) // подвинули бегунок на ширину предыдущего блока + 3px
+            await moveFakeItem(3)  // подвинули бегунок на 3 пикселя вправо 
             fakeItem.width($("#menu-services").width()) // установили ему ширину равную размеру блока, по которому он едет
+            break
+        case "menu-we":
+            await moveFakeItem($("#menu-services").width() + 3) // подвинули бегунок на ширину предыдущего блока + 3px
+            fakeItem.width($("#menu-we").width()) // установили ему ширину равную размеру блока, по которому он едет
             break
             // далее все аналогично
         case "menu-examples":
@@ -281,16 +281,17 @@ const smallMenuController = async (id, slider) => {
     $("#" + id).addClass("menu__item_active")
     const fakeItem = $("#menu-fake")
     switch (id) {
-        case "menu-we":
-            await moveFakeItem(2) // подвинули бегунок на 2 пикселя вправо
-            fakeItem.width($("#menu-we").width()) // установили ему ширину равную размеру блока, по которому он едет
+        case "menu-services":
+            await moveFakeItem($("#menu-we").width() + 2) // подвинули бегунок на 2 пикселя вправо
+            fakeItem.width($("#menu-services").width()) // установили ему ширину равную размеру блока, по которому он едет
             slider.slideTo(0) // сдвинули слайдер в начало
             break
-        case "menu-services":
-            await moveFakeItem($("#menu-we").width() + 2)
-            fakeItem.width($("#menu-services").width())
-            slider.slideTo($("#menu-we").width() / 4 + 2) // сдвинули на ширину предыдущего блока + 2px вправо
+        case "menu-we":
+            await moveFakeItem($("#menu-services").width() + 2) 
+            fakeItem.width($("#menu-we").width())
+            slider.slideTo($("#menu-services").width() / 4 + 2) // сдвинули на ширину предыдущего блока + 2px вправо
             break
+        
         case "menu-examples":
             await moveFakeItem($("#menu-we").width() + $("#menu-services").width() + 2)
             fakeItem.width($("#menu-examples").width())

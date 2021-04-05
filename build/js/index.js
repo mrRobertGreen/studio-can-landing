@@ -1,6 +1,6 @@
 $(window).on('load', function () {
     let slider;
-    const ids = ["we", "services", "examples", "process", "vacancies", "contacts"] // массив id блоков
+    const ids = ["services", "we", "examples", "process", "vacancies", "contacts"] // массив id блоков
     let isAllowedAutoSwitching = true; // разрешено ли автопролистывание меню
 
     
@@ -21,7 +21,7 @@ $(window).on('load', function () {
         slider = new Sly('#frame', options).init();
     }
 
-    $("#menu-fake").width($("#menu-we").width()) // установили начальную ширину бегунку
+    $("#menu-fake").width($("#menu-services").width()) // установили начальную ширину бегунку
 
     if (window.matchMedia('(min-width: 900px)').matches) {
         // если ширина экрана больше 900 пикселей
@@ -244,13 +244,13 @@ const bigMenuController = async (id) => {
     $("#" + id).addClass("menu__item_active") // добавили активный класс к блоку, на который тыкнули
     const fakeItem = $("#menu-fake") // нашли наш бегающий блок
     switch (id) {
-        case "menu-we":
-            await moveFakeItem(3) // подвинули бегунок на 3 пикселя вправо
-            fakeItem.width($("#menu-we").width()) // установили ему ширину равную размеру блока, по которому он едет
-            break
         case "menu-services":
-            await moveFakeItem($("#menu-we").width() + 3) // подвинули бегунок на ширину предыдущего блока + 3px
+            await moveFakeItem(3)  // подвинули бегунок на 3 пикселя вправо 
             fakeItem.width($("#menu-services").width()) // установили ему ширину равную размеру блока, по которому он едет
+            break
+        case "menu-we":
+            await moveFakeItem($("#menu-services").width() + 3) // подвинули бегунок на ширину предыдущего блока + 3px
+            fakeItem.width($("#menu-we").width()) // установили ему ширину равную размеру блока, по которому он едет
             break
             // далее все аналогично
         case "menu-examples":
@@ -281,16 +281,17 @@ const smallMenuController = async (id, slider) => {
     $("#" + id).addClass("menu__item_active")
     const fakeItem = $("#menu-fake")
     switch (id) {
-        case "menu-we":
-            await moveFakeItem(2) // подвинули бегунок на 2 пикселя вправо
-            fakeItem.width($("#menu-we").width()) // установили ему ширину равную размеру блока, по которому он едет
+        case "menu-services":
+            await moveFakeItem($("#menu-we").width() + 2) // подвинули бегунок на 2 пикселя вправо
+            fakeItem.width($("#menu-services").width()) // установили ему ширину равную размеру блока, по которому он едет
             slider.slideTo(0) // сдвинули слайдер в начало
             break
-        case "menu-services":
-            await moveFakeItem($("#menu-we").width() + 2)
-            fakeItem.width($("#menu-services").width())
-            slider.slideTo($("#menu-we").width() / 4 + 2) // сдвинули на ширину предыдущего блока + 2px вправо
+        case "menu-we":
+            await moveFakeItem($("#menu-services").width() + 2) 
+            fakeItem.width($("#menu-we").width())
+            slider.slideTo($("#menu-services").width() / 4 + 2) // сдвинули на ширину предыдущего блока + 2px вправо
             break
+        
         case "menu-examples":
             await moveFakeItem($("#menu-we").width() + $("#menu-services").width() + 2)
             fakeItem.width($("#menu-examples").width())
@@ -1182,12 +1183,7 @@ const mainBody = document.querySelector('body');
 
 
 $(window).on('load', function () {
-  // слайдер
-  $("#product-slider").slick({
-    arrows: false,
-    dots: false,
-  })
-
+  
   // меню
   const options = {
     horizontal: 1,
@@ -1205,14 +1201,12 @@ $(window).on('load', function () {
   const mainMenu = document.querySelector("#frame")
   const mainContainer = document.querySelector("#main-container")
   const menuItems = document.querySelectorAll(".product-menu__item")
-  const body = document.querySelector(".product-popup__body")
+  // const body = document.querySelector(".product-popup__body")
 
-  $('#product-slider').on("reInit", () => {
-    productPopup.scroll(0, 0)
-    body.scroll(0, 0)
-  })
-
-
+  // $('#product-slider').on("reInit", () => {
+  //   productPopup.scroll(0, 0)
+  //   body.scroll(0, 0)
+  // })
 
   const setActiveProduct = (id) => {
     if (id !== currentProductId) {
@@ -1227,8 +1221,6 @@ $(window).on('load', function () {
 
       const title = document.querySelector(".product__title")
       const detailsWrapper = document.querySelector(".product-details-wrapper")
-      const productDetails = document.querySelectorAll(".product-details")
-      // const price = document.querySelector(".product__price")
       const slider = document.querySelector("#product-slider")
       const category = document.querySelector(".product__category")
       const arrowPrev = document.querySelector(".arrow-wrapper.prev")
@@ -1254,14 +1246,11 @@ $(window).on('load', function () {
       }
 
       title.innerHTML = productsData[id].name
-      // price.innerHTML = productsData[id].price
       category.innerHTML = productsData[id].category
 
-      $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
+      // $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
       slider.innerHTML = productsData[id].images
-      $('#product-slider').slick('refresh')
-
-      menuItems.forEach((item, idx) => {  
+      menuItems.forEach((item, idx) => {
         if (item.id === "menu_" + id) {
           item.classList.add("active")
           productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
@@ -1288,7 +1277,6 @@ $(window).on('load', function () {
         if (detailIdx === productsData[id].details.length - 1) detailsWrapper.innerHTML += htmlDots
         detailsWrapper.appendChild(productDetailsBlock)
       })
-
     }
   }
 
@@ -1299,7 +1287,7 @@ $(window).on('load', function () {
     formPopup.classList.remove("hidden")
     let value;
     const productName = productsData[currentProductId].name
- 
+
     switch (currentProductId) {
       case "design_landing":
         value = "Я хочу дизайн Лендинга";
