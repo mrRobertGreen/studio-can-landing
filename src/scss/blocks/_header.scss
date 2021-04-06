@@ -7,6 +7,10 @@
   padding: 20px 0 27px;
   position: relative;
 
+  &__phone {
+    display: none;
+  }
+
   &__links {
     height: 100%;
     left: 0;
@@ -61,8 +65,10 @@
 
       &:nth-child(1) {
         width: 39px;
+
         svg {
           &:hover {
+
             // text {
             //   fill: url("#colorVk2");
             // }
@@ -76,8 +82,10 @@
 
       &:nth-child(2) {
         width: 38px;
+
         &:hover {
           svg {
+
             // text {
             //   fill: url("#colorBe2");
             // }
@@ -93,8 +101,10 @@
         svg {
           width: 59px;
         }
+
         &:hover {
           svg {
+
             // text {
             //   fill: url("#colorInst2");
             // }
@@ -104,6 +114,7 @@
             }
           }
         }
+
         margin-right: 0;
       }
     }
@@ -115,6 +126,24 @@
     padding: 23px 0;
     margin-bottom: 25px;
   }
+}
+
+@media (min-width: 1000px) {
+  .header {
+    &__phone {
+      display: block;
+      height: 100%;
+      right: 0;
+      top: 0;
+      font-size: 30px;
+      font-weight: 700;
+      color: #E9E9E9;
+      position: absolute;
+      height: 30px;
+      top: calc(43px - 15px);
+    }
+  }
+
 }
 
 @media (min-width: 1350px) {

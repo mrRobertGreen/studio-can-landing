@@ -4,8 +4,6 @@ let productScrollPos = 0;
 const MENU_ITEM_WIDTH = 90
 const mainBody = document.querySelector('body');
 
-
-
 $(window).on('load', function () {
   
   // меню
@@ -77,7 +75,7 @@ $(window).on('load', function () {
       menuItems.forEach((item, idx) => {
         if (item.id === "menu_" + id) {
           item.classList.add("active")
-          productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
+          // productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
         } else {
           item.classList.remove("active")
         }
@@ -113,29 +111,11 @@ $(window).on('load', function () {
     const productName = productsData[currentProductId].name
 
     switch (currentProductId) {
-      case "design_landing":
-        value = "Я хочу дизайн Лендинга";
-        break;
-      case "design_bigsite":
-        value = "Я хочу дизайн Большого сайта"
-        break;
-      case "design_market":
-        value = "Я хочу дизайн Интернет-магазина"
-        break;
-      case "design_polygraphy":
-        value = "Я хочу Полиграфию"
-        break;
-      case "design_networks":
-        value = "Я хочу дизайн Социальных сетей"
-        break;
-      case "marketing_complex":
-        value = "Я хочу Комплексную рекламу"
-        break;
-      case "marketing_context":
-        value = "Я хочу Контекстную рекламу"
+      case "consultation":
+        value = "Я хочу консультациию";
         break;
       default:
-        value = "Я хочу " + productName;
+        value = "Я хочу " + productName.toLowerCase();
     }
 
     formPopupTextarea.value = value;
@@ -145,7 +125,9 @@ $(window).on('load', function () {
 
     const hash = window.location.hash;
 
-    productsData.ids.forEach(id => {
+    const ids = Object.keys(productsData)
+
+    ids.forEach(id => {
       if (hash === "#" + id) {
         scrollPos = window.pageYOffset
         productPopup.classList.remove("hidden")

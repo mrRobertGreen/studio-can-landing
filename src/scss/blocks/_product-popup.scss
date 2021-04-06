@@ -274,7 +274,8 @@
         }
         &__container-wrapper {
             height: auto;
-            min-height: auto;
+            // min-height: auto;
+            min-height: 550px;
         }
 
         &__header {
@@ -351,6 +352,11 @@
 .product-menu {
     padding: 0 15px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    @media (max-width: 345px) {
+        justify-content: flex-start;
+    }
 
     @media (min-width: 1100px) {
         max-width: 375px;
@@ -360,7 +366,7 @@
 
     &__track {
         display: flex;
-        width: calc(90px * 14);
+        width: calc(90px * 4);
         height: 75px;
     }
 
