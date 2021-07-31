@@ -1,2 +1,2 @@
-# student-can-landing
+# Studio Can
  
