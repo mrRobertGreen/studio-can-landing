@@ -21,12 +21,6 @@ const productsData = {
           "1 день",
         ]
       },
-      // {
-      //   title: "Главный принцип работы",
-      //   items: [
-      //     "Последовательность — согласование каждого шага из точки А в точку Б; от выводов к предложениям и действиям.",
-      //   ]
-      // },
       {
         title: "Процесс работы",
         items: [
@@ -35,20 +29,8 @@ const productsData = {
           "3. Сдача презентации, видеозаписи и сценариев.",
         ]
       },
-      // {
-      //   title: "О ценообразовании и доходах",
-      //   items: [
-      //     "Час работы специалистов: ~500 ₽",
-      //     "60% — вознаграждение специалистов;",
-      //     "10% — налоги и взносы;",
-      //     "15% — амортизация и развитие;",
-      //     "15% — вознаграждение атлантов =D",
-      //   ]
-      // },
     ],
     images: "<img src=\"../img/services/svg/network_white.svg\" class=\"product-slider__item\" />"
-      // "<img src=\"../img/services/svg/landing_white.svg\" class=\"product-slider__item\" />" +
-      // "<img src=\"../img/services/svg/landing_white.svg\" class=\"product-slider__item\" />",
   },
   logo: {
     id: "logo",
@@ -71,12 +53,6 @@ const productsData = {
           "1 день",
         ]
       },
-      // {
-      //   title: "Главный принцип работы",
-      //   items: [
-      //     "Последовательность — согласование каждого шага из точки А в точку Б; от выводов к предложениям и действиям.",
-      //   ]
-      // },
       {
         title: "Процесс работы",
         items: [
@@ -85,20 +61,8 @@ const productsData = {
           "3. Сдача логотипа и руководства к нему.",
         ]
       },
-      // {
-      //   title: "О ценообразовании и доходах",
-      //   items: [
-      //     "Час работы специалистов: ~500 ₽",
-      //     "60% — вознаграждение специалистов;",
-      //     "10% — налоги и взносы;",
-      //     "15% — амортизация и развитие;",
-      //     "15% — вознаграждение атлантов =D",
-      //   ]
-      // },
     ],
     images: "<img src=\"../img/services/svg/logo_white.svg\" class=\"product-slider__item\" />"
-      // "<img src=\"../img/services/svg/big_white.svg\" class=\"product-slider__item\" />" +
-      // "<img src=\"../img/services/svg/big_white.svg\" class=\"product-slider__item\" />",
   },
   analysis: {
     id: "analysis",
@@ -119,12 +83,6 @@ const productsData = {
           "1 день.",
         ]
       },
-      // {
-      //   title: "Главный принцип работы",
-      //   items: [
-      //     "Последовательность — согласование каждого шага из точки А в точку Б; от выводов к предложениям и действиям.",
-      //   ]
-      // },
       {
         title: "Процесс работы",
         items: [
@@ -133,20 +91,8 @@ const productsData = {
           "3. Сдача презентации и видеозаписи с комментариями и рекомендациями.",
         ]
       },
-      // {
-      //   title: "О ценообразовании и доходах",
-      //   items: [
-      //     "Час работы специалистов: ~500 ₽",
-      //     "60% — вознаграждение специалистов;",
-      //     "10% — налоги и взносы;",
-      //     "15% — амортизация и развитие;",
-      //     "15% — вознаграждение атлантов =D",
-      //   ]
-      // },
     ],
     images: "<img src=\"../img/services/svg/context_white.svg\" class=\"product-slider__item\" />"
-      // "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />" +
-      // "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />",
   },
   consultation: {
     id: "consultation",
@@ -155,8 +101,6 @@ const productsData = {
     price: "0 ₽",
     details: [],
     images: "<img src=\"../img/services/svg/context_white.svg\" class=\"product-slider__item\" />"
-      // "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />" +
-      // "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />",
   },
   ids: ["research", "logo", "analysis", "consultation"]
 }

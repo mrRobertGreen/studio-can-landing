@@ -168,51 +168,18 @@ function isVisible(id) {
 
     // формируем область по центру экрана и будем проверять видимость элемента в этой области
     const viewportTop = $(window).scrollTop() + $(window).height() / 2.5
-    const viewportBottom = viewportTop + $(window).height() / 10;
-
-    // чтоб наглядно увидеть эту область раскомментируй этот код
-    // $('#scanner').remove()
-    // $('#body').append('<div id="scanner"></div>');
-
-    // const props = {
-    //     background: "#000",
-    //     opacity: 0.5,
-    //     position: "fixed",
-    //     width: "100%",
-    //     height: viewportBottom - viewportTop + "px",
-
-    //     top: $(window).height() / 2.5 + "px",
-    //     bottom: $(window).height() / 2.1 + "px",
-    // }
-    // $("#scanner").css(props)
+    const viewportBottom = viewportTop + $(window).height() / 10;   
 
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
 function isVisibleForScrollDown(id) {
-    // console.log("id: ", id)
-
     const element = $(id)
 
     if (!element.offset()) return
 
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
-    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height();
-
-    // $('#scanner').remove()
-    // $('#body').append('<div id="scanner"></div>');
-
-    // const props = {
-    //     background: "#000",
-    //     opacity: 0.5,
-    //     position: "fixed",
-    //     width: "100%",
-    //     height: "10px",
-    //     top: $(window).height() / 2 + "px",
-    // }
-    // $("#scanner").css(props)
-
+    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху
 
     return elementTop < viewportTop + $(window).height() / 2
 }
@@ -224,9 +191,7 @@ function isVisibleForScrollUp(id) {
     if (!element.offset()) return
 
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
-    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height();
-
+    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху
 
     return elementTop > viewportTop + $(window).height() / 2
 }

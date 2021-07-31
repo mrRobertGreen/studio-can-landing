@@ -23,12 +23,6 @@ $(window).on('load', function () {
   const mainMenu = document.querySelector("#frame")
   const mainContainer = document.querySelector("#main-container")
   const menuItems = document.querySelectorAll(".product-menu__item")
-  // const body = document.querySelector(".product-popup__body")
-
-  // $('#product-slider').on("reInit", () => {
-  //   productPopup.scroll(0, 0)
-  //   body.scroll(0, 0)
-  // })
 
   const setActiveProduct = (id) => {
     if (id !== currentProductId) {
@@ -70,12 +64,10 @@ $(window).on('load', function () {
       title.innerHTML = productsData[id].name
       category.innerHTML = productsData[id].category
 
-      // $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
       slider.innerHTML = productsData[id].images
       menuItems.forEach((item, idx) => {
         if (item.id === "menu_" + id) {
           item.classList.add("active")
-          // productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
         } else {
           item.classList.remove("active")
         }

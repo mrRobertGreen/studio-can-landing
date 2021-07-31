@@ -168,51 +168,18 @@ function isVisible(id) {
 
     // формируем область по центру экрана и будем проверять видимость элемента в этой области
     const viewportTop = $(window).scrollTop() + $(window).height() / 2.5
-    const viewportBottom = viewportTop + $(window).height() / 10;
-
-    // чтоб наглядно увидеть эту область раскомментируй этот код
-    // $('#scanner').remove()
-    // $('#body').append('<div id="scanner"></div>');
-
-    // const props = {
-    //     background: "#000",
-    //     opacity: 0.5,
-    //     position: "fixed",
-    //     width: "100%",
-    //     height: viewportBottom - viewportTop + "px",
-
-    //     top: $(window).height() / 2.5 + "px",
-    //     bottom: $(window).height() / 2.1 + "px",
-    // }
-    // $("#scanner").css(props)
+    const viewportBottom = viewportTop + $(window).height() / 10;   
 
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
 function isVisibleForScrollDown(id) {
-    // console.log("id: ", id)
-
     const element = $(id)
 
     if (!element.offset()) return
 
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
-    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height();
-
-    // $('#scanner').remove()
-    // $('#body').append('<div id="scanner"></div>');
-
-    // const props = {
-    //     background: "#000",
-    //     opacity: 0.5,
-    //     position: "fixed",
-    //     width: "100%",
-    //     height: "10px",
-    //     top: $(window).height() / 2 + "px",
-    // }
-    // $("#scanner").css(props)
-
+    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху
 
     return elementTop < viewportTop + $(window).height() / 2
 }
@@ -224,9 +191,7 @@ function isVisibleForScrollUp(id) {
     if (!element.offset()) return
 
     const elementTop = $(element).offset().top; // позиция элемента от верхнего края документа
-    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху 
-    const viewportBottom = viewportTop + $(window).height();
-
+    const viewportTop = $(window).scrollTop(); // значение отступа прокрутки сверху
 
     return elementTop > viewportTop + $(window).height() / 2
 }
@@ -457,12 +422,6 @@ const productsData = {
           "1 день",
         ]
       },
-      // {
-      //   title: "Главный принцип работы",
-      //   items: [
-      //     "Последовательность — согласование каждого шага из точки А в точку Б; от выводов к предложениям и действиям.",
-      //   ]
-      // },
       {
         title: "Процесс работы",
         items: [
@@ -471,20 +430,8 @@ const productsData = {
           "3. Сдача презентации, видеозаписи и сценариев.",
         ]
       },
-      // {
-      //   title: "О ценообразовании и доходах",
-      //   items: [
-      //     "Час работы специалистов: ~500 ₽",
-      //     "60% — вознаграждение специалистов;",
-      //     "10% — налоги и взносы;",
-      //     "15% — амортизация и развитие;",
-      //     "15% — вознаграждение атлантов =D",
-      //   ]
-      // },
     ],
     images: "<img src=\"../img/services/svg/network_white.svg\" class=\"product-slider__item\" />"
-      // "<img src=\"../img/services/svg/landing_white.svg\" class=\"product-slider__item\" />" +
-      // "<img src=\"../img/services/svg/landing_white.svg\" class=\"product-slider__item\" />",
   },
   logo: {
     id: "logo",
@@ -507,12 +454,6 @@ const productsData = {
           "1 день",
         ]
       },
-      // {
-      //   title: "Главный принцип работы",
-      //   items: [
-      //     "Последовательность — согласование каждого шага из точки А в точку Б; от выводов к предложениям и действиям.",
-      //   ]
-      // },
       {
         title: "Процесс работы",
         items: [
@@ -521,20 +462,8 @@ const productsData = {
           "3. Сдача логотипа и руководства к нему.",
         ]
       },
-      // {
-      //   title: "О ценообразовании и доходах",
-      //   items: [
-      //     "Час работы специалистов: ~500 ₽",
-      //     "60% — вознаграждение специалистов;",
-      //     "10% — налоги и взносы;",
-      //     "15% — амортизация и развитие;",
-      //     "15% — вознаграждение атлантов =D",
-      //   ]
-      // },
     ],
     images: "<img src=\"../img/services/svg/logo_white.svg\" class=\"product-slider__item\" />"
-      // "<img src=\"../img/services/svg/big_white.svg\" class=\"product-slider__item\" />" +
-      // "<img src=\"../img/services/svg/big_white.svg\" class=\"product-slider__item\" />",
   },
   analysis: {
     id: "analysis",
@@ -555,12 +484,6 @@ const productsData = {
           "1 день.",
         ]
       },
-      // {
-      //   title: "Главный принцип работы",
-      //   items: [
-      //     "Последовательность — согласование каждого шага из точки А в точку Б; от выводов к предложениям и действиям.",
-      //   ]
-      // },
       {
         title: "Процесс работы",
         items: [
@@ -569,20 +492,8 @@ const productsData = {
           "3. Сдача презентации и видеозаписи с комментариями и рекомендациями.",
         ]
       },
-      // {
-      //   title: "О ценообразовании и доходах",
-      //   items: [
-      //     "Час работы специалистов: ~500 ₽",
-      //     "60% — вознаграждение специалистов;",
-      //     "10% — налоги и взносы;",
-      //     "15% — амортизация и развитие;",
-      //     "15% — вознаграждение атлантов =D",
-      //   ]
-      // },
     ],
     images: "<img src=\"../img/services/svg/context_white.svg\" class=\"product-slider__item\" />"
-      // "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />" +
-      // "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />",
   },
   consultation: {
     id: "consultation",
@@ -591,8 +502,6 @@ const productsData = {
     price: "0 ₽",
     details: [],
     images: "<img src=\"../img/services/svg/context_white.svg\" class=\"product-slider__item\" />"
-      // "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />" +
-      // "<img src=\"../img/services/svg/market_white.svg\" class=\"product-slider__item\" />",
   },
   ids: ["research", "logo", "analysis", "consultation"]
 }
@@ -621,12 +530,6 @@ $(window).on('load', function () {
   const mainMenu = document.querySelector("#frame")
   const mainContainer = document.querySelector("#main-container")
   const menuItems = document.querySelectorAll(".product-menu__item")
-  // const body = document.querySelector(".product-popup__body")
-
-  // $('#product-slider').on("reInit", () => {
-  //   productPopup.scroll(0, 0)
-  //   body.scroll(0, 0)
-  // })
 
   const setActiveProduct = (id) => {
     if (id !== currentProductId) {
@@ -668,12 +571,10 @@ $(window).on('load', function () {
       title.innerHTML = productsData[id].name
       category.innerHTML = productsData[id].category
 
-      // $('#product-slider').slick('removeSlide', null, null, true); // удаление всех слайдов
       slider.innerHTML = productsData[id].images
       menuItems.forEach((item, idx) => {
         if (item.id === "menu_" + id) {
           item.classList.add("active")
-          // productMenu.slideTo((idx - 1) * MENU_ITEM_WIDTH)
         } else {
           item.classList.remove("active")
         }
